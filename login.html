@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecotrack - Login</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-gradient-to-r from-darkerBlue to-evendarkerPurple">
+
+    <!-- header -->
+    <nav class="container flex py-5 mx-auto min-w-full bg-transparent">
+        <!-- logo -->
+        <div class="py-1 ml-10 justify-start items-center">
+            <img src="img/ecotrack2.png" class="w-52">
+        </div>
+        <!-- nav menu -->
+        <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
+            <li><a href="landing.html" class="hover:text-lightGreen">Home</a></li>
+            <li><a href="about.html" class="hover:text-lightGreen">About</a></li>
+            <li><a href="register.html" class="hover:text-lightGreen">Daftar</a></li>
+            <a href="#"
+                class="px-2 py-2 mr-10 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                Login
+            </a>
+        </ul>
+    </nav>
+
+    <!-- login section -->
+    <section id="login">
+        <!-- flex container -->
+        <div class="container flex flex-col w-608px items-center mx-auto my-32 h-96 bg-black md:flex-row">
+            <!-- left (login) -->
+            <div class="flex flex-col p-10 space-y-3 w-full h-full bg-white md:w-1/2">
+                <h1 class="text-center font-bold text-3xl">
+                    Login
+                </h1>
+                <form action="#" id="login">
+                    <p class="">
+                        <label for="id" class="text-sm p-3">Email</label>
+                        <input type="email" id="email" required
+                            class="my-1 px-3 py-0.5 rounded-full bg-lightGreen md:w-full"><br>
+                        <label for="pass" class="text-sm p-3">Password</label>
+                        <input type="password" id="pass" required
+                            class="my-1 px-3 py-0.5 rounded-full  bg-lightGreen md:w-full">
+                    </p>
+                    <a href="#"
+                        class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-2/3 my-5 font-bold justify-center rounded-full md:w-full">Login</a>
+                </form>
+            </div>
+            <!-- right (no acc? register)-->
+            <div class="flex flex-col p-10 w-full h-full md:w-1/2 bg-tosca">
+                <h1 class="font-bold text-3xl text-center md:text-left">
+                    Don't have an account?
+                </h1>
+                <p class="text-center text-sm my-5 max-w-md md:text-left">
+                    Buat akun dan mulai blah blah blah
+                </p>
+                <a href="register.html"
+                    class="py-1 w-3/4 bg-customPurple hover:bg-lighterPurple text-white font-bold text-center rounded-full">Register
+                    Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container flex flex-row p-24 space-x-16 mx-auto h-80 min-w-full bg-evendarkerBlue text-white">
+            <!-- alamat -->
+            <div>
+                <h2 class="font-semibold">Address</h2><br>
+                <p>Kaliurang, Yogyakarta</p>
+            </div>
+            <!-- contacts -->
+            <div>
+                <h2 class="font-semibold">Contacts</h2><br>
+                <p>123 456 7890<br>
+                    aurora@email.com</p>
+            </div>
+            <!-- faq -->
+            <div>
+                <h2 class="font-semibold">FAQ</h2><br>
+                <a href="" class="underline hover:text-lightGreen">Frequently asked questions</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

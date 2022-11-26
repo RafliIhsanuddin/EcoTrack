@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecotrack - Register</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-gradient-to-r from-darkerBlue to-evendarkerPurple">
+
+    <!-- header -->
+    <nav class="container flex py-5 mx-auto min-w-full bg-transparent">
+        <!-- logo -->
+        <div class="py-1 ml-10 justify-start items-center">
+            <img src="img/ecotrack2.png" class="w-52">
+        </div>
+        <!-- nav menu -->
+        <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
+            <li><a href="landing.html" class="hover:text-lightGreen">Home</a></li>
+            <li><a href="about.html" class="hover:text-lightGreen">About</a></li>
+            <li><a href="" class="text-lightGreen">Daftar</a></li>
+            <a href="login.html"
+                class="px-2 py-2 mr-10 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                Login
+            </a>
+        </ul>
+    </nav>
+
+    <!-- register section -->
+    <section id="register">
+        <!-- flex container -->
+        <div class="container flex flex-row justify-center items-center mx-auto my-32 w-96 bg-white">
+            <!-- register form -->
+            <div class="flex flex-row justify-center p-10 w-full h-full">
+                <form action="#" id="register">
+                    <p>
+                    <h1 class="text-center font-bold mb-5 text-3xl">
+                        Register
+                    </h1>
+                    <p class="">
+                        <label for="email" class="text-sm p-3">Email</label>
+                        <input type="email" id="email" required
+                            class="my-1 px-3 py-0.5 rounded-full bg-lightGreen md:w-full"><br>
+
+                        <label for="username" class="text-sm p-3">Username</label>
+                        <input type="text" id="username" required
+                            class="my-1 px-3 py-0.5 rounded-full  bg-lightGreen md:w-full"><br>
+
+                        <label for="telp" class="text-sm p-3">No. Telp</label>
+                        <input type="tel" id="telp" required
+                            class="my-1 px-3 py-0.5 rounded-full  bg-lightGreen md:w-full"><br>
+
+                        <label for="pass" class="text-sm p-3">Password</label>
+                        <input type="password" id="pass" required
+                            class="my-1 px-3 py-0.5 rounded-full  bg-lightGreen md:w-full"><br>
+
+                        <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
+                        <input type="password" id="konfirmpass" required
+                            class="my-1 px-3 py-0.5 rounded-full  bg-lightGreen md:w-full"><br>
+                    </p>
+                    </p>
+                    <a href="#"
+                        class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-2/3 my-7 font-bold justify-center rounded-full md:w-full">Register
+                    </a>
+                    <a href="login.html"
+                        class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
+                        Sudah punya akun? Kembali ke halaman Login.
+                    </a>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container flex flex-row p-24 space-x-16 mx-auto h-80 min-w-full bg-evendarkerBlue text-white">
+            <!-- alamat -->
+            <div>
+                <h2 class="font-semibold">Address</h2><br>
+                <p>Kaliurang, Yogyakarta</p>
+            </div>
+            <!-- contacts -->
+            <div>
+                <h2 class="font-semibold">Contacts</h2><br>
+                <p>123 456 7890<br>
+                    aurora@email.com</p>
+            </div>
+            <!-- faq -->
+            <div>
+                <h2 class="font-semibold">FAQ</h2><br>
+                <a href="" class="underline hover:text-lightGreen">Frequently asked questions</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
