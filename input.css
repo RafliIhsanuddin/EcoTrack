@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+
+    .tabs input[type='radio']:checked + label + .tab {
+        display: block;
+    }
+
+    .tabs input[type='radio']:checked + label {
+        background-color: white;
+        color: #100D29;
+    }
+
+}

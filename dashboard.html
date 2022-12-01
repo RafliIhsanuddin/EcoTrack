@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecotrack - Dashboard</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-darkerBlue">
+
+    <div class="flex flex-col h-screen justify-between">
+
+        <!-- top navbar -->
+        <header>
+            <nav class="container flex py-1 mx-auto min-w-full h-12 bg-darkerBlue text-white border-b-2 border-b-white">
+
+                <!-- nav menu -->
+                <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
+                    <li><a href="dashboard.html" class="hover:text-lightGreen">Dashboard</a></li>
+                    <li><a href="#" class="hover:text-lightGreen">Pembukuan</a></li>
+                    <li><a href="#" class="hover:text-lightGreen">Bantuan</a></li>
+                </ul>
+
+                <div>
+                    <a href="landing.html" class="flex flex-1 hover:text-lightGreen font-semibold p-2 mx-10">Logout</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- middle section -->
+        <main class="container flex flex-row text-evendarkerBlue w-screen">
+
+            <!-- content -->
+            <div class="container flex flex-col p-5">
+
+                <!-- tabs -->
+                <div class="tabs flex flex-wrap w-full mb-auto p-2 gap-x-1">
+                    <input type="radio" name="tabs" id="general" checked="checked" class="hidden">
+                    <label for="general" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
+                        General
+                    </label>
+                    <div class="tab w-full p-10 bg-white order-1 hidden">
+                        <div>
+                            <!-- table section -->
+                            <div class="flex w-full justify-center">
+                                <div class="p-5">
+
+                                    <table class="w-full">
+                                        <thead class="bg-gray-300 border-b-2 border-gray-500">
+                                            <tr>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                                    Nomor
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Tanggal
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">Jenis
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Status
+                                                </th>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                                    Bukti
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-gray-100">
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- edit hapus tambah -->
+                        <nav class="container flex py-1 h-10 mx-auto min-w-full bg-transparent">
+                            <!-- nav menu -->
+                            <ul class="flex flex-1 justify-center items-center gap-x-20 mx-10 text-white font-semibold">
+                                <li><a href="#"
+                                        class="px-12 py-1 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                                        Edit
+                                    </a>
+                                </li>
+                                <li><a href="#"
+                                        class="px-10 py-1 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                                        Hapus
+                                    </a>
+                                </li>
+                                <li><a href="#"
+                                        class="px-10 py-1 w-full font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                                        Tambah
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <input type="radio" name="tabs" id="pengeluaran" class="hidden">
+                    <label for="pengeluaran" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
+                        Pengeluaran
+                    </label>
+                    <div class="tab w-full p-10 bg-white order-1 hidden">
+                        <div>
+                            <!-- table section -->
+                            <div class="flex w-full justify-center">
+                                <div class="p-5">
+
+                                    <table class="w-full">
+                                        <thead class="bg-gray-300 border-b-2 border-gray-500">
+                                            <tr>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                                    Nomor
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Tanggal
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">Jenis
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Status
+                                                </th>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                                    Bukti
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-gray-100">
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="radio" name="tabs" id="pendapatan" class="hidden">
+                    <label for="pendapatan" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
+                        Pendapatan
+                    </label>
+                    <div class="tab w-full p-10 bg-white order-1 hidden">
+                        <div>
+                            <!-- table section -->
+                            <div class="flex w-full justify-center">
+                                <div class="p-5">
+
+                                    <table class="w-full">
+                                        <thead class="bg-gray-300 border-b-2 border-gray-500">
+                                            <tr>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                                    Nomor
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Tanggal
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">Jenis
+                                                </th>
+                                                <th class="px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                    Status
+                                                </th>
+                                                <th
+                                                    class="px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                                    Bukti
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-gray-100">
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+
+                                            <tr class="">
+                                                <td>
+                                                    a
+                                                </td>
+                                                <td>
+                                                    b
+                                                </td>
+                                                <td>
+                                                    c
+                                                </td>
+                                                <td>
+                                                    d
+                                                </td>
+                                                <td>
+                                                    e
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </main>
+
+
+
+        <!-- footer -->
+        <footer>
+            <div class="container flex flex-row p-24 space-x-16 mx-auto h-80 min-w-full bg-evendarkerBlue text-white">
+                <!-- alamat -->
+                <div>
+                    <h2 class="font-semibold">Address</h2><br>
+                    <p>Kaliurang, Yogyakarta</p>
+                </div>
+                <!-- contacts -->
+                <div>
+                    <h2 class="font-semibold">Contacts</h2><br>
+                    <p>123 456 7890<br>
+                        aurora@email.com</p>
+                </div>
+                <!-- faq -->
+                <div>
+                    <h2 class="font-semibold">FAQ</h2><br>
+                    <a href="" class="underline hover:text-lightGreen">Frequently asked questions</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
