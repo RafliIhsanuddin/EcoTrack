@@ -1313,6 +1313,10 @@ input:checked + .toggle-bg {
   width: 1rem;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -2550,6 +2554,10 @@ input:checked + .toggle-bg {
     width: 400px;
   }
 
+  .md\:w-44 {
+    width: 11rem;
+  }
+
   .md\:max-w-3xl {
     max-width: 48rem;
   }
@@ -2643,6 +2651,16 @@ input:checked + .toggle-bg {
   .lg\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .lg\:mx-52 {
+    margin-left: 13rem;
+    margin-right: 13rem;
+  }
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg\:px-10 {
