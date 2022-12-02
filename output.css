@@ -1362,26 +1362,14 @@ input:checked + .toggle-bg {
   width: 24rem;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .w-6 {
   width: 1.5rem;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .w-11\/12 {
   width: 91.666667%;
 }
 
-=======
->>>>>>> 9d5f8c7 (mencoba register)
-=======
->>>>>>> a82fea1 (memperbaiki warna dan elemen input)
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .w-64 {
   width: 16rem;
 }
@@ -1986,14 +1974,11 @@ input:checked + .toggle-bg {
   fill: currentColor;
 }
 
-<<<<<<< HEAD
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
 
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .p-2 {
   padding: 0.5rem;
 }
@@ -2480,11 +2465,6 @@ input:checked + .toggle-bg {
   background-color: rgb(154 82 217 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#6C4AB6\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(108 74 182 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-blue-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
@@ -2514,14 +2494,11 @@ input:checked + .toggle-bg {
   color: rgb(71 255 191 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
 .hover\:text-green-700:hover {
   --tw-text-opacity: 1;
   color: rgb(4 108 78 / var(--tw-text-opacity));
 }
 
-=======
->>>>>>> af65655 (menambahkan session)
 .hover\:text-evendarkerBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(16 13 41 / var(--tw-text-opacity));
@@ -2949,38 +2926,11 @@ input:checked + .toggle-bg {
     padding-right: 1.25rem;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   .md\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-=======
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
->>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
 
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
-  .md\:pt-5 {
-    padding-top: 1.25rem;
-=======
-=======
->>>>>>> a37b444 (memperbaiki warna dan elemen input)
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-=======
->>>>>>> 6044593 (Membuat Dropdown)
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2997,29 +2947,11 @@ input:checked + .toggle-bg {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-<<<<<<< HEAD
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-=======
-  .md\:tracking-wider {
-    letter-spacing: 0.05em;
->>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
-=======
-
-  .md\:tracking-wider {
-    letter-spacing: 0.05em;
-  }
->>>>>>> a37b444 (memperbaiki warna dan elemen input)
-=======
->>>>>>> 6044593 (Membuat Dropdown)
 }
 
 @media (min-width: 976px) {
@@ -3061,50 +2993,11 @@ input:checked + .toggle-bg {
     padding-right: 20px;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-=======
-  .lg\:px-\[66px\] {
-    padding-left: 66px;
-    padding-right: 66px;
->>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
 
-=======
->>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
-=======
-=======
->>>>>>> cbf2601 (membuat fitur register dengan enkripsi)
-=======
->>>>>>> a37b444 (memperbaiki warna dan elemen input)
-  .lg\:px-\[25px\] {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 058050b (membuat file untuk mengupdate tabel)
-=======
-=======
->>>>>>> 696d64b (membuat fitur register dengan enkripsi)
->>>>>>> cbf2601 (membuat fitur register dengan enkripsi)
-=======
-  .lg\:px-\[66px\] {
-    padding-left: 66px;
-    padding-right: 66px;
-  }
-
->>>>>>> a37b444 (memperbaiki warna dan elemen input)
-=======
->>>>>>> 6044593 (Membuat Dropdown)
   .lg\:pt-0 {
     padding-top: 0px;
   }
