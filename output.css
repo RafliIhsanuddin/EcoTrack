@@ -2470,6 +2470,7 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2495,6 +2496,11 @@ input:checked + .toggle-bg {
 .focus\:ring-blue-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(164 202 254 / var(--tw-ring-opacity));
+=======
+.focus\:text-black:focus {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+>>>>>>> e337d15 (mengubah text input saat input dalam keadaan dalam mode focus)
 }
 
 .active\:shadow-none:active {
