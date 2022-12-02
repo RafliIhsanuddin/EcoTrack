@@ -2136,11 +2136,6 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2206,11 +2201,6 @@ input:checked + .toggle-bg {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-semibold {
@@ -2583,11 +2573,6 @@ input:checked + .toggle-bg {
 .focus\:text-black:focus {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.focus\:text-white:focus {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -2967,6 +2952,7 @@ input:checked + .toggle-bg {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   .md\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -2993,6 +2979,8 @@ input:checked + .toggle-bg {
     padding-right: 3rem;
   }
 
+=======
+>>>>>>> 6044593 (Membuat Dropdown)
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -3009,6 +2997,7 @@ input:checked + .toggle-bg {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -3029,6 +3018,8 @@ input:checked + .toggle-bg {
     letter-spacing: 0.05em;
   }
 >>>>>>> a37b444 (memperbaiki warna dan elemen input)
+=======
+>>>>>>> 6044593 (Membuat Dropdown)
 }
 
 @media (min-width: 976px) {
@@ -3075,6 +3066,7 @@ input:checked + .toggle-bg {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -3111,6 +3103,8 @@ input:checked + .toggle-bg {
   }
 
 >>>>>>> a37b444 (memperbaiki warna dan elemen input)
+=======
+>>>>>>> 6044593 (Membuat Dropdown)
   .lg\:pt-0 {
     padding-top: 0px;
   }
