@@ -2094,6 +2094,11 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2164,6 +2169,11 @@ input:checked + .toggle-bg {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-semibold {
@@ -2530,6 +2540,11 @@ input:checked + .toggle-bg {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.focus\:text-white:focus {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2889,6 +2904,11 @@ input:checked + .toggle-bg {
     padding-right: 1.25rem;
   }
 
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2904,6 +2924,10 @@ input:checked + .toggle-bg {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:tracking-wider {
+    letter-spacing: 0.05em;
   }
 }
 
@@ -2944,6 +2968,11 @@ input:checked + .toggle-bg {
   .lg\:px-\[20px\] {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
   }
 
   .lg\:pt-0 {
