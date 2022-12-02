@@ -2121,6 +2121,11 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2926,9 +2931,15 @@ input:checked + .toggle-bg {
     padding-right: 1.25rem;
   }
 
+<<<<<<< HEAD
   .md\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+=======
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+>>>>>>> abde1a0 (Memperbaiki rwd elemen toombol hapus,update,tambah)
   }
 
   .md\:pt-0 {
@@ -2993,9 +3004,15 @@ input:checked + .toggle-bg {
     padding-right: 20px;
   }
 
+<<<<<<< HEAD
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+=======
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
+>>>>>>> abde1a0 (Memperbaiki rwd elemen toombol hapus,update,tambah)
   }
 
   .lg\:pt-0 {
