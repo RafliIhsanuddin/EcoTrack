@@ -151,45 +151,6 @@ require 'cobaregister.php';
                                 Sudah punya akun? Kembali ke halaman Login.
                             </a>
                         </div>
-<<<<<<< HEAD:register.html
-                        <div>
-                            <div>
-                                <label for="email" class="text-sm p-3">Email</label>
-                            </div>
-                            <input type="email" id="email" required
-                                class="my-1 px-3 py-0.5 shadow-xl block rounded-full bg-white w-full border-[1px] md:w-full"><br>
-                            <div>
-                                <label for="username" class="text-sm p-3">Username</label>
-                            </div>
-                            <input type="text" id="username" required
-                                class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
-                            <div>
-                                <label for="telp" class="text-sm p-3">No. Telp</label>
-                            </div>
-                            <input type="tel" id="telp" required
-                                class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
-                            <div>
-                                <label for="pass" class="text-sm p-3">Password</label>
-                            </div>
-                            <input type="password" id="pass" required
-                                class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
-                            <div>
-                                <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
-                            </div>
-                            <input type="password" id="konfirmpass" required
-                                class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
-                        </div>
-                        </p>
-                        <a href="#"
-                            class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register
-                        </a>
-                        <a href="login.html"
-                            class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
-                            Sudah punya akun? Kembali ke halaman Login.
-                        </a>
-                    </div>
-=======
->>>>>>> 6ec64e9 (menambahkan session):register.php
                 </form>
 
             </div>
