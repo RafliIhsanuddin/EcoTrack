@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html'],
+  mode: 'jit',
+  purge: ["./*.html","./node_modules/flowbite/**/*.js"],
   theme: {
     screens: {
       sm: '480px',
@@ -38,5 +39,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 }
