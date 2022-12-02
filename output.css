@@ -1089,6 +1089,7 @@ input:checked + .toggle-bg {
   margin-right: 2.5rem;
 }
 
+<<<<<<< HEAD
 .my-7 {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
@@ -1097,6 +1098,11 @@ input:checked + .toggle-bg {
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+=======
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .my-32 {
@@ -1109,11 +1115,14 @@ input:checked + .toggle-bg {
   margin-bottom: 0.25rem;
 }
 
+<<<<<<< HEAD
 .mx-16 {
   margin-left: 4rem;
   margin-right: 4rem;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -1124,9 +1133,15 @@ input:checked + .toggle-bg {
   margin-bottom: 0.75rem;
 }
 
+<<<<<<< HEAD
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+=======
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .ml-10 {
@@ -1137,6 +1152,7 @@ input:checked + .toggle-bg {
   margin-right: 2.5rem;
 }
 
+<<<<<<< HEAD
 .mr-0 {
   margin-right: 0px;
 }
@@ -1147,6 +1163,18 @@ input:checked + .toggle-bg {
 
 .mt-20 {
   margin-top: 5rem;
+=======
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .mb-7 {
@@ -1221,6 +1249,7 @@ input:checked + .toggle-bg {
   display: flex;
 }
 
+<<<<<<< HEAD
 .inline-flex {
   display: inline-flex;
 }
@@ -1245,10 +1274,21 @@ input:checked + .toggle-bg {
   height: 2.5rem;
 }
 
+=======
+.table {
+  display: table;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .h-full {
   height: 100%;
 }
 
+<<<<<<< HEAD
 .h-auto {
   height: auto;
 }
@@ -1264,20 +1304,32 @@ input:checked + .toggle-bg {
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
+=======
+.h-80 {
+  height: 20rem;
+}
+
+.h-800px {
+  height: 50rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .h-96 {
   height: 24rem;
 }
 
+<<<<<<< HEAD
 .h-5 {
   height: 1.25rem;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .h-20 {
   height: 5rem;
 }
 
+<<<<<<< HEAD
 .h-6 {
   height: 1.5rem;
 }
@@ -1292,6 +1344,10 @@ input:checked + .toggle-bg {
 
 .max-h-\[320px\] {
   max-height: 320px;
+=======
+.h-12 {
+  height: 3rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .w-52 {
@@ -1314,14 +1370,32 @@ input:checked + .toggle-bg {
   width: 100%;
 }
 
+<<<<<<< HEAD
 .w-auto {
   width: auto;
+=======
+.w-80 {
+  width: 20rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-608px {
+  width: 38rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .w-3\/4 {
   width: 75%;
 }
 
+<<<<<<< HEAD
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -1338,12 +1412,19 @@ input:checked + .toggle-bg {
   width: 1.25rem;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .w-1\/6 {
   width: 16.666667%;
 }
 
+<<<<<<< HEAD
 .w-\[300px\] {
   width: 300px;
+=======
+.w-1\/3 {
+  width: 33.333333%;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .w-96 {
@@ -1496,15 +1577,41 @@ input:checked + .toggle-bg {
   gap: 2.5rem;
 }
 
+<<<<<<< HEAD
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
+=======
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-16 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(4rem * var(--tw-space-x-reverse));
+  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-9 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.25rem * var(--tw-space-y-reverse));
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .gap-y-5 {
   row-gap: 1.25rem;
 }
 
+<<<<<<< HEAD
 .gap-y-10 {
   row-gap: 2.5rem;
 }
@@ -1562,6 +1669,32 @@ input:checked + .toggle-bg {
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
 }
 
+=======
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-28 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(7rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(7rem * var(--tw-space-y-reverse));
+}
+
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1570,6 +1703,7 @@ input:checked + .toggle-bg {
   border-radius: 9999px;
 }
 
+<<<<<<< HEAD
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1582,10 +1716,13 @@ input:checked + .toggle-bg {
   border-radius: 0.75rem;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .rounded-2xl {
   border-radius: 1rem;
 }
 
+<<<<<<< HEAD
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -1632,6 +1769,8 @@ input:checked + .toggle-bg {
   border-top-right-radius: 0.5rem;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .border {
   border-width: 1px;
 }
@@ -1640,10 +1779,22 @@ input:checked + .toggle-bg {
   border-width: 1px;
 }
 
+<<<<<<< HEAD
+=======
+.border-\[1\.5px\] {
+  border-width: 1.5px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .border-\[1\.7px\] {
   border-width: 1.7px;
 }
 
+<<<<<<< HEAD
 .border-0 {
   border-width: 0px;
 }
@@ -1679,6 +1830,8 @@ input:checked + .toggle-bg {
   border-color: rgb(249 128 128 / var(--tw-border-opacity));
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1691,6 +1844,7 @@ input:checked + .toggle-bg {
 
 .border-purple-200 {
   --tw-border-opacity: 1;
+<<<<<<< HEAD
   border-color: rgb(220 215 254 / var(--tw-border-opacity));
 }
 
@@ -1712,12 +1866,63 @@ input:checked + .toggle-bg {
 .border-b-white {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
+=======
+  border-color: rgb(233 213 255 / var(--tw-border-opacity));
+}
+
+.border-\[\] {
+  border-color: ;
+}
+
+.border-\[1\.\] {
+  border-color: 1.;
+}
+
+.border-\[1\] {
+  border-color: 1;
+}
+
+.border-\[1\.5\] {
+  border-color: 1.5;
+}
+
+.border-\[1\.7\] {
+  border-color: 1.7;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .bg-transparent {
   background-color: transparent;
 }
 
+<<<<<<< HEAD
+=======
+.bg-lightGreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 255 191 / var(--tw-bg-opacity));
+}
+
+.bg-evendarkerBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 13 41 / var(--tw-bg-opacity));
+}
+
+.bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.bg-tosca {
+  --tw-bg-opacity: 1;
+  background-color: rgb(53 222 206 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1798,11 +2003,14 @@ input:checked + .toggle-bg {
   background-color: rgb(137 51 212 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .bg-\[\#9F73AB\] {
   --tw-bg-opacity: 1;
   background-color: rgb(159 115 171 / var(--tw-bg-opacity));
@@ -1813,6 +2021,7 @@ input:checked + .toggle-bg {
   background-color: rgb(63 59 108 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
 .bg-purple-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 215 254 / var(--tw-bg-opacity));
@@ -1848,6 +2057,16 @@ input:checked + .toggle-bg {
 
 .bg-gradient-to-tr {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+=======
+.bg-\[\#645CAA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 92 170 / var(--tw-bg-opacity));
+}
+
+.bg-purple-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 213 255 / var(--tw-bg-opacity));
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .bg-gradient-to-r {
@@ -1864,6 +2083,7 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+<<<<<<< HEAD
 .from-\[\#FF9671\] {
   --tw-gradient-from: #FF9671;
   --tw-gradient-to: rgb(255 150 113 / 0);
@@ -1874,6 +2094,30 @@ input:checked + .toggle-bg {
   --tw-gradient-from: #FF6F91;
   --tw-gradient-to: rgb(255 111 145 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+=======
+.from-\[\#A084CA\] {
+  --tw-gradient-from: #A084CA;
+  --tw-gradient-to: rgb(160 132 202 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-\[\#BFACE0\] {
+  --tw-gradient-to: rgb(191 172 224 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #BFACE0, var(--tw-gradient-to);
+}
+
+.to-evendarkerPurple {
+  --tw-gradient-to: #610DA8;
+}
+
+.to-\[\#EBC7E8\] {
+  --tw-gradient-to: #EBC7E8;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+          background-clip: text;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .from-\[\#F9F871\] {
@@ -1954,6 +2198,10 @@ input:checked + .toggle-bg {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-7 {
+  padding: 1.75rem;
 }
 
 .p-10 {
@@ -2069,16 +2317,20 @@ input:checked + .toggle-bg {
   padding-bottom: 0px;
 }
 
+<<<<<<< HEAD
 .px-\[60px\] {
   padding-left: 60px;
   padding-right: 60px;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
+<<<<<<< HEAD
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2092,6 +2344,11 @@ input:checked + .toggle-bg {
 .py-\[7px\] {
   padding-top: 7px;
   padding-bottom: 7px;
+=======
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .px-6 {
@@ -2099,6 +2356,7 @@ input:checked + .toggle-bg {
   padding-right: 1.5rem;
 }
 
+<<<<<<< HEAD
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2127,10 +2385,13 @@ input:checked + .toggle-bg {
   text-align: left;
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .text-center {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2139,10 +2400,15 @@ input:checked + .toggle-bg {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
+=======
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
+}
+
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -2175,8 +2441,14 @@ input:checked + .toggle-bg {
   font-weight: 600;
 }
 
-.font-bold {
-  font-weight: 700;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-medium {
@@ -2195,14 +2467,24 @@ input:checked + .toggle-bg {
   letter-spacing: 0.025em;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-\[\#845EC2\] {
   --tw-text-opacity: 1;
   color: rgb(132 94 194 / var(--tw-text-opacity));
+=======
+.text-lightGreen {
+  --tw-text-opacity: 1;
+  color: rgb(71 255 191 / var(--tw-text-opacity));
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .text-evendarkerBlue {
@@ -2210,6 +2492,7 @@ input:checked + .toggle-bg {
   color: rgb(16 13 41 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -2235,18 +2518,24 @@ input:checked + .toggle-bg {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .text-transparent {
   color: transparent;
 }
 
 .text-purple-900 {
   --tw-text-opacity: 1;
+<<<<<<< HEAD
   color: rgb(74 29 150 / var(--tw-text-opacity));
 }
 
 .text-\[\#A084CA\] {
   --tw-text-opacity: 1;
   color: rgb(160 132 202 / var(--tw-text-opacity));
+=======
+  color: rgb(88 28 135 / var(--tw-text-opacity));
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .text-black {
@@ -2254,11 +2543,14 @@ input:checked + .toggle-bg {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .underline {
   text-decoration-line: underline;
 }
@@ -2271,6 +2563,7 @@ input:checked + .toggle-bg {
   text-decoration-color: inherit;
 }
 
+<<<<<<< HEAD
 .opacity-0 {
   opacity: 0;
 }
@@ -2291,6 +2584,8 @@ input:checked + .toggle-bg {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -2301,6 +2596,7 @@ input:checked + .toggle-bg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+<<<<<<< HEAD
 }
 
 .shadow-md {
@@ -2320,6 +2616,8 @@ input:checked + .toggle-bg {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .transition-colors {
@@ -2366,6 +2664,7 @@ input:checked + .toggle-bg {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+<<<<<<< HEAD
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -2426,6 +2725,16 @@ input:checked + .toggle-bg {
 .hover\:bg-\[\#643EA3\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(100 62 163 / var(--tw-bg-opacity));
+=======
+.placeholder\:text-black::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-black::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .hover\:bg-teal:hover {
@@ -2436,6 +2745,7 @@ input:checked + .toggle-bg {
 .hover\:bg-lighterPurple:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(154 82 217 / var(--tw-bg-opacity));
+<<<<<<< HEAD
 }
 
 .hover\:bg-\[\#6C4AB6\]:hover {
@@ -2470,6 +2780,8 @@ input:checked + .toggle-bg {
 .hover\:text-\[\#A084CA\]:hover {
   --tw-text-opacity: 1;
   color: rgb(160 132 202 / var(--tw-text-opacity));
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
 }
 
 .hover\:text-lightGreen:hover {
@@ -2497,12 +2809,24 @@ input:checked + .toggle-bg {
   color: rgb(60 36 156 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .hover\:text-blue-600:hover {
+=======
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+.hover\:opacity-\[0\.95\]:hover {
+  opacity: 0.95;
+}
+
+.focus\:text-white:focus {
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
@@ -2512,8 +2836,36 @@ input:checked + .toggle-bg {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.hover\:underline:hover {
-  text-decoration-line: underline;
+.active\:shadow-none:active {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 480px) {
+  .sm\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:w-64 {
+    width: 16rem;
+  }
+
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
 }
 
 .hover\:opacity-\[0\.95\]:hover {
@@ -2800,6 +3152,7 @@ input:checked + .toggle-bg {
     width: 400px;
   }
 
+<<<<<<< HEAD
   .md\:w-44 {
     width: 11rem;
   }
@@ -2816,10 +3169,13 @@ input:checked + .toggle-bg {
     max-width: 42rem;
   }
 
+=======
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
   .md\:flex-row {
     flex-direction: row;
   }
 
+<<<<<<< HEAD
   .md\:gap-y-0 {
     row-gap: 0px;
   }
@@ -2900,6 +3256,11 @@ input:checked + .toggle-bg {
 
   .md\:pt-5 {
     padding-top: 1.25rem;
+=======
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
   }
 
   .md\:text-left {
@@ -2910,6 +3271,7 @@ input:checked + .toggle-bg {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+<<<<<<< HEAD
 }
 
 @media (min-width: 976px) {
@@ -2958,5 +3320,17 @@ input:checked + .toggle-bg {
 
   .lg\:pt-0 {
     padding-top: 0px;
+=======
+
+  .md\:tracking-wider {
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
+>>>>>>> f3aee74 (memperbaiki warna dan elemen input)
   }
 }
