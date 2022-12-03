@@ -34,6 +34,7 @@ module.exports = {
         'lightGreen': '#47FFBF',
         'notsolightGreen': '#2DB586',
         'tosca': '#35DECE',
+        'darkerTosca': '#18A194',
         'teal': '#2D9ABB'
       },
     },
