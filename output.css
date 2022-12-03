@@ -983,6 +983,10 @@ input:checked + .toggle-bg {
   }
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1007,6 +1011,10 @@ input:checked + .toggle-bg {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .inset-0 {
   top: 0px;
   right: 0px;
@@ -1014,12 +1022,17 @@ input:checked + .toggle-bg {
   left: 0px;
 }
 
-.top-0 {
+.inset-y-0 {
   top: 0px;
+  bottom: 0px;
 }
 
 .left-0 {
   left: 0px;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .bottom-\[60px\] {
@@ -1124,14 +1137,20 @@ input:checked + .toggle-bg {
   margin-right: 2.5rem;
 }
 
+<<<<<<< HEAD
 .mr-0 {
   margin-right: 0px;
+=======
+.mt-16 {
+  margin-top: 4rem;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .mt-10 {
   margin-top: 2.5rem;
 }
 
+<<<<<<< HEAD
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1144,6 +1163,8 @@ input:checked + .toggle-bg {
   margin-bottom: auto;
 }
 
+=======
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -1237,6 +1258,10 @@ input:checked + .toggle-bg {
   height: 24rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -1289,12 +1314,24 @@ input:checked + .toggle-bg {
   width: 33.333333%;
 }
 
+<<<<<<< HEAD
 .w-608px {
   width: 38rem;
+=======
+.w-5 {
+  width: 1.25rem;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .w-1\/6 {
   width: 16.666667%;
+<<<<<<< HEAD
+=======
+}
+
+.w-\[300px\] {
+  width: 300px;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .w-96 {
@@ -1313,8 +1350,17 @@ input:checked + .toggle-bg {
   width: 1rem;
 }
 
+<<<<<<< HEAD
 .w-\[300px\] {
   width: 300px;
+=======
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-\[\] {
+  width: ;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .min-w-full {
@@ -1337,10 +1383,13 @@ input:checked + .toggle-bg {
   max-width: 28rem;
 }
 
+<<<<<<< HEAD
 .max-w-4xl {
   max-width: 56rem;
 }
 
+=======
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1525,6 +1574,7 @@ input:checked + .toggle-bg {
   border-radius: 9999px;
 }
 
+<<<<<<< HEAD
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1539,6 +1589,10 @@ input:checked + .toggle-bg {
 
 .rounded-2xl {
   border-radius: 1rem;
+=======
+.rounded-3xl {
+  border-radius: 1.5rem;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .rounded-t-xl {
@@ -1554,6 +1608,14 @@ input:checked + .toggle-bg {
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-l-lg {
@@ -1594,6 +1656,7 @@ input:checked + .toggle-bg {
   border-width: 0px;
 }
 
+<<<<<<< HEAD
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1605,6 +1668,11 @@ input:checked + .toggle-bg {
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
+=======
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .border-black {
@@ -1620,11 +1688,6 @@ input:checked + .toggle-bg {
 .border-purple-200 {
   --tw-border-opacity: 1;
   border-color: rgb(220 215 254 / var(--tw-border-opacity));
-}
-
-.border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .border-blue-700 {
@@ -1694,6 +1757,11 @@ input:checked + .toggle-bg {
 .bg-\[\#FFC75F\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 199 95 / var(--tw-bg-opacity));
+}
+
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#9F73AB\] {
@@ -1861,14 +1929,25 @@ input:checked + .toggle-bg {
   padding: 1.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .p-2\.5 {
   padding: 0.625rem;
 }
 
+<<<<<<< HEAD
+=======
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1949,9 +2028,15 @@ input:checked + .toggle-bg {
   padding-bottom: 0px;
 }
 
+<<<<<<< HEAD
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+=======
+.px-\[78px\] {
+  padding-left: 78px;
+  padding-right: 78px;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .py-6 {
@@ -1986,6 +2071,58 @@ input:checked + .toggle-bg {
   padding-top: 1.25rem;
 }
 
+.px-\[\] {
+  padding-left: ;
+  padding-right: ;
+}
+
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.px-\[60px\] {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.px-\[61px\] {
+  padding-left: 61px;
+  padding-right: 61px;
+}
+
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.px-\[30px\] {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.px-\[6s0px\] {
+  padding-left: 6s0px;
+  padding-right: 6s0px;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1998,9 +2135,19 @@ input:checked + .toggle-bg {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+=======
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .text-sm {
@@ -2028,6 +2175,19 @@ input:checked + .toggle-bg {
   line-height: 2rem;
 }
 
+<<<<<<< HEAD
+=======
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .font-semibold {
   font-weight: 600;
 }
@@ -2067,9 +2227,20 @@ input:checked + .toggle-bg {
   color: rgb(16 13 41 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+=======
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 .text-transparent {
@@ -2084,16 +2255,6 @@ input:checked + .toggle-bg {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .text-blue-600 {
@@ -2312,6 +2473,11 @@ input:checked + .toggle-bg {
   opacity: 0.95;
 }
 
+.focus\:border-blue-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+}
+
 .focus\:border-black:focus {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -2337,6 +2503,11 @@ input:checked + .toggle-bg {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-black:focus {
@@ -2412,6 +2583,7 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 0.8;
 }
 
+<<<<<<< HEAD
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -2422,9 +2594,16 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .dark .dark\:text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .dark .dark\:text-blue-500 {
@@ -2432,6 +2611,24 @@ input:checked + .toggle-bg {
   color: rgb(63 131 248 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.dark .dark\:placeholder-gray-400::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+}
+
+.dark .dark\:placeholder-gray-400::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+}
+
+.dark .dark\:hover\:bg-gray-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 .dark .dark\:hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
@@ -2462,9 +2659,20 @@ input:checked + .toggle-bg {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .dark .dark\:focus\:ring-blue-800:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
+=======
+.dark .dark\:focus\:border-blue-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 131 248 / var(--tw-border-opacity));
+}
+
+.dark .dark\:focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
+>>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
 @media (min-width: 480px) {
@@ -2558,18 +2766,24 @@ input:checked + .toggle-bg {
     width: 11rem;
   }
 
+<<<<<<< HEAD
   .md\:max-w-3xl {
     max-width: 48rem;
   }
 
   .md\:max-w-2xl {
     max-width: 42rem;
+=======
+  .md\:w-1\/3 {
+    width: 33.333333%;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
   .md\:flex-row {
     flex-direction: row;
   }
 
+<<<<<<< HEAD
   .md\:gap-y-0 {
     row-gap: 0px;
   }
@@ -2622,6 +2836,10 @@ input:checked + .toggle-bg {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+=======
+  .md\:p-10 {
+    padding: 2.5rem;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
   .md\:px-12 {
@@ -2629,12 +2847,48 @@ input:checked + .toggle-bg {
     padding-right: 3rem;
   }
 
+<<<<<<< HEAD
   .md\:pt-0 {
     padding-top: 0px;
   }
 
   .md\:pt-5 {
     padding-top: 1.25rem;
+=======
+  .md\:px-\[78px\] {
+    padding-left: 78px;
+    padding-right: 78px;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:px-36 {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+
+  .md\:px-\[\] {
+    padding-left: ;
+    padding-right: ;
+  }
+
+  .md\:px-\[70px\] {
+    padding-left: 70px;
+    padding-right: 70px;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
   .md\:text-left {
@@ -2663,9 +2917,22 @@ input:checked + .toggle-bg {
     margin-right: auto;
   }
 
+<<<<<<< HEAD
   .lg\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+=======
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
   .lg\:px-\[66px\] {
@@ -2673,7 +2940,68 @@ input:checked + .toggle-bg {
     padding-right: 66px;
   }
 
+<<<<<<< HEAD
   .lg\:pt-0 {
     padding-top: 0px;
+=======
+  .lg\:px-\[\] {
+    padding-left: ;
+    padding-right: ;
+  }
+
+  .lg\:px-\[50px\] {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .lg\:px-\[70px\] {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .lg\:px-\[68px\] {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+
+  .lg\:px-\[65px\] {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+
+  .lg\:px-\[78px\] {
+    padding-left: 78px;
+    padding-right: 78px;
+  }
+
+  .lg\:px-\[69px\] {
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+
+  .lg\:px-\[67px\] {
+    padding-left: 67px;
+    padding-right: 67px;
+  }
+
+  .lg\:px-\[7px\] {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .lg\:px-\[80px\] {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .lg\:px-\[81px\] {
+    padding-left: 81px;
+    padding-right: 81px;
+  }
+
+  .lg\:px-\[82px\] {
+    padding-left: 82px;
+    padding-right: 82px;
+>>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 }
