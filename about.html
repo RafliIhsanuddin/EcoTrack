@@ -31,7 +31,7 @@
 
     <!-- about section -->
     <section>
-        <div class="container flex flex-col justify-center mx-auto space-y-10 w-full h-full text-white text-center">
+        <div class="container flex flex-col justify-center pt-10 mx-auto space-y-10 w-full h-full text-white text-center md:pt-0">
             <div class="space-y-10">
                 <h1 class="text-5xl font-semibold">
                     About
@@ -44,19 +44,17 @@
                 </p>
             </div>
             <!-- images -->
-            <div class="flex flex-row space-x-5 justify-center mx-auto text-center">
+            <div class="flex flex-col space-y-5 justify-center mx-auto text-center md:space-y-0 md:space-x-5 md:flex-row">
                 <!-- member 1 -->
                 <div class="">
-                    <img src="img/kitty.jpg" alt="" class="w-80 h-80">
+                    <img src="img/kitty.jpg" alt="" class="w-auto mx-auto max-w-[320px] h-auto max-h-[320px]">
                 </div>
                 <!-- member 2 -->
                 <div class="">
-                    <img src="img/kitty2.jpg" alt="" class="w-80 h-80">
+                    <img src="img/kitty2.jpg" alt=""
+                        class="w-auto mx-auto min-w-[320px] max-w-[320px] h-auto max-h-[320px]">
                 </div>
-                <!-- member 3 -->
-                <div class="">
-                    <img src="img/kitty3.jpg" alt="" class="w-80 h-80">
-                </div>
+
             </div>
             <div>
                 <p>
@@ -72,23 +70,35 @@
 
     <!-- footer -->
     <footer>
-        <div class="container flex flex-row p-24 my-20 space-x-16 mx-auto h-80 min-w-full bg-evendarkerBlue text-white">
-            <!-- alamat -->
-            <div>
-                <h2 class="font-semibold">Address</h2><br>
-                <p>Kaliurang, Yogyakarta</p>
+        <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-evendarkerBlue text-white">
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2>Address</h2>
+                </div>
+                <div class="">
+                    <p>Kaliurang, Yogyakarta</p>
+                </div>
             </div>
-            <!-- contacts -->
-            <div>
-                <h2 class="font-semibold">Contacts</h2><br>
-                <p>123 456 7890<br>
-                    aurora@email.com</p>
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2 class="">Contacts</h2>
+                </div>
+                <div class="">
+                    <p class="">123 456 7890</p>
+                </div>
+                <div class="">
+                    <p>aurora@email.com</p>
+                </div>
             </div>
-            <!-- faq -->
-            <div>
-                <h2 class="font-semibold">FAQ</h2><br>
-                <a href="" class="underline hover:text-lightGreen">Frequently asked questions</a>
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2>FAQ</h2>
+                </div>
+                <div class="">
+                    <a href="" class="underline hover:text-lightGreen">Frequently asked questions</a>
+                </div>
             </div>
+
         </div>
     </footer>
 </body>
