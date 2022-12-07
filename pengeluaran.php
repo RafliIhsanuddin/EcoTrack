@@ -1,3 +1,43 @@
+<?php
+
+require_once('connect.php');
+$var = "SELECT * FROM pengeluaran";
+$hasil= $conn -> query($var);
+
+if($_SERVER["REQUEST_METHOD"] === 'POST'){
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $konfirmasi = $_POST['konfirmasi'];
+
+    echo "$email \r\n <br>";
+    echo "$username \r\n <br>";
+    echo "$password \r\n <br>";
+    echo "$konfirmasi \r\n <br>";
+
+    $query = "INSERT INTO `pengeluaran` (`akun_id`, `username`, `password`, `email`) VALUES ('113','$username','$password','$email')" ;
+
+    $hasil = $conn -> query($query);
+
+    echo $hasil;
+
+
+    
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="">
 
@@ -80,17 +120,29 @@
                                     <div>referensi/</div>
                                     <div>toko</div>
                                 </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Hapus</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Ubah</p>
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="text-purple-900 text-center justify-center">
+                        <?php if($hasil->num_rows > 0) : ?>
+                            <?php while($baris = $hasil->fetch_assoc()): ?>  
                             <tr class="bg-purple-200 mx-auto">
-                                <td class="py-3 px-4 md:px-12 lg:px-[66px]">tes</td>
-                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
-                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
-                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
-                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
-                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                            <td class="py-3 px-6"><?php echo $baris['Id_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Nama_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Harga_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Jumlah_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Satuan'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Referensi'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]">hapus</td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]">ubah</td>
                             </tr>
+                            <?php endwhile?>
+                        <?php endif?> 
                         </tbody>
                     </table>
                 </div>
