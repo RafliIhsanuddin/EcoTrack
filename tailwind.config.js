@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
-  purge: ["./*.html","./node_modules/flowbite/**/*.js"],
+  purge: ["./*.html","./node_modules/flowbite/**/*.js","./*.php"],
   theme: {
     screens: {
       sm: '480px',
