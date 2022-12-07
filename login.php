@@ -1,3 +1,6 @@
+<?php
+require_once('cobalogin.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,25 +81,28 @@
                     <h1 class="text-center font-bold text-3xl pt-5 mb-5">
                         Login
                     </h1>
-                    <form action="#" id="login">
+                    <?php if (isset($error)) : ?>
+                    <p>username / password salah</p>
+                    <?php endif ?>
+                    <form action="#" id="login" method="POST">
                         <div class="">
                             <div>
-                                <label for="id" class="mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Email</label>
+                                <label for=" id" class="mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Email</label>
                             </div>
                             <div>
-                                <input type="email" id="email" required
-                                    class="mx-16 shadow-xl my-1 px-3 py-0.5 w-3/4 rounded-full bg-white md:w-3/4 md:mx-10">
+                                <input type="email" id="email" required name="email"
+                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
                             </div>
                             <div>
                                 <label for="pass" class=" mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Password</label>
                             </div>
                             <div class="">
-                                <input type="password" id="pass" required
-                                    class="mx-16 shadow-xl my-1 px-3 py-0.5 w-3/4 rounded-full bg-white md:w-3/4 md:mx-10">
+                                <input type="password" id="pass" required name="password"
+                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
                             </div>
                         </div>
-                        <a href="dashboard.html"
-                            class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-3/4 my-5 mb-10 font-bold text-center justify-center mx-16 rounded-full md:mx-10">Login</a>
+                        <input type="submit" value="Login"
+                            class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">
                     </form>
                 </div>
                 <!-- right (no acc? register)-->
