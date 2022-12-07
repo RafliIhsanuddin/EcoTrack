@@ -54,9 +54,8 @@ $hasil= $conn -> query($var);
     </style> -->
 </head>
 
-<body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
-    <div class="">
-        <div class="bg-white rounded-xl">
+<body class="bg-gradient-to-r from-[#A084CA] via-[#BFACE0] to-[#EBC7E8] min-width-md">
+    <div class="lg:">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
                 <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Pengeluaran</span>
