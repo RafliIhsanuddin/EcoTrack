@@ -1168,6 +1168,22 @@ input:checked + .toggle-bg {
   margin-bottom: 0.25rem;
 }
 
+.mr-16 {
+  margin-right: 4rem;
+}
+
+.mr-1\.5 {
+  margin-right: 0.375rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-80 {
+  margin-right: 20rem;
+}
+
 .block {
   display: block;
 }
@@ -1276,16 +1292,16 @@ input:checked + .toggle-bg {
   width: 75%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
 .w-5 {
   width: 1.25rem;
 }
 
 .w-1\/6 {
   width: 16.666667%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-\[300px\] {
@@ -1302,14 +1318,6 @@ input:checked + .toggle-bg {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-\[\] {
-  width: ;
 }
 
 .min-w-full {
@@ -1734,10 +1742,6 @@ input:checked + .toggle-bg {
   padding: 1rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1778,9 +1782,9 @@ input:checked + .toggle-bg {
   padding-bottom: 0px;
 }
 
-.px-\[78px\] {
-  padding-left: 78px;
-  padding-right: 78px;
+.px-\[60px\] {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .py-6 {
@@ -1818,44 +1822,19 @@ input:checked + .toggle-bg {
   padding-bottom: 0.625rem;
 }
 
-.px-\[\] {
-  padding-left: ;
-  padding-right: ;
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
-.px-\[50px\] {
-  padding-left: 50px;
-  padding-right: 50px;
+.px-72 {
+  padding-left: 18rem;
+  padding-right: 18rem;
 }
 
-.px-\[60px\] {
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-.px-\[61px\] {
-  padding-left: 61px;
-  padding-right: 61px;
-}
-
-.px-\[10px\] {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.px-\[20px\] {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.px-\[30px\] {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.px-\[6s0px\] {
-  padding-left: 6s0px;
-  padding-right: 6s0px;
+.px-96 {
+  padding-left: 24rem;
+  padding-right: 24rem;
 }
 
 .pt-10 {
@@ -1902,6 +1881,11 @@ input:checked + .toggle-bg {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1909,11 +1893,6 @@ input:checked + .toggle-bg {
 
 .text-lg {
   font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -2385,21 +2364,13 @@ input:checked + .toggle-bg {
     width: 11rem;
   }
 
-  .md\:w-1\/3 {
-    width: 33.333333%;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
 
-  .md\:p-10 {
-    padding: 2.5rem;
-  }
-
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .md\:px-\[70px\] {
+    padding-left: 70px;
+    padding-right: 70px;
   }
 
   .md\:px-\[78px\] {
@@ -2407,34 +2378,9 @@ input:checked + .toggle-bg {
     padding-right: 78px;
   }
 
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .md\:px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .md\:px-36 {
-    padding-left: 9rem;
-    padding-right: 9rem;
-  }
-
-  .md\:px-\[\] {
-    padding-left: ;
-    padding-right: ;
-  }
-
-  .md\:px-\[70px\] {
-    padding-left: 70px;
-    padding-right: 70px;
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .md\:text-left {
@@ -2458,80 +2404,21 @@ input:checked + .toggle-bg {
     margin-right: auto;
   }
 
-  .lg\:w-3\/4 {
-    width: 75%;
-  }
-
-  .lg\:w-1\/4 {
-    width: 25%;
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:w-1\/2 {
     width: 50%;
   }
 
-  .lg\:px-\[66px\] {
-    padding-left: 66px;
-    padding-right: 66px;
-  }
-
-  .lg\:px-\[\] {
-    padding-left: ;
-    padding-right: ;
-  }
-
-  .lg\:px-\[50px\] {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .lg\:px-\[70px\] {
-    padding-left: 70px;
-    padding-right: 70px;
-  }
-
-  .lg\:px-\[68px\] {
-    padding-left: 68px;
-    padding-right: 68px;
-  }
-
-  .lg\:px-\[65px\] {
-    padding-left: 65px;
-    padding-right: 65px;
-  }
-
-  .lg\:px-\[78px\] {
-    padding-left: 78px;
-    padding-right: 78px;
-  }
-
-  .lg\:px-\[69px\] {
-    padding-left: 69px;
-    padding-right: 69px;
-  }
-
-  .lg\:px-\[67px\] {
-    padding-left: 67px;
-    padding-right: 67px;
-  }
-
-  .lg\:px-\[7px\] {
-    padding-left: 7px;
-    padding-right: 7px;
-  }
-
-  .lg\:px-\[80px\] {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  .lg\:px-\[81px\] {
-    padding-left: 81px;
-    padding-right: 81px;
-  }
-
   .lg\:px-\[82px\] {
     padding-left: 82px;
     padding-right: 82px;
+  }
+
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
   }
 }
