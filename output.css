@@ -2083,6 +2083,11 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2884,6 +2889,11 @@ input:checked + .toggle-bg {
     padding-right: 1.25rem;
   }
 
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2939,6 +2949,11 @@ input:checked + .toggle-bg {
   .lg\:px-\[20px\] {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
   }
 
   .lg\:pt-0 {
