@@ -1197,6 +1197,22 @@ input:checked + .toggle-bg {
   margin-bottom: 0.25rem;
 }
 
+.mr-16 {
+  margin-right: 4rem;
+}
+
+.mr-1\.5 {
+  margin-right: 0.375rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mr-80 {
+  margin-right: 20rem;
+}
+
 .block {
   display: block;
 }
@@ -1310,6 +1326,7 @@ input:checked + .toggle-bg {
   width: 75%;
 }
 
+<<<<<<< HEAD
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -1318,6 +1335,8 @@ input:checked + .toggle-bg {
 .w-608px {
   width: 38rem;
 =======
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
 .w-5 {
   width: 1.25rem;
 >>>>>>> feffb83 (memperbaiki file pembukuan)
@@ -1327,6 +1346,10 @@ input:checked + .toggle-bg {
   width: 16.666667%;
 <<<<<<< HEAD
 =======
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-\[300px\] {
@@ -1351,6 +1374,7 @@ input:checked + .toggle-bg {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .w-\[300px\] {
   width: 300px;
 =======
@@ -1363,6 +1387,8 @@ input:checked + .toggle-bg {
 >>>>>>> feffb83 (memperbaiki file pembukuan)
 }
 
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
 .min-w-full {
   min-width: 100%;
 }
@@ -1943,11 +1969,14 @@ input:checked + .toggle-bg {
   padding: 1rem;
 }
 
+<<<<<<< HEAD
 .p-20 {
   padding: 5rem;
 }
 
 >>>>>>> feffb83 (memperbaiki file pembukuan)
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -2029,6 +2058,7 @@ input:checked + .toggle-bg {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -2037,6 +2067,11 @@ input:checked + .toggle-bg {
   padding-left: 78px;
   padding-right: 78px;
 >>>>>>> feffb83 (memperbaiki file pembukuan)
+=======
+.px-\[60px\] {
+  padding-left: 60px;
+  padding-right: 60px;
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
 }
 
 .py-6 {
@@ -2071,44 +2106,19 @@ input:checked + .toggle-bg {
   padding-top: 1.25rem;
 }
 
-.px-\[\] {
-  padding-left: ;
-  padding-right: ;
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
-.px-\[50px\] {
-  padding-left: 50px;
-  padding-right: 50px;
+.px-72 {
+  padding-left: 18rem;
+  padding-right: 18rem;
 }
 
-.px-\[60px\] {
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-.px-\[61px\] {
-  padding-left: 61px;
-  padding-right: 61px;
-}
-
-.px-\[10px\] {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.px-\[20px\] {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.px-\[30px\] {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.px-\[6s0px\] {
-  padding-left: 6s0px;
-  padding-right: 6s0px;
+.px-96 {
+  padding-left: 24rem;
+  padding-right: 24rem;
 }
 
 .pt-10 {
@@ -2170,6 +2180,11 @@ input:checked + .toggle-bg {
   line-height: 1;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2182,12 +2197,15 @@ input:checked + .toggle-bg {
   line-height: 1.75rem;
 }
 
+<<<<<<< HEAD
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
 >>>>>>> feffb83 (memperbaiki file pembukuan)
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
 .font-semibold {
   font-weight: 600;
 }
@@ -2767,6 +2785,7 @@ input:checked + .toggle-bg {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .md\:max-w-3xl {
     max-width: 48rem;
   }
@@ -2779,10 +2798,13 @@ input:checked + .toggle-bg {
 >>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   .md\:flex-row {
     flex-direction: row;
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   .md\:gap-y-0 {
     row-gap: 0px;
@@ -2845,6 +2867,11 @@ input:checked + .toggle-bg {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+=======
+  .md\:px-\[70px\] {
+    padding-left: 70px;
+    padding-right: 70px;
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   }
 
 <<<<<<< HEAD
@@ -2860,6 +2887,7 @@ input:checked + .toggle-bg {
     padding-right: 78px;
   }
 
+<<<<<<< HEAD
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2889,6 +2917,11 @@ input:checked + .toggle-bg {
     padding-left: 70px;
     padding-right: 70px;
 >>>>>>> feffb83 (memperbaiki file pembukuan)
+=======
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   }
 
   .md\:text-left {
@@ -2918,6 +2951,7 @@ input:checked + .toggle-bg {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .lg\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2928,6 +2962,10 @@ input:checked + .toggle-bg {
 
   .lg\:w-1\/4 {
     width: 25%;
+=======
+  .lg\:flex {
+    display: flex;
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   }
 
   .lg\:w-1\/2 {
@@ -2935,6 +2973,7 @@ input:checked + .toggle-bg {
 >>>>>>> feffb83 (memperbaiki file pembukuan)
   }
 
+<<<<<<< HEAD
   .lg\:px-\[66px\] {
     padding-left: 66px;
     padding-right: 66px;
@@ -2999,9 +3038,16 @@ input:checked + .toggle-bg {
     padding-right: 81px;
   }
 
+=======
+>>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   .lg\:px-\[82px\] {
     padding-left: 82px;
     padding-right: 82px;
 >>>>>>> feffb83 (memperbaiki file pembukuan)
+  }
+
+  .lg\:px-\[66px\] {
+    padding-left: 66px;
+    padding-right: 66px;
   }
 }
