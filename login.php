@@ -1,3 +1,6 @@
+<?php
+require_once('cobalogin.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +27,7 @@
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="landing.html" class="hover:text-lightGreen">Home</a></li>
                     <li><a href="about.html" class="hover:text-lightGreen">About</a></li>
-                    <li><a href="register.html" class="hover:text-lightGreen">Daftar</a></li>
+                    <li><a href="register.html" class="hover:t ext-lightGreen">Daftar</a></li>
                     <a href="#"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
                         Login
@@ -43,25 +46,28 @@
                     <h1 class="text-center font-bold text-3xl pt-5">
                         Login
                     </h1>
-                    <form action="#" id="login">
+                    <?php if (isset($error)) : ?>
+                    <p>username / password salah</p>
+                    <?php endif ?>
+                    <form action="#" id="login" method="POST">
                         <div class="">
                             <div>
-                                <label for="id" class="mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Email</label>
+                                <label for=" id" class="mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Email</label>
                             </div>
                             <div>
-                                <input type="email" id="email" required
+                                <input type="email" id="email" required name="email"
                                     class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
                             </div>
                             <div>
                                 <label for="pass" class=" mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Password</label>
                             </div>
                             <div class="">
-                                <input type="password" id="pass" required
+                                <input type="password" id="pass" required name="password"
                                     class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
                             </div>
                         </div>
-                        <a href="#"
-                            class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">Login</a>
+                        <input type="submit" value="Login"
+                            class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">
                     </form>
                 </div>
                 <!-- right (no acc? register)-->

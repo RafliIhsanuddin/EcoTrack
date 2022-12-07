@@ -1086,19 +1086,9 @@ input:checked + .toggle-bg {
   margin-bottom: 8rem;
 }
 
-.mx-16 {
-  margin-left: 4rem;
-  margin-right: 4rem;
-}
-
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-}
-
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .my-7 {
@@ -1203,10 +1193,6 @@ input:checked + .toggle-bg {
   height: fit-content;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-6 {
   height: 1.5rem;
 }
@@ -1243,14 +1229,6 @@ input:checked + .toggle-bg {
   width: 2.5rem;
 }
 
-.w-608px {
-  width: 38rem;
-}
-
-.w-3\/4 {
-  width: 75%;
-}
-
 .w-44 {
   width: 11rem;
 }
@@ -1285,10 +1263,6 @@ input:checked + .toggle-bg {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-md {
-  max-width: 28rem;
 }
 
 .max-w-4xl {
@@ -1608,16 +1582,6 @@ input:checked + .toggle-bg {
   background-color: rgb(100 92 170 / var(--tw-bg-opacity));
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-customPurple {
-  --tw-bg-opacity: 1;
-  background-color: rgb(137 51 212 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#A084CA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(160 132 202 / var(--tw-bg-opacity));
@@ -1785,16 +1749,6 @@ input:checked + .toggle-bg {
   padding-right: 0.75rem;
 }
 
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1805,12 +1759,18 @@ input:checked + .toggle-bg {
   padding-bottom: 0.625rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .pt-2 {
@@ -1836,14 +1796,14 @@ input:checked + .toggle-bg {
   line-height: 1;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-2xl {
@@ -2036,11 +1996,6 @@ input:checked + .toggle-bg {
 .hover\:bg-teal:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(45 154 187 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-lighterPurple:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(154 82 217 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-100:hover {
@@ -2267,10 +2222,6 @@ input:checked + .toggle-bg {
     width: 50%;
   }
 
-  .md\:w-3\/4 {
-    width: 75%;
-  }
-
   .md\:w-full {
     width: 100%;
   }
@@ -2321,10 +2272,6 @@ input:checked + .toggle-bg {
 
   .md\:pt-5 {
     padding-top: 1.25rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 }
 
