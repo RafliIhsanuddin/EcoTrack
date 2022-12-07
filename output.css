@@ -1201,10 +1201,6 @@ input:checked + .toggle-bg {
   margin-bottom: 0.25rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .block {
   display: block;
 }
@@ -1367,10 +1363,14 @@ input:checked + .toggle-bg {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .w-6 {
   width: 1.5rem;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .w-11\/12 {
   width: 91.666667%;
@@ -1380,6 +1380,8 @@ input:checked + .toggle-bg {
 >>>>>>> 9d5f8c7 (mencoba register)
 =======
 >>>>>>> a82fea1 (memperbaiki warna dan elemen input)
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .w-64 {
   width: 16rem;
 }
@@ -1676,6 +1678,10 @@ input:checked + .toggle-bg {
 
 .border-b-2 {
   border-bottom-width: 2px;
+}
+
+.border-t-4 {
+  border-top-width: 4px;
 }
 
 .border-gray-500 {
@@ -1980,11 +1986,14 @@ input:checked + .toggle-bg {
   fill: currentColor;
 }
 
+<<<<<<< HEAD
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
 
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 .p-2 {
   padding: 0.5rem;
 }
@@ -2127,11 +2136,6 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2197,11 +2201,6 @@ input:checked + .toggle-bg {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .font-semibold {
@@ -2574,11 +2573,6 @@ input:checked + .toggle-bg {
 .focus\:text-black:focus {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.focus\:text-white:focus {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -2956,6 +2950,7 @@ input:checked + .toggle-bg {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .md\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -2966,6 +2961,8 @@ input:checked + .toggle-bg {
 >>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
 
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2982,6 +2979,7 @@ input:checked + .toggle-bg {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
   .md\:text-lg {
@@ -2992,6 +2990,8 @@ input:checked + .toggle-bg {
     letter-spacing: 0.05em;
 >>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
 }
 
 @media (min-width: 976px) {
@@ -3034,6 +3034,7 @@ input:checked + .toggle-bg {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -3044,6 +3045,8 @@ input:checked + .toggle-bg {
 >>>>>>> a82fea1 (memperbaiki warna dan elemen input)
   }
 
+=======
+>>>>>>> fa1c20e (membuat koneksi.php dan pengeluaran.php)
   .lg\:pt-0 {
     padding-top: 0px;
   }
