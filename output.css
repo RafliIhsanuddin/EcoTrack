@@ -2078,6 +2078,7 @@ input:checked + .toggle-bg {
   padding-bottom: 6px;
 }
 
+<<<<<<< HEAD
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2088,6 +2089,16 @@ input:checked + .toggle-bg {
 
 .pt-5 {
   padding-top: 1.25rem;
+=======
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+>>>>>>> 81fcf2b (mengkoneksikan database pada pengeluaran.php)
 }
 
 .pt-10 {
@@ -2893,6 +2904,46 @@ input:checked + .toggle-bg {
 >>>>>>> 6093eef (memperbaiki tombol pada pengeluaran)
   }
 
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .md\:px-\[\] {
+    padding-left: ;
+    padding-right: ;
+  }
+
+  .md\:px-\[6\] {
+    padding-left: 6;
+    padding-right: 6;
+  }
+
+  .md\:px-\[6px\] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .md\:px-\[5px\] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -3018,5 +3069,45 @@ input:checked + .toggle-bg {
   .lg\:px-\[66px\] {
     padding-left: 66px;
     padding-right: 66px;
+  }
+
+  .lg\:px-\[50px\] {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .lg\:px-\[10px\] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .lg\:px-\[20px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .lg\:px-\[2px\] {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .lg\:px-\[1px\] {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .lg\:px-\[18px\] {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .lg\:px-\[px\] {
+    padding-left: px;
+    padding-right: px;
+  }
+
+  .lg\:px-\[25px\] {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
