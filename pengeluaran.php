@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <title>EcoTrack-Pengeluaran</title>
+    <!-- <style>
+        * {
+            border: 1px solid black;
+        }
+    </style> -->
+</head>
+
+<body class="bg-gradient-to-r from-[#A084CA] via-[#BFACE0] to-[#EBC7E8] min-width-md">
+    <div class="lg:">
+        <div class="">
+            <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
+                <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Pengeluaran</span>
+            </div>
+        </div>
+        <div class="px-5">
+            <div
+                class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">
+                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                    <input type="text" id="nama" placeholder="Bukti Transaksi" required
+                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                </div>
+                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                    <input type="text" id="nama" placeholder="Jenis Transaksi" required
+                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                </div>
+                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                    <input type="text" id="nama" placeholder="Tanggal Transaksi" required
+                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                </div>
+                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                    <input type="text" id="nama" placeholder="Nomor Transaksi" required
+                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                </div>
+                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                    <input type="text" id="nama" placeholder="Status" required
+                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                </div>
+                <div
+                    class="sm:mb-0 shadow-lg border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-[#9F73AB] h-12 mb-2 hover:opacity-[0.95] active:shadow-none">
+                    <input type="submit" id="submit"
+                        class="bg-[#3F3B6C] text-2xl bg-clip-text text-transparent font-bold placeholder:text-black px-5 rounded-full w-full h-full">
+                </div>
+            </div>
+        </div>
+        <div class="lg:flex">
+            <div class="mx-auto">
+                <div class="justify-center items-center mx-auto mb-0 flex">
+                    <table
+                        class="text-sm md:text-2xl shadow-2xl font-poppins border-purple-200 w-1/3 rounded-2xl overflow-hidden mt-0 mx-auto">
+                        <thead class="text-white ">
+                            <tr>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">No</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Nama Barang</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Harga Barang</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Jumlah Barang</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <p class="">Satuan</p>
+                                </th>
+                                <th class="py-3 bg-[#645CAA]">
+                                    <div>referensi/</div>
+                                    <div>toko</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-purple-900 text-center justify-center">
+                            <tr class="bg-purple-200 mx-auto">
+                                <td class="py-3 px-4 md:px-12 lg:px-[66px]">tes</td>
+                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                                <td class="py-3 px-6 md:px-12 lg:px-[66px]">tes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="md:flex mx-auto lg:mx-52">
+                    <div class="flex md:mx-auto lg:mx-auto">
+                        <a href=""
+                            class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Ubah</a>
+                    </div>
+                    <div class="flex md:mx-auto lg:mx-auto">
+                        <a href=""
+                            class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Hapus</a>
+                    </div>
+                    <div class="flex md:mx-auto lg:mx-auto">
+                        <a href=""
+                            class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
+                    </div>
+                </div>
+            </    </div>
+
+</body>
+
+</html>
