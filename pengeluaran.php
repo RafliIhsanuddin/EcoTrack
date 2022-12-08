@@ -4,26 +4,6 @@ require_once('connect.php');
 $var = "SELECT * FROM pengeluaran";
 $hasil= $conn -> query($var);
 
-if($_SERVER["REQUEST_METHOD"] === 'POST'){
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $konfirmasi = $_POST['konfirmasi'];
-
-    echo "$email \r\n <br>";
-    echo "$username \r\n <br>";
-    echo "$password \r\n <br>";
-    echo "$konfirmasi \r\n <br>";
-
-    $query = "INSERT INTO `pengeluaran` (`akun_id`, `username`, `password`, `email`) VALUES ('113','$username','$password','$email')" ;
-
-    $hasil = $conn -> query($query);
-
-    echo $hasil;
-
-
-    
-}
 
 ?>
 
@@ -156,7 +136,7 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
                             class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Hapus</a>
                     </div>
                     <div class="flex md:mx-auto lg:mx-auto">
-                        <a href=""
+                        <a href="pengtambah.php"
                             class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
                     </div>
                 </div>
