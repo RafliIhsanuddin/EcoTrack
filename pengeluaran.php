@@ -154,7 +154,7 @@ $hasil= $conn -> query($var);
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-red-700">Hapus</a></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-green-700">Ubah</a></td>
                             </tr>
                             <?php $j++ ?>
