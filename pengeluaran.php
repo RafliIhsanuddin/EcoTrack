@@ -120,7 +120,7 @@ $hasil= $conn -> query($var);
                                     <p class="">no</p>
                                 </th>
                                 <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
-                                    <p cls="">nama barang</p>
+                                    <p class="">nama barang</p>
                                 </th>
                                 <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
                                     <p class="">harga barang</p>
