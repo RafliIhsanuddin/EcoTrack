@@ -1221,6 +1221,10 @@ input:checked + .toggle-bg {
   display: table;
 }
 
+.table-cell {
+  display: table-cell;
+}
+
 .grid {
   display: grid;
 }
@@ -1778,11 +1782,6 @@ input:checked + .toggle-bg {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 36 36 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -2024,14 +2023,9 @@ input:checked + .toggle-bg {
   padding-bottom: 1.5rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-\[7px\] {
-  padding-top: 7px;
-  padding-bottom: 7px;
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .py-\[6px\] {
@@ -2039,9 +2033,9 @@ input:checked + .toggle-bg {
   padding-bottom: 6px;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+.py-\[7px\] {
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .pt-10 {
@@ -2302,6 +2296,16 @@ input:checked + .toggle-bg {
 .tabs input[type='radio']:checked + label {
   background-color: white;
   color: #100D29;
+}
+
+.placeholder\:text-gray-100::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-gray-100::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .placeholder\:text-black::-moz-placeholder {
@@ -2679,6 +2683,10 @@ input:checked + .toggle-bg {
     width: 75%;
   }
 
+  .md\:w-4\/5 {
+    width: 80%;
+  }
+
   .md\:w-full {
     width: 100%;
   }
@@ -2767,14 +2775,14 @@ input:checked + .toggle-bg {
     padding-right: 78px;
   }
 
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   .md\:px-\[5px\] {
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .md\:pt-0 {
@@ -2827,11 +2835,6 @@ input:checked + .toggle-bg {
   .lg\:px-\[82px\] {
     padding-left: 82px;
     padding-right: 82px;
-  }
-
-  .lg\:px-\[66px\] {
-    padding-left: 66px;
-    padding-right: 66px;
   }
 
   .lg\:px-\[20px\] {

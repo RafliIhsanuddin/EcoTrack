@@ -107,7 +107,7 @@
                             <div class="md:flex mx-auto lg:mx-52">
                                 <div class="flex md:mx-auto lg:mx-auto">
                                     <a href=""
-                                        class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md" onclick="return tableHapus()">Hapus</a>
+                                        class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md" onclick="return tableHapus(1)">Hapus</a>
                                 </div>
                                 <div class="flex md:mx-auto lg:mx-auto">
                                     <a href=""
@@ -126,15 +126,41 @@
     </div>
 
     <script>
-        // function tableHapus() {
-        //     document.getElementById('hapushead').style.display ="table-cell";
-        //     document.getElementById('hapusdata').style.display ="table-cell";
-        //     return false;
+        function tableHapus() {
+            document.getElementById('hapushead').style.display ="table-cell";
+            document.getElementById('hapusdata').style.display ="table-cell";
+            return false;
+        }
+
+        // function tableHapus(idHapus) {
+        //     var hapusheader = document.getElementById('hapushead' + idHapus);
+        //     if(idHapus === 1 || idHapus === 2) {
+        //         if(hapusheader.style.display ="table-cell") 
+        //             hapusheader.style.display ="none"; 
+        //         else {
+        //             hapusheader.style.display ="table-cell";
+        //         }
+        //     }
         // }
 
-        function tableHapus(idHapus) {
-            var tablehapus = document.getElementById('hapushead' + idHapus);
-        }
+    //     function tableHapus(idHapus){
+    //     if(idHapus==1){
+    //         if( document.getElementById('hapushead'+idHapus).style.display == "table-cell" ){
+    //             document.getElementById('hapushead'+idHapus).style.display = "none";
+    //         } 
+    //         else if( document.getElementById('hapushead'+idHapus).style.display == "none" ) {
+    //             document.getElementById('hapushead'+idHapus).style.display = "table-cell";
+    //         }
+    //     } 
+    //     else if(idHapus==2){
+    //         if( document.getElementById('hapushead'+idHapus).style.display == "table-cell" ) {
+    //             document.getElementById('hapushead'+idHapus).style.display = "none";
+    //         }
+    //         else if( document.getElementById('hapushead'+idHapus).style.display == "none" ) {
+    //             document.getElementById('hapushead'+idHapus).style.display = "table-cell";
+    //         }
+    //     }
+    // }
 
         function tableUbah() {
             document.getElementById('ubahhead').style.display ="table-cell";
