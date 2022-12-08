@@ -78,6 +78,7 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <body class="bg-gradient-to-r from-[#EB66A1] via-[#FF6F91] to-[#FF9671] min-width-md">
 =======
 <body class="bg-gradient-to-r from-[#A084CA] via-[#BFACE0] to-[#EBC7E8] min-width-md">
@@ -85,6 +86,9 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
 =======
 <body class="bg-gradient-to-r from-[#EB66A1] via-[#FF6F91] to-[#FF9671] min-width-md">
 >>>>>>> 4ddf6d7 (membuat file untuk mengupdate tabel)
+=======
+<body class="bg-gradient-to-r from-[#EB66A1] via-[#FF6F91] to-[#FF9671] min-width-md">
+>>>>>>> e7f6e66 (membuat file untuk mengupdate tabel)
     <div class="lg:">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">

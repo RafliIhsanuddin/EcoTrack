@@ -3015,6 +3015,11 @@ input:checked + .toggle-bg {
 >>>>>>> abde1a0 (Memperbaiki rwd elemen toombol hapus,update,tambah)
   }
 
+  .lg\:px-\[25px\] {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .lg\:pt-0 {
     padding-top: 0px;
   }
