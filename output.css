@@ -1800,6 +1800,11 @@ input:checked + .toggle-bg {
   background-color: rgb(235 102 161 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#FFEFA8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 239 168 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -2719,6 +2724,10 @@ input:checked + .toggle-bg {
 
   .md\:max-w-3xl {
     max-width: 48rem;
+  }
+
+  .md\:max-w-2xl {
+    max-width: 42rem;
   }
 
   .md\:-translate-y-1\/2 {
