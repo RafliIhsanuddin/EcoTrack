@@ -37,7 +37,7 @@ $hasil= $conn -> query($var);
     </style> -->
 </head>
 
-<body class="bg-gradient-to-r from-[#A084CA] via-[#BFACE0] to-[#EBC7E8] min-width-md">
+<body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
     <div class="lg:">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
@@ -47,30 +47,30 @@ $hasil= $conn -> query($var);
         <div class="px-5">
             <div
                 class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">
-                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                     <input type="text" id="nama" placeholder="Bukti Transaksi" required
-                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                        class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
-                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                     <input type="text" id="nama" placeholder="Jenis Transaksi" required
-                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                        class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
-                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                     <input type="text" id="nama" placeholder="Tanggal Transaksi" required
-                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                        class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
-                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                     <input type="text" id="nama" placeholder="Nomor Transaksi" required
-                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                        class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
-                <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
+                <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                     <input type="text" id="nama" placeholder="Status" required
-                        class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full">
+                        class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
                 <div
-                    class="sm:mb-0 shadow-lg border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-[#9F73AB] h-12 mb-2 hover:opacity-[0.95] active:shadow-none">
+                    class=" sm:mb-0 border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto  mb-2 hover:opacity-[0.95] active:shadow-none mt-1">
                     <input type="submit" id="submit"
-                        class="bg-[#3F3B6C] text-2xl bg-clip-text text-transparent font-bold placeholder:text-black px-5 rounded-full w-full h-full">
+                        class="bg-[#9F73AB] py-1 shadow-lg text-2xl font-bold placeholder:text-black px-5 rounded-full w-full">
                 </div>
             </div>
         </div>
@@ -81,45 +81,45 @@ $hasil= $conn -> query($var);
                         class="text-sm md:text-2xl shadow-2xl font-poppins border-purple-200 w-1/3 rounded-2xl overflow-hidden mt-0 mx-auto">
                         <thead class="text-white ">
                             <tr>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">No</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">no</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">Nama Barang</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">nama barang</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">Harga Barang</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">harga barang</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
                                     <p class="">Jumlah Barang</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">Satuan</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">satuan</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
                                     <div>referensi/</div>
                                     <div>toko</div>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">Hapus</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">hapus</p>
                                 </th>
-                                <th class="py-3 bg-[#645CAA]">
-                                    <p class="">Ubah</p>
+                                <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
+                                    <p class="">ubah</p>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="text-purple-900 text-center justify-center">
+                        <tbody class="text-purple-900 text-center justify-center font-semibold">
                         <?php if($hasil->num_rows > 0) : ?>
                             <?php while($baris = $hasil->fetch_assoc()): ?>  
                             <tr class="bg-purple-200 mx-auto">
-                            <td class="py-3 px-6"><?php echo $baris['Id_Barang'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Nama_Barang'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Harga_Barang'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Jumlah_Barang'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Satuan'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><?php echo $baris['Referensi'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>">Hapus</a></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[25px]">ubah</td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Id_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Nama_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Harga_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-red-700">Hapus</a></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-green-700">Ubah</a></td>
                             </tr>
                             <?php endwhile?>
                         <?php endif?> 

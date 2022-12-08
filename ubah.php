@@ -1,29 +1,18 @@
 <?php
 
-require_once('connect.php');
+require 'connect.php';
+require 'functions.php';
+
+$id = $_GET['id'];
+
+$barang = query("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
+// echo "<br>";
+// var_dump($barang);
 
 
 
-if($_SERVER["REQUEST_METHOD"] === 'POST'){
-    $nama = htmlspecialchars($_POST['nabar']);
-    $harga = htmlspecialchars($_POST['habar']);
-    $jumlah = htmlspecialchars($_POST['jumbar']);
-    $satuan = htmlspecialchars($_POST['satuan']);
-    $toko = htmlspecialchars($_POST['toko']);
-
-    // echo "$nama \r\n <br>";
-    // echo "$harga \r\n <br>";
-    // echo "$jumlah \r\n <br>";
-    // echo "$satuan \r\n <br>";
-    // echo "$toko \r\n <br>";
-
-    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`,`Referensi`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko')" ;
-
-    $hasil = $conn -> query($query);
-
-    // var_dump(mysqli_affected_rows($conn));
-
-    if( mysqli_affected_rows($conn) > 0 ){
+if(isset($_POST["submit"])){
+    if( ubah($_POST) > 0 ){
         echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
         document.location.href = 'pengeluaran.php' </script>";
         // echo "berhasil";
@@ -32,17 +21,30 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
         document.location.href = 'pengeluaran.php' </script>";
         // echo "gagal";
     }
-
-    
-
-    // header("Location: pengeluaran.php");
-
-    // echo $hasil;
-
-    
-
-    
 }
+
+
+// if($_SERVER["REQUEST_METHOD"] === 'POST'){
+//     // echo "$nama \r\n <br>";
+//     // echo "$harga \r\n <br>";
+//     // echo "$jumlah \r\n <br>";
+//     // echo "$satuan \r\n <br>";
+//     // echo "$toko \r\n <br>";
+
+//     // var_dump(mysqli_affected_rows($conn));
+
+   
+
+    
+
+//     // header("Location: pengeluaran.php");
+
+//     // echo $hasil;
+
+    
+
+    
+// }
 
 ?>
 
@@ -76,40 +78,41 @@ if($_SERVER["REQUEST_METHOD"] === 'POST'){
     </style> -->
 </head>
 
-<body class="bg-gradient-to-r from-[#EB66A1] via-[#FF6F91] to-[#FF9671] min-width-md">
+<body class="bg-gradient-to-r from-[#A084CA] via-[#BFACE0] to-[#EBC7E8] min-width-md">
     <div class="lg:">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
-                <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Tambah Pengeluaran</span>
+                <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Ubah Pengeluaran</span>
             </div>
         </div>
         <div class="px-5">
             <form action="#" id="register" method="POST">
                 <div
-                    class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">
+                    class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">  
+                    <input type="hidden" name="id" value="<?= $barang['Id_Barang']?>">
                     <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
                         <input type="text" id="nama" placeholder="Nama Barang" required
-                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="nabar">
+                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="nabar" value="<?= $barang['Nama_Barang']?>">
                     </div>
                     <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
                         <input type="text" id="nama" placeholder="Harga Barang" required
-                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="habar">
+                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="habar" value="<?= $barang['Harga_Barang']?>">
                     </div>
                     <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
                         <input type="text" id="nama" placeholder="Jumlah Barang" required
-                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="jumbar">
+                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">
                     </div>
                     <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
                         <input type="text" id="nama" placeholder="Satuan" required
-                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="satuan">
+                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="satuan" value="<?= $barang['Satuan']?>">
                     </div>
                     <div class=" sm:mb-0 shadow-lg sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white h-12 mb-2">
                         <input type="text" id="nama" placeholder="referensi/toko" required
-                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="toko">
+                            class="focus:ring-black bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-black focus:text-black px-5 rounded-full w-full h-full" name="toko" value="<?= $barang['Referensi']?>">
                     </div>
                     <div
                         class="sm:mb-0 shadow-lg border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-[#9F73AB] h-12 mb-2 hover:opacity-[0.95] active:shadow-none">
-                        <input type="submit" id="submit"
+                        <input type="submit" id="submit" name="submit"
                             class="bg-[#3F3B6C] text-2xl bg-clip-text text-transparent font-bold placeholder:text-black px-5 rounded-full w-full h-full">
                     </div>
                 </div>
