@@ -24,9 +24,9 @@
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="#" class="text-lightGreen">Home</a></li>
-                    <li><a href="about.html" class="hover:text-lightGreen">About</a></li>
-                    <li><a href="register.html" class="hover:text-lightGreen">Daftar</a></li>
-                    <a href="login.html"
+                    <li><a href="about.php" class="hover:text-lightGreen">About</a></li>
+                    <li><a href="register.php" class="hover:text-lightGreen">Daftar</a></li>
+                    <a href="login.php"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
                         Login
                     </a>
@@ -35,7 +35,8 @@
             <!-- hero section -->
             <div class="container flex flex-col mx-auto min-w-full p-7 md:flex-row">
                 <!-- left side -->
-                <div class="max-w-full text-white space-y-20 m-10 mt-20 h-screen md:h-fit md:space-y-9 md:m-44 md:w-1/2">
+                <div
+                    class="max-w-full text-white space-y-20 m-10 mt-20 h-screen md:h-fit md:space-y-9 md:m-44 md:w-1/2">
                     <h1 class="text-6xl font-semibold">
                         Ecotrack
                     </h1>
@@ -45,7 +46,7 @@
                         dan melakukan pembukuan keuangan.
                     </p>
                     <div>
-                        <a href="register.html"
+                        <a href="register.php"
                             class="px-5 py-2 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
                             Daftar Sekarang
                         </a>
@@ -90,7 +91,8 @@
                         </div>
                         <!-- feature 3 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty3.jpg" alt="" class="w-auto mx-auto max-w-[320px] h-auto max-h-[320px] md:pt-5 lg:pt-0">
+                            <img src="img/kitty3.jpg" alt=""
+                                class="w-auto mx-auto max-w-[320px] h-auto max-h-[320px] md:pt-5 lg:pt-0">
                             <h2 class="font-semibold">Mencetak Pembukuan</h2>
                             <p>Lorem ipsum dolor sit amet
                                 <br> consectetur adipisicing elit.

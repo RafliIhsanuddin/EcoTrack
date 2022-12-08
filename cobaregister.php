@@ -7,7 +7,7 @@ require_once('connect.php');
 $emailErr  = $passwordErr = "";
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-if (isset($_POST["email"]) && $_POST["password"]) {
+if (isset($_POST["email"]) && isset($_POST["password"])&& isset($_POST['telp']) && isset($_POST['username']) && isset($_POST['konfirmasi']) ){
     function validate($data)
     {
         $data = trim($data);
@@ -17,6 +17,10 @@ if (isset($_POST["email"]) && $_POST["password"]) {
     }
     $email = validate($_POST["email"]);
     $password = validate($_POST["password"]);
+    $telp = validate($_POST["telp"]);
+    $username = validate($_POST["username"]);
+    $konfirmasi = validate($_POST["konfirmasi"]);
+
 
     $result = mysqli_query($conn, "SELECT * FROM user WHERE email_User = '$email' AND password_User = '$password'");
     if (mysqli_num_rows($result) === 1) {
