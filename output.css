@@ -2465,6 +2465,11 @@ input:checked + .toggle-bg {
   background-color: rgb(154 82 217 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-\[\#6C4AB6\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(108 74 182 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-blue-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
@@ -2494,11 +2499,14 @@ input:checked + .toggle-bg {
   color: rgb(71 255 191 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .hover\:text-green-700:hover {
   --tw-text-opacity: 1;
   color: rgb(4 108 78 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> af65655 (menambahkan session)
 .hover\:text-evendarkerBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(16 13 41 / var(--tw-text-opacity));

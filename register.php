@@ -1,3 +1,8 @@
+<?php
+require_once('cobaregister.php');
+?>
+
+</php>
 <!DOCTYPE html>
 <html lang="en" class="">
 
@@ -25,11 +30,11 @@
         </div>
         <!-- nav menu -->
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-            <li><a href="landing.html" class="hover:text-[#845EC2]">Home</a></li>
-            <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
-            <li><a href="" class="text-[#845EC2]">Daftar</a></li>
-            <a href="login.html"
-                class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
+            <li><a href="landing.php" class="hover:text-[#A084CA]">Home</a></li>
+            <li><a href="about.php" class="hover:text-[#A084CA]">About</a></li>
+            <li><a href="" class="text-[#A084CA]">Daftar</a></li>
+            <a href="login.php"
+                class="px-2 py-2 mr-10 w-20 font-bold bg-[#A084CA] text-evendarkerBlue text-center rounded-full">
                 Login
             </a>
         </ul>
@@ -52,20 +57,20 @@
         class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
             <li>
-                <a href="landing.html"
+                <a href="landing.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
             </li>
             <li>
-                <a href="about.html"
+                <a href="about.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
             </li>
             <li>
-                <a href="register.html"
+                <a href="register.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
             </li>
         </ul>
         <div class="py-1">
-            <a href="login.html"
+            <a href="login.php"
                 class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
         </div>
     </div>
@@ -76,13 +81,62 @@
         <div class="container justify-center rounded-lg items-center mx-auto my-32 w-96 bg-white">
             <!-- register form -->
             <div class="justify-center p-10 w-full h-full">
-                <form action="#" id="register">
+                <form action="#" id="register" method="POST">
                     <div>
                         <div>
                             <h1 class="text-center font-bold mb-5 text-3xl">
                                 Register
                             </h1>
+                            <?php if (isset($_GET['error'])) : ?>
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                                role="alert">
+                                <span class="block sm:inline"><?php echo $_GET['error'] ?>
+                                </span>
+                                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                    <title>Close</title>
+                                    <path
+                                        d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                                    </svg>
+                                </span>
+                                <?php endif ?>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="email" class="text-sm p-3">Email</label>
+                                </div>
+                                <input type="email" id="email" name="email" required class=" my-1 px-3 py-0.5 shadow-xl block rounded-full bg-[#A084CA] w-full border-0
+                                md:w-full"><br>
+                                <div>
+                                    <label for="username" class="text-sm p-3">Username</label>
+                                </div>
+                                <input type="text" id="username" name="username" required
+                                    class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-[#A084CA] w-full border-0 md:w-full"><br>
+                                <div>
+                                    <label for="telp" class="text-sm p-3">No. Telp</label>
+                                </div>
+                                <input type="tel" id="telp" name="telp" required class=" my-1 px-3 py-0.5 shadow-xl block rounded-full bg-[#A084CA] w-full border-0
+                                md:w-full"><br>
+                                <div>
+                                    <label for="pass" class="text-sm p-3">Password</label>
+                                </div>
+                                <input type="password" id="pass" name="password" required
+                                    class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-[#A084CA] w-full border-0 md:w-full"><br>
+                                <div>
+                                    <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
+                                </div>
+                                <input type="password" id="konfirmasi" name="kofirmasi" required class=" my-1 px-3 py-0.5 shadow-xl block rounded-full bg-[#A084CA] w-full border-0
+                                md:w-full"><br>
+                            </div>
+                            </p>
+                            <input type="submit" href=" #"
+                                class="flex p-1 bg-[#645CAA] hover:bg-[#6C4AB6] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register
+                            </input>
+                            <a href="login.php"
+                                class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
+                                Sudah punya akun? Kembali ke halaman Login.
+                            </a>
                         </div>
+<<<<<<< HEAD:register.html
                         <div>
                             <div>
                                 <label for="email" class="text-sm p-3">Email</label>
@@ -119,6 +173,8 @@
                             Sudah punya akun? Kembali ke halaman Login.
                         </a>
                     </div>
+=======
+>>>>>>> 6ec64e9 (menambahkan session):register.php
                 </form>
 
             </div>
