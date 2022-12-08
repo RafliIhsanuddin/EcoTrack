@@ -18,33 +18,12 @@ function query($query){
         $rows[] = $row;
     }
 
+
     return $rows;
 }
 
 
-function ubah($data){
-    global $conn;
 
-    $id = $data['id'];
-    $nama = htmlspecialchars($_POST['nabar']);
-    $harga = htmlspecialchars($_POST['habar']);
-    $jumlah = htmlspecialchars($_POST['jumbar']);
-    $satuan = htmlspecialchars($_POST['satuan']);
-    $toko = htmlspecialchars($_POST['toko']);
-
-    $query = "UPDATE `pengeluaran` SET 
-        `Nama_Barang` = '$nama',
-        `Satuan` = '$satuan',
-        `Jumlah_Barang` ='$jumlah',
-        `Harga_Barang` = '$harga',
-        `Referensi` = '$toko'
-        WHERE Id_Barang = $id" 
-        ;
-
-    $hasil = $conn -> query($query);
-
-    return mysqli_affected_rows($conn);
-}
 
 
 
@@ -94,6 +73,31 @@ function registrasi($data){
     
 }
 
+
+
+function ubah($data){
+    global $conn;
+
+    $id = $data['id'];
+    $nama = htmlspecialchars($_POST['nabar']);
+    $harga = htmlspecialchars($_POST['habar']);
+    $jumlah = htmlspecialchars($_POST['jumbar']);
+    $satuan = htmlspecialchars($_POST['satuan']);
+    $toko = htmlspecialchars($_POST['toko']);
+
+    $query = "UPDATE `pengeluaran` SET 
+        `Nama_Barang` = '$nama',
+        `Satuan` = '$satuan',
+        `Jumlah_Barang` ='$jumlah',
+        `Harga_Barang` = '$harga',
+        `Referensi` = '$toko'
+        WHERE Id_Barang = $id" 
+        ;
+
+    $hasil = $conn -> query($query);
+
+    return mysqli_affected_rows($conn);
+}
 
 
 
