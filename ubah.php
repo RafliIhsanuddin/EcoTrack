@@ -13,11 +13,11 @@ $barang = query("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
 
 if(isset($_POST["submit"])){
     if( ubah($_POST) > 0 ){
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        echo "<script>alert('Data Transaksi Berhasil Diubah');
         document.location.href = 'pengeluaran.php' </script>";
         // echo "berhasil";
     }else{
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        echo "<script>alert('Data Transaksi Gagal Diubah');
         document.location.href = 'pengeluaran.php' </script>";
         // echo "gagal";
     }

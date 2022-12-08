@@ -38,7 +38,7 @@ $hasil= $conn -> query($var);
 </head>
 
 <body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
-    <div class="lg:">
+    <div class="">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
                 <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Pengeluaran</span>
@@ -140,7 +140,7 @@ $hasil= $conn -> query($var);
                             class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
                     </div>
                 </div>
-            </    </div>
+            </div>
 
 </body>
 
