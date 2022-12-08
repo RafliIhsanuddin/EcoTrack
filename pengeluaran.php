@@ -1,7 +1,24 @@
 <?php
 
-require_once('connect.php');
-$var = "SELECT * FROM pengeluaran";
+require 'connect.php';
+require 'functions.php';
+
+$jumperhal = 2;
+$jumdata = count(query("SELECT * FROM pengeluaran"));
+$jumhal = ceil($jumdata/$jumperhal);
+
+$halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+
+$awaldata = ( $jumperhal * $halaktif)-$jumperhal;
+
+// if(isset($_GET['halaman'])){
+//     $halaktif = $_GET['halaman'];
+// }else{
+//     $halaktif = 1;
+// }
+
+
+$var = "SELECT * FROM pengeluaran LIMIT $awaldata,$jumperhal ";
 $hasil= $conn -> query($var);
 
 
@@ -75,8 +92,26 @@ $hasil= $conn -> query($var);
             </div>
         </div>
         <div class="lg:flex">
+        
             <div class="mx-auto">
-                <div class="justify-center items-center mx-auto mb-0 flex">
+            <div class="flex">
+                <div class="mx-auto">
+                <?php if( $halaktif > 1 ) : ?>
+                <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
+                <?php endif; ?>
+                <?php for($i = 1;$i <= $jumhal;$i++) : ?>
+                    <?php if($i == $halaktif) : ?>
+                    <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
+                    <?php else : ?>
+                    <a href="?halaman= <?= $i; ?>" ><?= $i; ?></a>
+                    <?php endif; ?>
+                <?php endfor; ?>
+                <?php if( $halaktif < $jumhal ) : ?>
+                <a href="?halaman= <?= $halaktif + 1; ?>">&raquo;</a>
+                <?php endif; ?>
+                </div>
+            </div>
+                <div class="justify-center items-center mx-auto mb-0 flex"> 
                     <table
                         class="text-sm md:text-2xl shadow-2xl font-poppins border-purple-200 w-1/3 rounded-2xl overflow-hidden mt-0 mx-auto">
                         <thead class="text-white ">
@@ -110,9 +145,10 @@ $hasil= $conn -> query($var);
                         </thead>
                         <tbody class="text-purple-900 text-center justify-center font-semibold">
                         <?php if($hasil->num_rows > 0) : ?>
+                            <?php $j = 1; ?>
                             <?php while($baris = $hasil->fetch_assoc()): ?>  
                             <tr class="bg-purple-200 mx-auto">
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Id_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?= $j ?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Nama_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Harga_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang'];?></td>
@@ -121,6 +157,7 @@ $hasil= $conn -> query($var);
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-red-700">Hapus</a></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-green-700">Ubah</a></td>
                             </tr>
+                            <?php $j++ ?>
                             <?php endwhile?>
                         <?php endif?> 
                         </tbody>
