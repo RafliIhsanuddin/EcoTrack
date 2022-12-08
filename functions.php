@@ -50,9 +50,6 @@ function ubah($data){
 
 
 
-
-
-
 function registrasi($data){
     global $conn;
     $email = stripslashes($data['email']);
@@ -88,6 +85,7 @@ function registrasi($data){
 
     
 }
+
 
 
 
