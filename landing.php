@@ -70,7 +70,8 @@
             <!-- hero section -->
             <div class="container flex flex-col mx-auto min-w-full p-7 md:flex-row">
                 <!-- left side -->
-                <div class="max-w-full text-white space-y-20 m-10 mt-20 h-screen md:h-fit md:space-y-9 md:m-44 md:w-1/2">
+                <div
+                    class="max-w-full text-white space-y-20 m-10 mt-20 h-screen md:h-fit md:space-y-9 md:m-44 md:w-1/2">
                     <h1 class="text-6xl font-semibold">
                         Ecotrack
                     </h1>
