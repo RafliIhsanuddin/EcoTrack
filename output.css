@@ -2223,11 +2223,6 @@ input:checked + .toggle-bg {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-lightGreen {
-  --tw-text-opacity: 1;
-  color: rgb(71 255 191 / var(--tw-text-opacity));
-}
-
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(200 30 30 / var(--tw-text-opacity));
@@ -2480,6 +2475,11 @@ input:checked + .toggle-bg {
   color: rgb(71 255 191 / var(--tw-text-opacity));
 }
 
+.hover\:text-green-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(4 108 78 / var(--tw-text-opacity));
+}
+
 .hover\:text-evendarkerBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(16 13 41 / var(--tw-text-opacity));
@@ -2488,11 +2488,6 @@ input:checked + .toggle-bg {
 .hover\:text-red-700:hover {
   --tw-text-opacity: 1;
   color: rgb(200 30 30 / var(--tw-text-opacity));
-}
-
-.hover\:text-green-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(4 108 78 / var(--tw-text-opacity));
 }
 
 .hover\:text-darkBlue:hover {

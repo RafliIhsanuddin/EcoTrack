@@ -26,7 +26,7 @@
                     <li><a href="#" class="text-[#845EC2]">Home</a></li>
                     <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
                     <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
-                    <a href="login.html"
+                    <a href="login.php"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
                     </a>
@@ -85,7 +85,6 @@
                             class="px-5 py-2 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
                             Daftar Sekarang
                         </a>
-
                         <!-- hover stuff with transition-->
                         <!-- <a href="register.html" target="_blank"
                         class="transition-colors ease-in-out duration-500 delay-100 hover:bg-teal hover:text-evendarkerBlue px-5 py-2 font-bold bg-[#FF6F91] text-evendarkerBlue text-center rounded-full">
@@ -126,7 +125,9 @@
                         </div>
                         <!-- feature 3 -->
                         <div class="text-center space-y-2">
+
                             <img src="img/kitty3.jpg" alt="" class="w-auto mx-auto rounded-full max-w-[320px] h-auto max-h-[320px] md:mb-5 md:pt-5 lg:pt-0">
+
                             <h2 class="font-semibold">Mencetak Pembukuan</h2>
                             <p>Lorem ipsum dolor sit amet
                                 <br> consectetur adipisicing elit.
