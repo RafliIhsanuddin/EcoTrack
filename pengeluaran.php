@@ -37,7 +37,7 @@ $hasil= $conn -> query($var);
     </style> -->
 </head>
 
-<body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
+<body class="bg-gradient-to-r from-[#EB66A1] via-[#FF6F91] to-[#FF9671] min-width-md">
     <div class="lg:">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
@@ -110,17 +110,19 @@ $hasil= $conn -> query($var);
                         </thead>
                         <tbody class="text-purple-900 text-center justify-center font-semibold">
                         <?php if($hasil->num_rows > 0) : ?>
+                            <?php $i = 1; ?>
                             <?php while($baris = $hasil->fetch_assoc()): ?>  
                             <tr class="bg-purple-200 mx-auto">
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Id_Barang'];?></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?= $i; ?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Nama_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Harga_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan'];?></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi'];?></td>
-                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-red-700">Hapus</a></td>
+                                <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang'];?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah.php?id=<?= $baris['Id_Barang'];?>" class="hover:text-green-700">Ubah</a></td>
                             </tr>
+                            <?php $i++; ?>
                             <?php endwhile?>
                         <?php endif?> 
                         </tbody>
@@ -139,8 +141,8 @@ $hasil= $conn -> query($var);
                         <a href="pengtambah.php"
                             class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
                     </div>
-                </div>
-            </    </div>
+                </div> 
+            </div>
 
 </body>
 
