@@ -82,7 +82,7 @@
                                                 <div>referensi/</div>
                                                 <div>toko</div>
                                             </th>
-                                            <th class="hidden py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]" id="hapushead">
+                                            <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]" id="hapushead">
                                                 <p class="">hapus</p>
                                             </th>
                                             <th class="hidden py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]" id="ubahhead">
@@ -98,7 +98,7 @@
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
-                                            <td class="hidden py-3 px-1 md:px-5 lg:px-[20px]" id="hapusdata">hapus</td>
+                                            <td class="py-3 px-1 md:px-5 lg:px-[20px]" id="hapusdata">hapus</td>
                                             <td class="hidden py-3 px-1 md:px-5 lg:px-[20px]" id="ubahdata">ubah</td>
                                         </tr>
                                     </tbody>
@@ -126,10 +126,23 @@
     </div>
 
     <script>
-        function tableHapus() {
+        document.getElementById('hapushead').style.display ="none";
+        document.getElementById('hapusdata').style.display ="none";
+
+        function tableHapus(idHapus) {
+            if(idHapus === 1){
             document.getElementById('hapushead').style.display ="table-cell";
             document.getElementById('hapusdata').style.display ="table-cell";
+            var idHapus = idHapus + 1;
             return false;
+            }
+
+            else if(idHapus === 2){
+            document.getElementById('hapushead').style.display ="none";
+            document.getElementById('hapusdata').style.display ="none";
+            var idHapus = idHapus - 1;
+            return false;
+            }
         }
 
         // function tableHapus(idHapus) {

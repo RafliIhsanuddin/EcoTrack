@@ -3,7 +3,7 @@
 require 'connect.php';
 require 'functions.php';
 
-$jumperhal = 2;
+$jumperhal = 5;
 $jumdata = count(query("SELECT * FROM pengeluaran"));
 $jumhal = ceil($jumdata/$jumperhal);
 
@@ -56,6 +56,7 @@ $hasil= $conn -> query($var);
 
 <body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
     <div class="">
+        <div class="bg-white rounded-xl">
         <div class="">
             <div class="font-bold mx-auto my-3 text-center justify-center py-6 ">
                 <span class="bg-white w-1/6 h-20 rounded-2xl py-3 px-3">Pengeluaran</span>
@@ -105,8 +106,7 @@ $hasil= $conn -> query($var);
                     <?php else : ?>
                     <a href="?halaman= <?= $i; ?>" ><?= $i; ?></a>
                     <?php endif; ?>
-                <?php endfor; ?>
-                <?php if( $halaktif < $jumhal ) : ?>
+                <?php endfor; ?>   <?php if( $halaktif < $jumhal ) : ?>
                 <a href="?halaman= <?= $halaktif + 1; ?>">&raquo;</a>
                 <?php endif; ?>
                 </div>
@@ -120,7 +120,7 @@ $hasil= $conn -> query($var);
                                     <p class="">no</p>
                                 </th>
                                 <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
-                                    <p class="">nama barang</p>
+                                    <p cls="">nama barang</p>
                                 </th>
                                 <th class="py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]">
                                     <p class="">harga barang</p>
@@ -176,6 +176,7 @@ $hasil= $conn -> query($var);
                         <a href="pengtambah.php"
                             class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
                     </div>
+                </div>
                 </div>
             </div>
 
