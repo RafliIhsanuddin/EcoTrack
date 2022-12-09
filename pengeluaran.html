@@ -82,12 +82,8 @@
                                                 <div>toko</div>
                                             </th>
                                             <th class="hidden py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]"
-                                                id="hapusHead">
-                                                <p class="">hapus</p>
-                                            </th>
-                                            <th class="hidden py-3 px-1 md:px-[5px] lg:px-[20px] bg-[#645CAA]"
-                                                id="ubahHead">
-                                                <p class="">ubah</p>
+                                                id="magicHeader">
+                                                <p class="" id="isiHeader">-</p>
                                             </th>
                                         </tr>
                                     </thead>
@@ -99,32 +95,32 @@
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
                                             <td class="py-3 px-1 md:px-5 lg:px-[20px]">tes</td>
-                                            <td class="hidden py-3 px-1 md:px-5 lg:px-[20px]" id="hapusData">hapus</td>
-                                            <td class="hidden py-3 px-1 md:px-5 lg:px-[20px]" id="ubahData">ubah</td>
+                                            <td class="hidden py-3 px-1 md:px-5 lg:px-[20px]" id="magicColumn"><span
+                                                    id="isiData">-</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="md:flex mx-auto lg:mx-52">
-                                <div class="flex md:mx-auto lg:mx-auto" id="hapusButton">
+                                <div class="flex md:mx-auto lg:mx-auto" id="buttonHapus">
                                     <a href=""
                                         class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md"
-                                        onclick="return tableHapus()">Hapus</a>
+                                        onclick="return cobaHapus()">Hapus</a>
                                 </div>
                                 <div class="hidden md:mx-auto lg:mx-auto" id="hiddenHapus">
                                     <a href=""
                                         class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md"
-                                        onclick="return hapusHapus()">Hapus</a>
+                                        onclick="return ilanginHapus()">Hapus</a>
                                 </div>
-                                <div class="flex md:mx-auto lg:mx-auto" id="ubahButton">
+                                <div class="flex md:mx-auto lg:mx-auto" id="buttonUbah">
                                     <a href=""
                                         class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md"
-                                        onclick="return tableUbah()">Ubah</a>
+                                        onclick="return cobaUbah()">Ubah</a>
                                 </div>
                                 <div class="hidden md:mx-auto lg:mx-auto" id="hiddenUbah">
                                     <a href=""
                                         class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md"
-                                        onclick="return hapusUbah()">Ubah</a>
+                                        onclick="return ilanginUbah()">Ubah</a>
                                 </div>
                                 <div class="flex md:mx-auto lg:mx-auto">
                                     <a href=""
@@ -140,36 +136,80 @@
 
     <script>
 
-        function tableHapus() {
+        // function tableHapus() {
+        //     document.getElementById('hapusHead').style.display = "table-cell";
+        //     document.getElementById('hapusData').style.display = "table-cell";
+        //     document.getElementById('hapusButton').style.display = "none";
+        //     document.getElementById('hiddenHapus').style.display = "flex";
+        //     return false;
+        // }
 
-            document.getElementById('hapusHead').style.display = "table-cell";
-            document.getElementById('hapusData').style.display = "table-cell";
-            document.getElementById('hapusButton').style.display = "none";
+        // function hapusHapus() {
+        //     document.getElementById('hapusHead').style.display = "none";
+        //     document.getElementById('hapusData').style.display = "none";
+        //     document.getElementById('hiddenHapus').style.display = "none";
+        //     document.getElementById('hapusButton').style.display = "flex";
+        //     return false;
+        // }
+
+        // function tableUbah() {
+        //     document.getElementById('ubahHead').style.display = "table-cell";
+        //     document.getElementById('ubahData').style.display = "table-cell";
+        //     document.getElementById('ubahButton').style.display = "none";
+        //     document.getElementById('hiddenUbah').style.display = "flex";
+        //     return false;
+        // }
+
+        // function hapusubah() {
+        //     document.getElementById('ubahHead').style.display = "none";
+        //     document.getElementById('ubahData').style.display = "none";
+        //     document.getElementById('hiddenUbah').style.display = "none";
+        //     document.getElementById('ubahButton').style.display = "flex";
+        //     return false;
+        // }
+
+        function cobaHapus() {
+            document.getElementById('magicHeader').style.display = "table-cell";
+            document.getElementById('magicColumn').style.display = "table-cell";
+
+            document.getElementById('isiHeader').innerHTML = "hapus";
+            document.getElementById('isiData').innerHTML = "hapus";
+
+            document.getElementById('buttonHapus').style.display = "none";
             document.getElementById('hiddenHapus').style.display = "flex";
-            return false;
-        }
-
-        function hapusHapus() {
-            document.getElementById('hapusHead').style.display = "none";
-            document.getElementById('hapusData').style.display = "none";
-            document.getElementById('hiddenHapus').style.display = "none";
-            document.getElementById('hapusButton').style.display = "flex";
-            return false;
-        }
-
-        function tableUbah() {
-            document.getElementById('ubahHead').style.display = "table-cell";
-            document.getElementById('ubahData').style.display = "table-cell";
-            document.getElementById('ubahButton').style.display = "none";
-            document.getElementById('hiddenUbah').style.display = "flex";
-            return false;
-        }
-
-        function hapusubah() {
-            document.getElementById('ubahHead').style.display = "none";
-            document.getElementById('ubahData').style.display = "none";
+            document.getElementById('buttonUbah').style.display = "flex";
             document.getElementById('hiddenUbah').style.display = "none";
-            document.getElementById('ubahButton').style.display = "flex";
+            return false;
+        }
+
+        function cobaUbah() {
+            document.getElementById('magicHeader').style.display = "table-cell";
+            document.getElementById('magicColumn').style.display = "table-cell";
+
+            document.getElementById('isiHeader').innerHTML = "ubah";
+            document.getElementById('isiData').innerHTML = "ubah";
+
+            document.getElementById('buttonUbah').style.display = "none";
+            document.getElementById('hiddenUbah').style.display = "flex";
+            document.getElementById('buttonHapus').style.display = "flex";
+            document.getElementById('hiddenHapus').style.display = "none";
+            return false;
+        }
+
+        function ilanginHapus() {
+                document.getElementById('magicHeader').style.display = "none";
+                document.getElementById('magicColumn').style.display = "none";
+
+                document.getElementById('buttonHapus').style.display = "flex";
+                document.getElementById('hiddenHapus').style.display = "none";
+        }
+
+        function ilanginUbah() {
+            document.getElementById('magicHeader').style.display = "none";
+            document.getElementById('magicColumn').style.display = "none";
+
+            document.getElementById('buttonUbah').style.display = "flex";
+            document.getElementById('hiddenUbah').style.display = "none";
             return false;
         }
 
