@@ -4,10 +4,9 @@ session_start();
 use LDAP\Result;
 
 require_once('connect.php');
-$emailErr  = $passwordErr = "";
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-if (isset($_POST["email"]) && isset($_POST["password"])&& isset($_POST['telp']) && isset($_POST['username']) && isset($_POST['konfirmasi']) ){
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST['telp']) && isset($_POST['username']) && isset($_POST['konfirmasi'])) {
     function validate($data)
     {
         $data = trim($data);
@@ -20,22 +19,26 @@ if (isset($_POST["email"]) && isset($_POST["password"])&& isset($_POST['telp']) 
     $telp = validate($_POST["telp"]);
     $username = validate($_POST["username"]);
     $konfirmasi = validate($_POST["konfirmasi"]);
+    $user_data = array($email);
+    if ($password !== $konfirmasi) {
+        header("location: registrasi.php?error=password dan konfirmasi password tidak sama");
+        exit();
+    } else {
+        $pass = hash('md5', $password);
 
-
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE email_User = '$email' AND password_User = '$password'");
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row['email_User'] == $email && $row['password_User'] == $password) {
-            $_SESSION['id'] = $row['id_User'];
-            $_SESSION['nama'] = $row['nama_User'];
-            header("location: dashboard.php");
+        $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+        if (mysqli_num_rows($result) > 0) {
+            header("location: registrasi.php?error=username sudah ada silahkan mencoba yang lain");
             exit();
         } else {
-            header("location: login.php?error=Username atau password anda salah");
-            exit();
+            $result2 = mysqli_query($conn, "INSERT INTO user(nama_User, email_User,password_User,telp_User) VALUES('$username', '$email','$password','$telp')");
+            if ($result2) {
+                header("location: dashboard.php?success=akun anda sudah berhasil di buat");
+                exit();
+            } else {
+                header("location: registrasi.php?success=akun anda sudah berhasil di buat");
+                exit();
+            }
         }
-    } else {
-        header("location: login.php?error=Username atau password anda salah");
-        exit();
     }
 }
