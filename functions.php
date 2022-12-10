@@ -51,4 +51,46 @@ function ubah($data){
 
 
 
+
+
+function registrasi($data){
+    global $conn;
+    $email = stripslashes($data['email']);
+    $username = strtolower(stripslashes($data['username']));
+    $password = mysqli_real_escape_string($conn,$data['password']);
+    $telepon = $data['telp'];
+    $konfirmasi = mysqli_real_escape_string($conn,$data['konfirmasi']);
+
+    $result = mysqli_query($conn,"SELECT nama_User FROM user WHERE nama_User = '$username'");
+    if(mysqli_fetch_assoc($result) ){
+        echo "<script>
+        alert('username sudah terdaftar!')
+        </script>";
+    }
+
+    if($password !== $konfirmasi){
+        echo "<script>
+        alert('konfirmasi tidak sesuai')
+        </script>";
+        return false;
+    }
+
+    $password = password_hash($password,PASSWORD_DEFAULT);
+
+
+    mysqli_query($conn,"INSERT INTO user VALUES ('','$username','$email','$password',$telepon)");
+
+
+    return mysqli_affected_rows($conn);
+    // $password = md5($password);
+    // var_dump($password);die;
+
+    
+}
+
+
+
+
+
+
 ?>
