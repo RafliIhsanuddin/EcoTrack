@@ -151,7 +151,6 @@ require 'cobaregister.php';
                                 Sudah punya akun? Kembali ke halaman Login.
                             </a>
                         </div>
-<<<<<<< HEAD:register.html
                         <div>
                             <div>
                                 <label for="email" class="text-sm p-3">Email</label>
@@ -188,8 +187,6 @@ require 'cobaregister.php';
                             Sudah punya akun? Kembali ke halaman Login.
                         </a>
                     </div>
-=======
->>>>>>> 6ec64e9 (menambahkan session):register.php
                 </form>
 
             </div>

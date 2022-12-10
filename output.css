@@ -1771,6 +1771,11 @@ input:checked + .toggle-bg {
   background-color: rgb(255 199 95 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-red-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 232 232 / var(--tw-bg-opacity));
@@ -1779,6 +1784,11 @@ input:checked + .toggle-bg {
 .bg-customPurple {
   --tw-bg-opacity: 1;
   background-color: rgb(137 51 212 / var(--tw-bg-opacity));
+}
+
+.bg-evendarkerBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 13 41 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -1864,9 +1874,21 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-darkerBlue {
+  --tw-gradient-from: #1B1641;
+  --tw-gradient-to: rgb(27 22 65 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-\[\#F9F871\] {
   --tw-gradient-from: #F9F871;
   --tw-gradient-to: rgb(249 248 113 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-tosca {
+  --tw-gradient-from: #35DECE;
+  --tw-gradient-to: rgb(53 222 206 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1923,8 +1945,16 @@ input:checked + .toggle-bg {
   --tw-gradient-to: #845EC2;
 }
 
+.to-evendarkerPurple {
+  --tw-gradient-to: #610DA8;
+}
+
 .to-\[\#FCE068\] {
   --tw-gradient-to: #FCE068;
+}
+
+.to-darkerTosca {
+  --tw-gradient-to: #18A194;
 }
 
 .to-\[\#EBC7E8\] {
@@ -2082,11 +2112,6 @@ input:checked + .toggle-bg {
   padding-bottom: 7px;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -2196,6 +2221,11 @@ input:checked + .toggle-bg {
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-lightGreen {
+  --tw-text-opacity: 1;
+  color: rgb(71 255 191 / var(--tw-text-opacity));
 }
 
 .text-red-700 {
@@ -2863,11 +2893,6 @@ input:checked + .toggle-bg {
     padding-right: 1.25rem;
   }
 
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   .md\:pt-0 {
     padding-top: 0px;
   }
@@ -2923,16 +2948,6 @@ input:checked + .toggle-bg {
   .lg\:px-\[20px\] {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .lg\:px-\[66px\] {
-    padding-left: 66px;
-    padding-right: 66px;
-  }
-
-  .lg\:px-\[25px\] {
-    padding-left: 25px;
-    padding-right: 25px;
   }
 
   .lg\:pt-0 {
