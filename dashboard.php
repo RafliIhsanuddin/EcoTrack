@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+require_once 'connect.php';
+$var = "SELECT * FROM transaksi";
+$hasil= $conn -> query($var);
 // if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 //     header("location: login.php");
 // }
@@ -137,26 +141,6 @@ if( !isset($_SESSION["login"])){
                     </div>
                 </div>
                 <!-- edit hapus tambah -->
-                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
-                    <!-- nav menu -->
-                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#"
-                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Edit
-                            </a>
-                        </div>
-                        <div><a href="#"
-                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Hapus
-                            </a>
-                        </div>
-                        <div><a href="#"
-                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <input type="radio" name="tabs" id="pengeluaran" class="hidden">
@@ -235,6 +219,26 @@ if( !isset($_SESSION["login"])){
                         </div>
                     </div>
                 </div>
+                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
+                    <!-- nav menu -->
+                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
+                        <div><a href="#"
+                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Edit
+                            </a>
+                        </div>
+                        <div><a href="#"
+                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Hapus
+                            </a>
+                        </div>
+                        <div><a href="pengeluaran.php"
+                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Tambah
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <input type="radio" name="tabs" id="pendapatan" class="hidden">
@@ -310,6 +314,26 @@ if( !isset($_SESSION["login"])){
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
+                    <!-- nav menu -->
+                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
+                        <div><a href="#"
+                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Edit
+                            </a>
+                        </div>
+                        <div><a href="#"
+                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Hapus
+                            </a>
+                        </div>
+                        <div><a href=""
+                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Tambah
+                            </a>
                         </div>
                     </div>
                 </div>

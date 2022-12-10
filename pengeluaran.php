@@ -74,7 +74,7 @@ $hasil= $conn -> query($var);
                         class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
                 <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                    <input type="text" id="nama" placeholder="Tanggal Transaksi" required
+                    <input type="date" id="nama" placeholder="Tanggal Transaksi" required
                         class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                 </div>
                 <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
