@@ -1,5 +1,5 @@
 <?php
-require_once('cobaregister.php');
+require 'cobaregister.php';
 ?>
 
 </php>
@@ -81,7 +81,7 @@ require_once('cobaregister.php');
         <div class="container justify-center rounded-lg items-center mx-auto my-32 w-96 bg-white">
             <!-- register form -->
             <div class="justify-center p-10 w-full h-full">
-                <form action="#" id="register" method="POST">
+                <form action="" id="register" method="POST">
                     <div>
                         <div>
                             <h1 class="text-center font-bold mb-5 text-3xl">
@@ -137,13 +137,13 @@ require_once('cobaregister.php');
                                 <input type="password" id="pass" name="password" required
                                     class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-[#A084CA] w-full border-0 md:w-full"><br>
                                 <div>
-                                    <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
+                                    <label for="konfirmasi" class="text-sm p-3">Konfirmasi Password</label>
                                 </div>
-                                <input type="password" id="konfirmasi" name="kofirmasi" required class=" my-1 px-3 py-0.5 shadow-xl block rounded-full bg-[#A084CA] w-full border-0
+                                <input type="password" id="konfirmasi" name="konfirmasi" required class=" my-1 px-3 py-0.5 shadow-xl block rounded-full bg-[#A084CA] w-full border-0
                                 md:w-full"><br>
                             </div>
                             </p>
-                            <input type="submit" href=" #"
+                            <input type="submit" name="register" href=""
                                 class="flex p-1 bg-[#645CAA] hover:bg-[#6C4AB6] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register
                             </input>
                             <a href="login.php"
