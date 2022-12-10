@@ -51,6 +51,7 @@ function registrasi($data){
         echo "<script>
         alert('username sudah terdaftar!')
         </script>";
+        return false;
     }
 
     if($password !== $konfirmasi){
