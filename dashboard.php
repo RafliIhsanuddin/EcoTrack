@@ -76,8 +76,9 @@ $hasil = $conn->query($var);
 
                 <!-- nav menu -->
                 <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
-                    <li><a href="dashboard.html" class="hover:text-lightGreen">Dashboard</a></li>
-                    <li><a href="#" class="hover:text-lightGreen">Pembukuan</a></li>
+                    <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
+                    <li><a href="pembukuan.html" class="hover:text-lightGreen">Pembukuan</a>
+                    </li>
                     <li><a href="#" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>
 

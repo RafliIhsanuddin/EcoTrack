@@ -43,7 +43,7 @@
                             class="mx-auto w-10 h-10 p-2" alt=""></div>
                 </button>
             </div>
-        
+
             <!-- Dropdown menu -->
             <div id="dropdownDivider"
                 class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
@@ -106,7 +106,8 @@
                     <div class="flex flex-wrap flex-col justify-center gap-y-5 md:gap-y-0 md:gap-x-8 md:flex-row">
                         <!-- feature 1 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty.jpg" alt="" class="w-auto mx-auto rounded-full max-w-[320px] h-auto max-h-[320px] md:mb-5">
+                            <img src="img/kitty.jpg" alt=""
+                                class="w-auto mx-auto rounded-full max-w-[320px] h-auto max-h-[320px] md:mb-5">
 
                             <h2 class="font-semibold">Mencatat Transaksi</h2>
                             <p>Lorem ipsum dolor sit amet
@@ -149,7 +150,8 @@
                     <div class="flex flex-wrap flex-col justify-center gap-y-10 md:gap-y-10 md:gap-x-8 md:flex-row">
                         <!-- member 1 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty.jpg" alt="" class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
+                            <img src="img/kitty.jpg" alt=""
+                                class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
                         <!-- member 2 -->
                         <div class="text-center space-y-2">
@@ -158,11 +160,13 @@
                         </div>
                         <!-- member 3 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty3.jpg" alt="" class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
+                            <img src="img/kitty3.jpg" alt=""
+                                class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
                         <!-- member 4 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty4.jpg" alt="" class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
+                            <img src="img/kitty4.jpg" alt=""
+                                class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
                     </div>
                     <div class="text-center">

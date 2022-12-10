@@ -125,9 +125,9 @@ if (isset($_POST["login"])){
                     <h1 class="text-center font-bold text-3xl pt-5 mb-5">
                         Login
                     </h1>
-                    <?php if (isset($_GET['error'])): ?>
+                    <?php if (isset($_GET['error'])) : ?>
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <span class="block sm:inline"><?php echo $_GET['error']?>
+                        <span class="block sm:inline"><?php echo $_GET['error'] ?>
                         </span>
                         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                             <title>Close</title>

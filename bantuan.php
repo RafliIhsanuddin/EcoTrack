@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecotrack - About</title>
+    <title>Ecotrack - Bantuan</title>
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="bg-gradient-to-tr from-[#845EC2] to-[#FF6F91]">
+<body class="bg-gradient-to-br from-[#FF9671] to-[#D65DB1]">
 
     <!-- header -->
     <nav class="container hidden py-5 mx-auto min-w-full bg-transparent md:flex">
@@ -20,7 +20,7 @@
         <!-- nav menu -->
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
             <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
-            <li><a href="#" class="text-[#845EC2]">About</a></li>
+            <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li>
             <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
             <a href="login.php"
                 class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
@@ -66,41 +66,65 @@
     <!-- about section -->
     <section>
         <div
-            class="container flex flex-col justify-center mt-10 pt-10 mx-auto space-y-10 w-full h-full text-white text-center md:pt-0">
+            class="container flex flex-col justify-center mt-10 p-10 mx-auto space-y-10 w-full h-full md:max-w-3xl bg-white rounded-lg text-center md:pt-0">
             <div class="space-y-10">
-                <h1 class="text-5xl font-semibold">
-                    About
+                <h1 class="text-5xl pt-10 font-semibold">
+                    FAQ
                 </h1>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique voluptates eos quia, vitae animi
-                    saepe et sunt,
-                    <br>
-                    officiis sint, unde consectetur quisquam quos id provident dolor facilis accusantium tempora cumque.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates eos quia, vitae animi
+                    saepe et sunt, officiis sint, unde consectetur quisquam quos id provident dolor facilis accusantium
+                    tempora cumque.
                 </p>
             </div>
-            <!-- images -->
-            <div
-                class="flex flex-col space-y-5 justify-center mx-auto text-center md:space-y-0 md:space-x-5 md:flex-row">
-                <!-- member 1 -->
-                <div class="">
-                    <img src="img/kitty.jpg" alt="" class="w-auto mx-auto max-w-[320px] h-auto max-h-[320px]">
-                </div>
-                <!-- member 2 -->
-                <div class="">
-                    <img src="img/kitty2.jpg" alt=""
-                        class="w-auto mx-auto min-w-[320px] max-w-[320px] h-auto max-h-[320px]">
-                </div>
+            <details class="pb-5 border-b hover:cursor-pointer">
+                <summary
+                    class="flex justify-between text-lg font-semibold items-center  text-evendarkerBlue hover:text-[#845EC2]">
+                    Question 1</summary>
+                <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.</p>
+            </details>
 
-            </div>
+            <details class="pb-5 border-b hover:cursor-pointer">
+                <summary
+                    class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">
+                    Question 2</summary>
+                <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.</p>
+            </details>
+
+            <details class="pb-5 border-b hover:cursor-pointer">
+                <summary
+                    class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">
+                    Question 3</summary>
+                <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.</p>
+            </details>
+
+            <details class="pb-5 border-b hover:cursor-pointer">
+                <summary
+                    class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">
+                    Question 4</summary>
+                <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.</p>
+            </details>
+
+            <details class="pb-5 border-b hover:cursor-pointer">
+                <summary
+                    class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">
+                    Question 5</summary>
+                <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.</p>
+            </details>
+
             <div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quo illo cum dolores qui eligendi
-                    sapiente temporibus!
-                    <br>
-                    Veritatis esse quidem doloribus,
-                    debitis mollitia aperiam, eum nisi ducimus necessitatibus aspernatur modi!
-                </p>
+                <textarea name="" id="" cols="60" rows="5" placeholder="Perlu bantuan?"
+                    class="w-3/4 rounded-lg"></textarea>
             </div>
+            <a href="#"
+                class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-1/3 mx-auto my-7 font-bold justify-center rounded-full md:w-1/4">Submit
+            </a>
+
         </div>
     </section>
 
@@ -131,7 +155,7 @@
                     <h2>FAQ</h2>
                 </div>
                 <div class="">
-                    <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                    <a href="" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                 </div>
             </div>
 
