@@ -50,6 +50,15 @@ function ubah($data){
 
 
 
+
+
+
+
+
+
+
+
+
 function registrasi($data){
     global $conn;
     $email = stripslashes($data['email']);
@@ -63,7 +72,6 @@ function registrasi($data){
         echo "<script>
         alert('username sudah terdaftar!')
         </script>";
-        return false;
     }
 
     if($password !== $konfirmasi){
@@ -85,7 +93,6 @@ function registrasi($data){
 
     
 }
-
 
 
 

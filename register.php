@@ -2,7 +2,7 @@
 require 'cobaregister.php';
 ?>
 
-</php>
+
 <!DOCTYPE html>
 <html lang="en" class="">
 
