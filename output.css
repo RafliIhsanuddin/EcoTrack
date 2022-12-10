@@ -1089,11 +1089,14 @@ input:checked + .toggle-bg {
   margin-right: 2.5rem;
 }
 
+<<<<<<< HEAD
 .my-7 {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1104,6 +1107,14 @@ input:checked + .toggle-bg {
   margin-bottom: 8rem;
 }
 
+<<<<<<< HEAD
+=======
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1137,8 +1148,21 @@ input:checked + .toggle-bg {
   margin-right: 2.5rem;
 }
 
+<<<<<<< HEAD
 .mr-0 {
   margin-right: 0px;
+=======
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 }
 
 .mt-10 {
@@ -1189,6 +1213,7 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
 }
 
+<<<<<<< HEAD
 .mr-4 {
   margin-right: 1rem;
 }
@@ -1205,6 +1230,28 @@ input:checked + .toggle-bg {
   display: block;
 }
 
+=======
+.mr-0 {
+  margin-right: 0px;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.block {
+  display: block;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .inline-block {
   display: inline-block;
 }
@@ -1225,10 +1272,13 @@ input:checked + .toggle-bg {
   display: table;
 }
 
+<<<<<<< HEAD
 .table-cell {
   display: table-cell;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .grid {
   display: grid;
 }
@@ -1237,8 +1287,13 @@ input:checked + .toggle-bg {
   display: none;
 }
 
+<<<<<<< HEAD
 .h-10 {
   height: 2.5rem;
+=======
+.h-screen {
+  height: 100vh;
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 }
 
 .h-full {
@@ -1314,10 +1369,22 @@ input:checked + .toggle-bg {
   width: auto;
 }
 
+<<<<<<< HEAD
+=======
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-608px {
+  width: 38rem;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .w-3\/4 {
   width: 75%;
 }
 
+<<<<<<< HEAD
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -1326,6 +1393,8 @@ input:checked + .toggle-bg {
   width: 38rem;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .w-1\/2 {
   width: 50%;
 }
@@ -1340,6 +1409,10 @@ input:checked + .toggle-bg {
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .w-96 {
@@ -1562,18 +1635,37 @@ input:checked + .toggle-bg {
   border-radius: 9999px;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+<<<<<<< HEAD
+=======
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded {
   border-radius: 0.25rem;
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+<<<<<<< HEAD
+.rounded {
+  border-radius: 0.25rem;
+}
+
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .rounded-xl {
   border-radius: 0.75rem;
 }
 
+<<<<<<< HEAD
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1582,6 +1674,8 @@ input:checked + .toggle-bg {
   border-radius: 1.5rem;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .rounded-t-xl {
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
@@ -1612,10 +1706,13 @@ input:checked + .toggle-bg {
   border-bottom-right-radius: 0.5rem;
 }
 
+<<<<<<< HEAD
 .rounded-tl-none {
   border-top-left-radius: 0px;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .rounded-tl-lg {
   border-top-left-radius: 0.5rem;
 }
@@ -1628,10 +1725,13 @@ input:checked + .toggle-bg {
   border-width: 1px;
 }
 
+<<<<<<< HEAD
 .border-\[1px\] {
   border-width: 1px;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .border-\[1\.7px\] {
   border-width: 1.7px;
 }
@@ -1706,6 +1806,29 @@ input:checked + .toggle-bg {
   background-color: transparent;
 }
 
+<<<<<<< HEAD
+=======
+.bg-lightGreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 255 191 / var(--tw-bg-opacity));
+}
+
+.bg-evendarkerBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 13 41 / var(--tw-bg-opacity));
+}
+
+.bg-darkerBlue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 22 65 / var(--tw-bg-opacity));
+}
+
+.bg-evendarkerPurple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 13 168 / var(--tw-bg-opacity));
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1852,9 +1975,15 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+<<<<<<< HEAD
 .from-\[\#FF9671\] {
   --tw-gradient-from: #FF9671;
   --tw-gradient-to: rgb(255 150 113 / 0);
+=======
+.from-\[\#3D2C8D\] {
+  --tw-gradient-from: #3D2C8D;
+  --tw-gradient-to: rgb(61 44 141 / 0);
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -1876,16 +2005,27 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+<<<<<<< HEAD
 .from-\[\#D65DB1\] {
   --tw-gradient-from: #D65DB1;
   --tw-gradient-to: rgb(214 93 177 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .from-\[\#EB66A1\] {
   --tw-gradient-from: #EB66A1;
   --tw-gradient-to: rgb(235 102 161 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+<<<<<<< HEAD
+=======
+}
+
+.via-\[\#BFACE0\] {
+  --tw-gradient-to: rgb(191 172 224 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #BFACE0, var(--tw-gradient-to);
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 }
 
 .via-\[\#FF6F91\] {
@@ -1893,6 +2033,7 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), #FF6F91, var(--tw-gradient-to);
 }
 
+<<<<<<< HEAD
 .via-\[\#BFACE0\] {
   --tw-gradient-to: rgb(191 172 224 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #BFACE0, var(--tw-gradient-to);
@@ -1925,10 +2066,34 @@ input:checked + .toggle-bg {
 
 .to-\[\#FCE068\] {
   --tw-gradient-to: #FCE068;
+=======
+.to-evendarkerPurple {
+  --tw-gradient-to: #610DA8;
+}
+
+.to-\[\#916BBF\] {
+  --tw-gradient-to: #916BBF;
+}
+
+.to-darkerTosca {
+  --tw-gradient-to: #18A194;
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 }
 
 .to-\[\#EBC7E8\] {
   --tw-gradient-to: #EBC7E8;
+<<<<<<< HEAD
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+          background-clip: text;
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
+}
+
+.to-\[\#FF9671\] {
+  --tw-gradient-to: #FF9671;
 }
 
 .bg-clip-text {
@@ -1944,6 +2109,13 @@ input:checked + .toggle-bg {
   padding: 0.5rem;
 }
 
+<<<<<<< HEAD
+=======
+.p-4 {
+  padding: 1rem;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .p-10 {
   padding: 2.5rem;
 }
@@ -1952,6 +2124,7 @@ input:checked + .toggle-bg {
   padding: 0.25rem;
 }
 
+<<<<<<< HEAD
 .p-5 {
   padding: 1.25rem;
 }
@@ -1968,6 +2141,8 @@ input:checked + .toggle-bg {
   padding: 1.75rem;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .p-2\.5 {
   padding: 0.625rem;
 }
@@ -2067,6 +2242,24 @@ input:checked + .toggle-bg {
   padding-bottom: 1.5rem;
 }
 
+<<<<<<< HEAD
+=======
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-\[7px\] {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.py-\[6px\] {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2091,10 +2284,13 @@ input:checked + .toggle-bg {
   padding-top: 2.5rem;
 }
 
+<<<<<<< HEAD
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -2124,13 +2320,26 @@ input:checked + .toggle-bg {
   line-height: 1.75rem;
 }
 
+<<<<<<< HEAD
+=======
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
+<<<<<<< HEAD
 .text-5xl {
   font-size: 3rem;
+=======
+.text-6xl {
+  font-size: 3.75rem;
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   line-height: 1;
 }
 
@@ -2139,11 +2348,14 @@ input:checked + .toggle-bg {
   line-height: 2.25rem;
 }
 
+<<<<<<< HEAD
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -2154,6 +2366,14 @@ input:checked + .toggle-bg {
   line-height: 2rem;
 }
 
+<<<<<<< HEAD
+=======
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .font-semibold {
   font-weight: 600;
 }
@@ -2193,11 +2413,14 @@ input:checked + .toggle-bg {
   color: rgb(16 13 41 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(200 30 30 / var(--tw-text-opacity));
@@ -2227,6 +2450,14 @@ input:checked + .toggle-bg {
   color: rgb(160 132 202 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2257,6 +2488,7 @@ input:checked + .toggle-bg {
   opacity: 1;
 }
 
+<<<<<<< HEAD
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -2269,6 +2501,8 @@ input:checked + .toggle-bg {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -2284,6 +2518,18 @@ input:checked + .toggle-bg {
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2357,6 +2603,7 @@ input:checked + .toggle-bg {
   color: #100D29;
 }
 
+<<<<<<< HEAD
 .placeholder\:text-gray-200::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -2367,6 +2614,8 @@ input:checked + .toggle-bg {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .placeholder\:text-black::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2414,6 +2663,14 @@ input:checked + .toggle-bg {
 .hover\:bg-lighterPurple:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(154 82 217 / var(--tw-bg-opacity));
+<<<<<<< HEAD
+=======
+}
+
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 }
 
 .hover\:bg-\[\#6C4AB6\]:hover {
@@ -2435,7 +2692,11 @@ input:checked + .toggle-bg {
   font-weight: 700;
 }
 
+<<<<<<< HEAD
 .hover\:text-\[\#845EC2\]:hover {
+=======
+.hover\:text-lightGreen:hover {
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   --tw-text-opacity: 1;
   color: rgb(132 94 194 / var(--tw-text-opacity));
 }
@@ -2575,16 +2836,27 @@ input:checked + .toggle-bg {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+<<<<<<< HEAD
 .dark .dark\:bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .dark .dark\:bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.dark .dark\:bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .dark .dark\:bg-gray-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
@@ -2603,11 +2875,14 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 0.8;
 }
 
+<<<<<<< HEAD
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .dark .dark\:text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -2618,6 +2893,14 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.dark .dark\:text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .dark .dark\:text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(63 131 248 / var(--tw-text-opacity));
@@ -2668,16 +2951,27 @@ input:checked + .toggle-bg {
   border-color: rgb(63 131 248 / var(--tw-border-opacity));
 }
 
+<<<<<<< HEAD
 .dark .dark\:focus\:ring-blue-800:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
 }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 .dark .dark\:focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(63 131 248 / var(--tw-ring-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.dark .dark\:focus\:ring-blue-800:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
+}
+
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
 @media (min-width: 480px) {
   .sm\:mb-0 {
     margin-bottom: 0px;
@@ -2726,6 +3020,7 @@ input:checked + .toggle-bg {
   .md\:my-4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
+<<<<<<< HEAD
   }
 
   .md\:mr-10 {
@@ -2734,6 +3029,8 @@ input:checked + .toggle-bg {
 
   .md\:mb-5 {
     margin-bottom: 1.25rem;
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   }
 
   .md\:flex {
@@ -2749,10 +3046,13 @@ input:checked + .toggle-bg {
     height: fit-content;
   }
 
+<<<<<<< HEAD
   .md\:w-1\/4 {
     width: 25%;
   }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2853,6 +3153,7 @@ input:checked + .toggle-bg {
     padding-right: 78px;
   }
 
+<<<<<<< HEAD
   .md\:px-\[5px\] {
     padding-left: 5px;
     padding-right: 5px;
@@ -2861,6 +3162,24 @@ input:checked + .toggle-bg {
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .md\:pt-5 {
+    padding-top: 1.25rem;
+=======
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:px-\[5px\] {
+    padding-left: 5px;
+    padding-right: 5px;
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   }
 
   .md\:pt-0 {
@@ -2920,11 +3239,14 @@ input:checked + .toggle-bg {
     padding-right: 20px;
   }
 
+<<<<<<< HEAD
   .lg\:px-\[25px\] {
     padding-left: 25px;
     padding-right: 25px;
   }
 
+=======
+>>>>>>> 696d64b (membuat fitur register dengan enkripsi)
   .lg\:pt-0 {
     padding-top: 0px;
   }
