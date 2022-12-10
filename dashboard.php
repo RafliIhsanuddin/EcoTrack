@@ -1,8 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
+// if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
+//     header("location: login.php");
+// }
+
+if( !isset($_SESSION["login"])){
     header("location: login.php");
+    exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +52,10 @@ if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 
 
         <!-- content -->
+
+        <?php
+        //  echo $_SESSION["idakun"] 
+        ?> 
 
 
         <!-- tabs -->
@@ -356,5 +366,3 @@ if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 </body>
 
 </html>
-<?php session_destroy();
-?>

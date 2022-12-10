@@ -1,5 +1,49 @@
 <?php
-require_once('cobalogin.php');
+// require 'cobalogin.php';
+require 'connect.php';
+
+session_start();
+
+if( isset($_SESSION["login"])){
+    header("location: dashboard.php");
+    exit;
+}
+
+
+if (isset($_POST["login"])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $result = mysqli_query($conn,"SELECT * FROM user WHERE email_User = '$email' ");
+
+    
+    
+    if(mysqli_num_rows($result) === 1){
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password,$row["password_User"])){
+            header("Location:dashboard.php");
+            $_SESSION["idakun"] = $row["id_User"];
+            $_SESSION["login"] = true;
+            exit;
+        }else{
+            header("location: login.php?error=Username atau password anda salah");
+            exit();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +154,7 @@ require_once('cobalogin.php');
                                     class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
                             </div>
                         </div>
-                        <input type="submit" value="Login"
+                        <input name="login" type="submit" value="Login"
                             class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">
                     </form>
                 </div>
