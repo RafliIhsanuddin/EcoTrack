@@ -2,16 +2,38 @@
 session_start();
 
 require_once 'connect.php';
-$var = "SELECT * FROM transaksi";
-$hasil= $conn -> query($var);
+require  'functions.php';
 // if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 //     header("location: login.php");
 // }
 
-if( !isset($_SESSION["login"])){
+if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
 }
+
+$iduser = $_SESSION["idakun"];
+
+
+$jumperhal = 5;
+$jumdata = count(query("SELECT * FROM transaksi WHERE id_User = $iduser"));
+$jumhal = ceil($jumdata / $jumperhal);
+
+$halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+
+$awaldata = ($jumperhal * $halaktif) - $jumperhal;
+
+$where = "WHERE id_User = $iduser";
+
+// if(isset($_GET['halaman'])){
+//     $halaktif = $_GET['halaman'];
+// }else{
+//     $halaktif = 1;
+// }
+
+
+$var = "SELECT * FROM transaksi WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
+$hasil = $conn->query($var);
 
 ?>
 
@@ -47,7 +69,7 @@ if( !isset($_SESSION["login"])){
                 </ul>
 
                 <div>
-                    <a href="landing.html" class="flex flex-1 hover:text-lightGreen font-semibold p-2 mx-10">Logout</a>
+                    <a href="logout.php" class="flex flex-1 hover:text-lightGreen font-semibold p-2 mx-10">Logout</a>
                 </div>
             </nav>
         </header>
@@ -59,7 +81,7 @@ if( !isset($_SESSION["login"])){
 
         <?php
         //  echo $_SESSION["idakun"] 
-        ?> 
+        ?>
 
 
         <!-- tabs -->
@@ -77,24 +99,19 @@ if( !isset($_SESSION["login"])){
                             <table class="w-full overflow-hidden rounded-2xl">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Bukti
                                         </th>
                                     </tr>
@@ -156,64 +173,47 @@ if( !isset($_SESSION["login"])){
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Bukti
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-gray-100">
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
-
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
+                                    <?php if ($hasil->num_rows > 0) : ?>
+                                        <?php $j = 1; ?>
+                                        <?php while ($baris = $hasil->fetch_assoc()) : ?>
+                                            <tr class="">
+                                                <td>
+                                                    <?= $j ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $baris['tanggal_Transaksi']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $baris['jenis_Transaksi']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $baris['status_Transaksi']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $baris['bukti_Transaksi']; ?>
+                                                </td>
+                                            </tr>
+                                            <?php $j++ ?>
+                                        <?php endwhile ?>
+                                    <?php endif ?>
                                 </tbody>
                             </table>
                         </div>
@@ -222,18 +222,15 @@ if( !isset($_SESSION["login"])){
                 <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
                     <!-- nav menu -->
                     <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#"
-                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Edit
                             </a>
                         </div>
-                        <div><a href="#"
-                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Hapus
                             </a>
                         </div>
-                        <div><a href="pengeluaran.php"
-                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="pengeluaran.php" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Tambah
                             </a>
                         </div>
@@ -254,24 +251,19 @@ if( !isset($_SESSION["login"])){
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Bukti
                                         </th>
                                     </tr>
@@ -320,18 +312,15 @@ if( !isset($_SESSION["login"])){
                 <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
                     <!-- nav menu -->
                     <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#"
-                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Edit
                             </a>
                         </div>
-                        <div><a href="#"
-                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Hapus
                             </a>
                         </div>
-                        <div><a href=""
-                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Tambah
                             </a>
                         </div>
