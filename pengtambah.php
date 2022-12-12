@@ -1,6 +1,14 @@
 <?php
 
 require_once('connect.php');
+session_start();
+
+
+
+$transid = $_SESSION['transid'];
+$transid++;
+
+$iduser = $_SESSION["idakun"];
 
 
 
@@ -17,8 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
 
-    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`,`Referensi`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko')";
-
+    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
     $hasil = $conn->query($query);
 
     // var_dump(mysqli_affected_rows($conn));

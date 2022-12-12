@@ -2,7 +2,6 @@
 require 'cobaregister.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en" class="">
 
@@ -32,9 +31,10 @@ require 'cobaregister.php';
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
             <li><a href="landing.php" class="hover:text-[#A084CA]">Home</a></li>
             <li><a href="about.php" class="hover:text-[#A084CA]">About</a></li>
-            <li><a href="" class="text-[#A084CA]">Daftar</a></li>
+            <li><a href="register.php" class="text-[#A084CA]">Daftar</a></li>
             <a href="login.php" class="px-2 py-2 mr-10 w-20 font-bold bg-[#A084CA] text-evendarkerBlue text-center rounded-full">
                 Login
+                
             </a>
         </ul>
     </nav>

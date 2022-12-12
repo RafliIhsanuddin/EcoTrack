@@ -4,13 +4,12 @@ require 'connect.php';
 require 'functions.php';
 session_start();
 
+$id = $_GET['id'];
+
 $iduser = $_SESSION["idakun"];
 
-$transid = $_SESSION['transid'];
-$transid++;
-
 $jumperhal = 5;
-$jumdata = count(querycoba("SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid"));
+$jumdata = count(querycoba("SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id"));
 $jumhal = ceil($jumdata / $jumperhal);
 
 $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
@@ -23,8 +22,13 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 //     $halaktif = 1;
 // }
 
-$var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid LIMIT $awaldata,$jumperhal";
+$var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
+
+$transaksi = querycoba("SELECT * FROM transaksi WHERE id_Transaksi = $id")[0];
+// $transaksi = $conn->query("SELECT * FROM transaksi WHERE id_Transaksi = $id");
+
+
 
 
 
@@ -124,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <div class="px-5">
                     <div class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="buktit" type="text" id="nama" placeholder="Bukti Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                            <input value="<?= $transaksi['bukti_Transaksi']?>" name="buktit" type="text" id="nama" placeholder="Bukti Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                             <input name="jenist" type="text" id="nama" placeholder="Jenis Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
