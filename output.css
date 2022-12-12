@@ -1894,6 +1894,12 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-\[\#D65DB1\] {
+  --tw-gradient-from: #D65DB1;
+  --tw-gradient-to: rgb(214 93 177 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-\[\#FF6F91\] {
   --tw-gradient-to: rgb(255 111 145 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #FF6F91, var(--tw-gradient-to);
@@ -1902,6 +1908,11 @@ input:checked + .toggle-bg {
 .via-\[\#BFACE0\] {
   --tw-gradient-to: rgb(191 172 224 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #BFACE0, var(--tw-gradient-to);
+}
+
+.via-\[\#FE9F86\] {
+  --tw-gradient-to: rgb(254 159 134 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), #FE9F86, var(--tw-gradient-to);
 }
 
 .to-\[\#FF6F91\] {
