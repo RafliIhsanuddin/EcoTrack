@@ -5,7 +5,7 @@ require 'functions.php';
 
 $id = $_GET['id'];
 
-$barang = query("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
+$barang = querycoba("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
 // echo "<br>";
 // var_dump($barang);
 

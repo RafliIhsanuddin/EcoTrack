@@ -10,7 +10,7 @@ function hapus($id) {
 }
 
 
-function query($query){
+function querycoba($query){
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];

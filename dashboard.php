@@ -16,14 +16,27 @@ $iduser = $_SESSION["idakun"];
 
 
 $jumperhal = 5;
-$jumdata = count(query("SELECT * FROM transaksi WHERE id_User = $iduser"));
+$jumdata = count(querycoba("SELECT * FROM transaksi WHERE id_User = $iduser"));
 $jumhal = ceil($jumdata / $jumperhal);
+
+
+$tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi");
+
+
+if ($tes->num_rows > 0) {
+    while ($baris1 = $tes->fetch_assoc()) {
+        $_SESSION['transid'] = $baris1['MAX(id_Transaksi)'];
+    }
+}
+
+
+
+
 
 $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
 $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
-$where = "WHERE id_User = $iduser";
 
 // if(isset($_GET['halaman'])){
 //     $halaktif = $_GET['halaman'];
@@ -79,9 +92,7 @@ $hasil = $conn->query($var);
 
         <!-- content -->
 
-        <?php
-        //  echo $_SESSION["idakun"] 
-        ?>
+        <?php ?>;
 
 
         <!-- tabs -->
@@ -185,8 +196,14 @@ $hasil = $conn->query($var);
                                         <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
                                             Bukti
+                                        </th>
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
+                                            Hapus
+                                        </th>
+                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                            Ubah
                                         </th>
                                     </tr>
                                 </thead>
@@ -194,6 +211,7 @@ $hasil = $conn->query($var);
                                     <?php if ($hasil->num_rows > 0) : ?>
                                         <?php $j = 1; ?>
                                         <?php while ($baris = $hasil->fetch_assoc()) : ?>
+                                            <?php  ?>
                                             <tr class="">
                                                 <td>
                                                     <?= $j ?>
@@ -209,6 +227,12 @@ $hasil = $conn->query($var);
                                                 </td>
                                                 <td>
                                                     <?php echo $baris['bukti_Transaksi']; ?>
+                                                </td>
+                                                <td>
+                                                    <a href="ubahtransaksi.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
+                                                </td>
+                                                <td>
+                                                    <a href="">Hapus</a>
                                                 </td>
                                             </tr>
                                             <?php $j++ ?>
