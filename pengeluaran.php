@@ -17,11 +17,6 @@ $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
 $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
-// if(isset($_GET['halaman'])){
-//     $halaktif = $_GET['halaman'];
-// }else{
-//     $halaktif = 1;
-// }
 
 $var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
@@ -82,16 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en" class="">
 
@@ -104,11 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <title>EcoTrack-Pengeluaran</title>
-    <!-- <style>
-        * {
-            border: 1px solid black;
-        }
-    </style> -->
+
 </head>
 
 <body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">

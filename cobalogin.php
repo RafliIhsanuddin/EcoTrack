@@ -24,7 +24,9 @@ if (isset($_POST["email"]) && $_POST["password"]) {
         if ($row['email_User'] == $email && $row['password_User'] == $password) {
             $_SESSION['id'] = $row['id_User'];
             $_SESSION['nama'] = $row['nama_User'];
-            header("location: dashboard.php");
+            $username = $row['nama_User'];
+            
+            header("location: dashboard.php?success= selamat datang $username ");
             exit();
         } else {
             header("location: login.php?error=Username atau password anda salah");

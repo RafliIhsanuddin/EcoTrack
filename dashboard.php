@@ -79,7 +79,7 @@ $hasil = $conn->query($var);
                     <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
                     <li><a href="pembukuan.html" class="hover:text-lightGreen">Pembukuan</a>
                     </li>
-                    <li><a href="#" class="hover:text-lightGreen">Bantuan</a></li>
+                    <li><a href="antuan.phpb" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>
 
                 <div>
@@ -91,6 +91,20 @@ $hasil = $conn->query($var);
         <!-- middle section -->
 
 
+        <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
+            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
+                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
+                <canvas class="p-10" id="chartBar"></canvas>
+            </div>
+            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
+                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
+                <canvas class="p-10" id="chartBar1"></canvas>
+            </div>
+            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
+                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
+                <canvas class="p-10" id="chartBar2"></canvas>
+            </div>
+        </div>
         <!-- content -->
 
         <?php ?>;
@@ -103,7 +117,24 @@ $hasil = $conn->query($var);
                 General
             </label>
             <div class="tab w-full p-10 bg-white order-1 hidden">
-                <div>
+                <?php if (isset($_GET['success'])) : ?>
+                <div class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+                    role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div>
+                        <span class="font-medium">login berhasil </span><?php echo $_GET['success'] ?>
+                    </div>
+                </div>
+
+                <?php endif ?>
+                <?php
+                ?> <div>
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
@@ -400,7 +431,39 @@ $hasil = $conn->query($var);
         </footer>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- Chart bar -->
+    <script>
+    const labelsBarChart = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+    ];
+    const dataBarChart = {
+        labels: labelsBarChart,
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: "hsl(252, 82.9%, 67.8%)",
+            borderColor: "hsl(252, 82.9%, 67.8%)",
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }, ],
+    };
+
+    const configBarChart = {
+        type: "bar",
+        data: dataBarChart,
+        options: {},
+    };
+
+    var chartBar = new Chart(
+        document.getElementById("chartBar"),
+        configBarChart
+    );
+    </script>
 </body>
 
 </html>
