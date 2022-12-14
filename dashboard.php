@@ -16,11 +16,11 @@ $iduser = $_SESSION["idakun"];
 
 
 $jumperhal = 5;
-$jumdata = count(querycoba("SELECT * FROM transaksi WHERE id_User = $iduser"));
+$jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
 $jumhal = ceil($jumdata / $jumperhal);
 
 
-$tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi");
+$tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pengeluaran");
 
 
 if ($tes->num_rows > 0) {
@@ -45,7 +45,7 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 // }
 
 
-$var = "SELECT * FROM transaksi WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
+$var = "SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
 
 ?>
@@ -229,7 +229,7 @@ $hasil = $conn->query($var);
                                                     <?php echo $baris['bukti_Transaksi']; ?>
                                                 </td>
                                                 <td>
-                                                    <a href="ubahtransaksi.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
+                                                    <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
                                                 </td>
                                                 <td>
                                                     <a href="">Hapus</a>

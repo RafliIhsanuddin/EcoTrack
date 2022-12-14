@@ -25,7 +25,7 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 $var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
 
-$transaksi = querycoba("SELECT * FROM transaksi WHERE id_Transaksi = $id")[0];
+$transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi = $id")[0];
 // $transaksi = $conn->query("SELECT * FROM transaksi WHERE id_Transaksi = $id");
 
 
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
 
-    $query = "INSERT INTO `transaksi` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
+    $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
 
     $hasil = $conn->query($query);
 

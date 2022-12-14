@@ -41,7 +41,7 @@ function ubah($data){
         WHERE Id_Barang = $id" 
         ;
 
-    $hasil = $conn -> query($query);
+    mysqli_query($conn,$query);
 
     return mysqli_affected_rows($conn);
 }
