@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
 
-    $query = "INSERT INTO `transaksi` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
+    $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
 
     $hasil = $conn->query($query);
 
@@ -48,11 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
-        document.location.href = 'pengeluaran.php' </script>";
+        document.location.href = 'dashboard.php' </script>";
         // echo "berhasil";
     } else {
         echo "<script>alert('Data Transaksi Gagal Ditambahkan');
-        document.location.href = 'pengeluaran.php' </script>";
+        document.location.href = 'dashboard.php' </script>";
         // echo "gagal";
     }
 
