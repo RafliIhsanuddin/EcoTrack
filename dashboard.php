@@ -44,9 +44,23 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 //     $halaktif = 1;
 // }
 
+$var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
 
-$var = "SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
-$hasil = $conn->query($var);
+if(isset($_POST['cari'])){
+    $var = cari($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
+
+    $var = cariBarang($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
+}
+
+if(isset($_POST['reset'])){
+    $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
+}
+
+
+
+
+
+
 
 ?>
 
@@ -180,7 +194,11 @@ $hasil = $conn->query($var);
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
-
+                            <form action="" method="POST">
+                                <input type="text" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
+                                <button type="submit" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
+                                <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
+                            </form>
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
@@ -200,18 +218,16 @@ $hasil = $conn->query($var);
                                             Bukti
                                         </th>
                                         <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Hapus
+                                            Ubah
                                         </th>
                                         <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
-                                            Ubah
+                                            Hapus
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-gray-100">
-                                    <?php if ($hasil->num_rows > 0) : ?>
                                         <?php $j = 1; ?>
-                                        <?php while ($baris = $hasil->fetch_assoc()) : ?>
-                                            <?php  ?>
+                                        <?php foreach( $var as $baris) : ?>
                                             <tr class="">
                                                 <td>
                                                     <?= $j ?>
@@ -236,8 +252,7 @@ $hasil = $conn->query($var);
                                                 </td>
                                             </tr>
                                             <?php $j++ ?>
-                                        <?php endwhile ?>
-                                    <?php endif ?>
+                                        <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

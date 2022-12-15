@@ -130,13 +130,23 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                             <input name="jenist" type="text" id="nama" placeholder="Jenis Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="tglt" type="date" id="nama" placeholder="Tanggal Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                            <input name="tglt" type="text" id="tanggalt" placeholder="Tanggal Transaksi" required class=" focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                             <input name="not" type="text" id="nama" placeholder="Nomor Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="statust" type="text" id="nama" placeholder="Status" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                            <!-- <input name="statust" type="text" id="nama" placeholder="Status" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full"> -->
+                            <select name="statust" placeholder="Status" id="status" required class="invalid:text-slate-500 active:text-black focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                                <option value="" disabled selected hidden>Status Transaksi</option>
+                                <option value="lunas">lunas</option>
+                                <option value="belum">belum</option>
+                            </select>
+                            <!-- <input list="status" name="statust" placeholder="Status" class="focus:ring-black shadow-lg  bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                            <datalist id="status">
+                                <option value="lunas">
+                                <option value="belum">
+                            </datalist> -->
                         </div>
                         <div class=" sm:mb-0 border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto  mb-2 hover:opacity-[0.95] active:shadow-none mt-1">
                             <input name="" type="submit" id="submit" class="bg-[#9F73AB] py-1 shadow-lg text-2xl font-bold placeholder:text-black px-5 rounded-full w-full">
@@ -226,6 +236,28 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let x = document.getElementById("tanggalt");
+        x.addEventListener("focusin", myFocusFunction);
+        x.addEventListener("focusout", mytext);
+
+        function myFocusFunction() {
+            document.getElementById("tanggalt").type='date';
+        }
+
+        function mytext() {
+            document.getElementById("tanggalt").type='text';
+        }
+
+        function mytex() {
+            document.getElementById("status").type='text';
+        }
+    </script>
 
 </body>
 
