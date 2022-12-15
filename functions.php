@@ -89,6 +89,32 @@ function registrasi($data){
     
 }
 
+function cari($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
+    $query = "SELECT * FROM $namatabel WHERE id_User = $iduser 
+    AND tanggal_Transaksi 
+    LIKE '%$keyword%' 
+    OR status_Transaksi 
+    LIKE '%$keyword%' 
+    OR jenis_Transaksi
+    LIKE '%$keyword%' 
+    LIMIT $awaldata,$jumperhal";
+
+    return querycoba($query);
+}
+
+
+function cariBarang($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
+    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser 
+    AND pengeluaran.Nama_Barang 
+    LIKE '%$keyword%' 
+    OR pengeluaran.Referensi 
+    LIKE '%$keyword%' 
+    GROUP BY $namatabel.id_Transaksi 
+    LIMIT $awaldata,$jumperhal";
+
+    return querycoba($query);
+}
+
 
 
 
