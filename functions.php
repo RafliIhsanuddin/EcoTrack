@@ -3,6 +3,7 @@ require 'connect.php';
 
 
 
+
 function hapus($id) {
     global $conn;
     mysqli_query($conn,"DELETE FROM pengeluaran WHERE Id_Barang = $id");
@@ -104,10 +105,16 @@ function cari($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
 
 
 function cariBarang($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
-    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser 
+    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser
     AND pengeluaran.Nama_Barang 
     LIKE '%$keyword%' 
     OR pengeluaran.Referensi 
+    LIKE '%$keyword%'
+    OR $namatabel.tanggal_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.status_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.jenis_Transaksi
     LIKE '%$keyword%' 
     GROUP BY $namatabel.id_Transaksi 
     LIMIT $awaldata,$jumperhal";
