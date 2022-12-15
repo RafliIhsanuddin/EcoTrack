@@ -207,6 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Nama_Barang']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Harga_Barang']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang']; ?></td>
+                                        <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang']*$baris['Harga_Barang']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>

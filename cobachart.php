@@ -1,3 +1,19 @@
+<?php
+require_once 'connect.php';
+require_once 'functions.php';
+
+
+$pengeluaran = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE id_User = $iduser");
+$total = 0;
+foreach ($pengeluaran as $row){
+    $total = $total + $row['Jumlah_Barang'] * $row['Harga_Barang'];
+}
+echo $total;
+
+;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,34 +68,29 @@
 
     <!-- Chart bar -->
     <script>
-    const labelsBarChart = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-    ];
-    const dataBarChart = {
-        labels: labelsBarChart,
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: "hsl(252, 82.9%, 67.8%)",
-            borderColor: "hsl(252, 82.9%, 67.8%)",
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }, ],
-    };
+        const labelsBarChart = [
+            "total", "pendapatan", "pengeluaran",
+        ];
+        const dataBarChart = {
+            labels: labelsBarChart,
+            datasets: [{
+                label: "My First dataset",
+                backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                borderColor: "hsl(252, 82.9%, 67.8%)",
+                data: [<?php echo $total;?> ],
+            },],
+        };
 
-    const configBarChart = {
-        type: "bar",
-        data: dataBarChart,
-        options: {},
-    };
+        const configBarChart = {
+            type: "bar",
+            data: dataBarChart,
+            options: {},
+        };
 
-    var chartBar = new Chart(
-        document.getElementById("chartBar"),
-        configBarChart
-    );
+        var chartBar = new Chart(
+            document.getElementById("chartBar"),
+            configBarChart
+        );
     </script>
 </body>
 

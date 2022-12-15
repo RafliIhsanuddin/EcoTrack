@@ -61,7 +61,7 @@ function registrasi($data){
     $telepon = $data['telp'];
     $konfirmasi = mysqli_real_escape_string($conn,$data['konfirmasi']);
 
-    $result = mysqli_query($conn,"SELECT nama_User FROM user WHERE nama_User = '$username'");
+    $result = mysqli_query($conn,"SELECT nama_User FROM user WHERE nama_User = '$username' ");
     if(mysqli_fetch_assoc($result) ){
         echo "<script>
         alert('username sudah terdaftar!')

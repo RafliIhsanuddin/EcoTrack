@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'connect.php';
-require  'functions.php';
+require 'functions.php';
 // if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 //     header("location: login.php");
 // }
@@ -48,6 +48,19 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 $var = "SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
 
+$pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $iduser");
+$tkeluar = 0;
+foreach ($pengeluaran as $row) {
+    $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
+}
+// $pendapatan = mysqli_query($conn, "SELECT * FROM pendapatan WHERE id_User = $iduser");
+
+$tmasuk = 0;
+// foreach ($pengeluaran as $row) {
+//     $tmasuk = $tmasuk + $row['Jumlah_Barang'] * $row['Harga_Barang'];
+// }
+$total = $tkeluar + $tmasuk;
+// echo $total;
 ?>
 
 <!DOCTYPE html>
@@ -77,9 +90,9 @@ $hasil = $conn->query($var);
                 <!-- nav menu -->
                 <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
                     <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
-                    <li><a href="pembukuan.html" class="hover:text-lightGreen">Pembukuan</a>
+                    <li><a href="pembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
                     </li>
-                    <li><a href="antuan.phpb" class="hover:text-lightGreen">Bantuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>
 
                 <div>
@@ -92,17 +105,9 @@ $hasil = $conn->query($var);
 
 
         <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
-                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
+            <div class="w shadow-lg rounded-lg overflow-hidden">
+                <div class="py-3 px-5 bg-gray-50">Bar chart</div>
                 <canvas class="p-10" id="chartBar"></canvas>
-            </div>
-            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
-                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
-                <canvas class="p-10" id="chartBar1"></canvas>
-            </div>
-            <div class="mb-auto shadow-lg rounded-lg overflow-hidden">
-                <div class="mb-auto py-3 px-5 bg-gray-50">Bar chart</div>
-                <canvas class="p-10" id="chartBar2"></canvas>
             </div>
         </div>
         <!-- content -->
@@ -117,7 +122,7 @@ $hasil = $conn->query($var);
                 General
             </label>
             <div class="tab w-full p-10 bg-white order-1 hidden">
-                <?php if (isset($_GET['success'])) : ?>
+                <?php if (isset($_GET['success'])): ?>
                 <div class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
                     role="alert">
                     <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
@@ -128,13 +133,15 @@ $hasil = $conn->query($var);
                     </svg>
                     <span class="sr-only">Info</span>
                     <div>
-                        <span class="font-medium">login berhasil </span><?php echo $_GET['success'] ?>
+                        <span class="font-medium">login berhasil </span>
+                        <?php echo $_GET['success'] ?>
                     </div>
                 </div>
 
                 <?php endif ?>
                 <?php
-                ?> <div>
+                ?>
+                <div>
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
@@ -142,19 +149,24 @@ $hasil = $conn->query($var);
                             <table class="w-full overflow-hidden rounded-2xl">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Bukti
                                         </th>
                                     </tr>
@@ -216,59 +228,67 @@ $hasil = $conn->query($var);
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
                                             Bukti
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
                                             Hapus
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Ubah
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-gray-100">
-                                    <?php if ($hasil->num_rows > 0) : ?>
-                                        <?php $j = 1; ?>
-                                        <?php while ($baris = $hasil->fetch_assoc()) : ?>
-                                            <?php  ?>
-                                            <tr class="">
-                                                <td>
-                                                    <?= $j ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $baris['tanggal_Transaksi']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $baris['jenis_Transaksi']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $baris['status_Transaksi']; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $baris['bukti_Transaksi']; ?>
-                                                </td>
-                                                <td>
-                                                    <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
-                                                </td>
-                                                <td>
-                                                    <a href="">Hapus</a>
-                                                </td>
-                                            </tr>
-                                            <?php $j++ ?>
-                                        <?php endwhile ?>
+                                    <?php if ($hasil->num_rows > 0): ?>
+                                    <?php $j = 1; ?>
+                                    <?php while ($baris = $hasil->fetch_assoc()): ?>
+                                    <?php ?>
+                                    <tr class="">
+                                        <td>
+                                            <?= $j ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $baris['tanggal_Transaksi']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $baris['jenis_Transaksi']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $baris['status_Transaksi']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $baris['bukti_Transaksi']; ?>
+                                        </td>
+                                        <td>
+                                            <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>"
+                                                class="hover:text-green-700">Ubah</a>
+                                        </td>
+                                        <td>
+                                            <a href="">Hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php $j++ ?>
+                                    <?php endwhile ?>
                                     <?php endif ?>
                                 </tbody>
                             </table>
@@ -278,15 +298,18 @@ $hasil = $conn->query($var);
                 <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
                     <!-- nav menu -->
                     <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#"
+                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Edit
                             </a>
                         </div>
-                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#"
+                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Hapus
                             </a>
                         </div>
-                        <div><a href="pengeluaran.php" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="pengeluaran.php"
+                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Tambah
                             </a>
                         </div>
@@ -307,19 +330,24 @@ $hasil = $conn->query($var);
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th
+                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Bukti
                                         </th>
                                     </tr>
@@ -368,15 +396,18 @@ $hasil = $conn->query($var);
                 <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
                     <!-- nav menu -->
                     <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#"
+                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Edit
                             </a>
                         </div>
-                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href="#"
+                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Hapus
                             </a>
                         </div>
-                        <div><a href="" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                        <div><a href=""
+                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
                                 Tambah
                             </a>
                         </div>
@@ -435,34 +466,29 @@ $hasil = $conn->query($var);
 
     <!-- Chart bar -->
     <script>
-    const labelsBarChart = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-    ];
-    const dataBarChart = {
-        labels: labelsBarChart,
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: "hsl(252, 82.9%, 67.8%)",
-            borderColor: "hsl(252, 82.9%, 67.8%)",
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }, ],
-    };
+        const labelsBarChart = [
+            "total", "pendapatan", "pengeluaran",
+        ];
+        const dataBarChart = {
+            labels: arus kas,
+            datasets: [{
+                label: "My First dataset",
+                backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                borderColor: "hsl(252, 82.9%, 67.8%)",
+                data: [<?php echo $total; ?>,<?php echo $tmasuk; ?> ,<?php echo $tkeluar; ?> ],
+        },],
+            };
 
-    const configBarChart = {
-        type: "bar",
-        data: dataBarChart,
-        options: {},
-    };
+        const configBarChart = {
+            type: "bar",
+            data: dataBarChart,
+            options: {},
+        };
 
-    var chartBar = new Chart(
-        document.getElementById("chartBar"),
-        configBarChart
-    );
+        var chartBar = new Chart(
+            document.getElementById("chartBar"),
+            configBarChart
+        );
     </script>
 </body>
 
