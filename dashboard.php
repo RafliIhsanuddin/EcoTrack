@@ -3,6 +3,7 @@ session_start();
 
 require_once 'connect.php';
 require  'functions.php';
+global $conn;
 // if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
 //     header("location: login.php");
 // }
@@ -48,8 +49,15 @@ $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LI
 
 if(isset($_POST['cari'])){
     $var = cari($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
+    $zx = 0;
+    foreach( $var as $baris) {
+        $zx++;
+    }
+    
+    if($zx === 0){
+        $var = cariBarang($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
+    }
 
-    $var = cariBarang($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
 }
 
 if(isset($_POST['reset'])){

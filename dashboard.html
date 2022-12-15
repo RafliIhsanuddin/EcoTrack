@@ -56,14 +56,12 @@
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
-
-
-                            <form action="">
-                                <input type="text" name="keyword" class="rounded-full h-7 w-48 mb-3">
-                                <button type="submit" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
+                            <iframe name="stay" style="display:none;"></iframe>
+                            <form action="" method="POST" target="stay">
+                                <input type="text" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
+                                <button type="submit" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
+                                <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
                             </form>
-
-
                             <table class="w-full overflow-hidden rounded-xl">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
@@ -172,7 +170,12 @@
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
-
+                            <iframe name="stay" style="display:none;"></iframe>
+                            <form action="" method="POST" target="stay">
+                                <input type="text" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
+                                <button type="submit" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
+                                <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
+                            </form>
                             <table class="w-full overflow-hidden rounded-xl">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
