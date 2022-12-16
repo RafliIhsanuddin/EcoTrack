@@ -47,22 +47,21 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
 $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
 
-if(isset($_POST['cari'])){
-    $var = cari($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
-    $zx = 0;
-    foreach( $var as $baris) {
-        $zx++;
-    }
-    
-    if($zx === 0){
-        $var = cariBarang($_POST["keyword"],"transaksi_pengeluaran",$iduser,$awaldata,$jumperhal);
-    }
+// if (isset($_POST['cari'])) {
+//     $var = cari($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+//     $zx = 0;
+//     foreach ($var as $baris) {
+//         $zx++;
+//     }
 
-}
+//     if ($zx === 0) {
+//         $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+//     }
+// }
 
-if(isset($_POST['reset'])){
-    $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
-}
+// if (isset($_POST['reset'])) {
+//     $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
+// }
 
 
 
@@ -81,6 +80,7 @@ if(isset($_POST['reset'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecotrack - Dashboard</title>
     <link rel="stylesheet" href="output.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- <style>
         * {
             border: 1px solid black;
@@ -202,40 +202,41 @@ if(isset($_POST['reset'])){
                     <!-- table section -->
                     <div class="flex w-full justify-center">
                         <div class="p-5">
-                            <form action="" method="POST">
-                                <input type="text" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
-                                <button type="submit" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
+                            <form action="" id="formpeng" method="POST">
+                                <input type="text" id="transpeng" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
+                                <button type="submit" id="cari" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
                                 <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
                             </form>
-                            <table class="w-full">
-                                <thead class="bg-gray-300 border-b-2 border-gray-500">
-                                    <tr>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
-                                            Nomor
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Tanggal
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Jenis
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Status
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Bukti
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Ubah
-                                        </th>
-                                        <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
-                                            Hapus
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-gray-100">
+                            <div id="contpeng">
+                                <table class="w-full">
+                                    <thead class="bg-gray-300 border-b-2 border-gray-500">
+                                        <tr>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                                Nomor
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                Tanggal
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                Jenis
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
+                                                Status
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
+                                                Bukti
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
+                                                Ubah
+                                            </th>
+                                            <th class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                                Hapus
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-gray-100">
                                         <?php $j = 1; ?>
-                                        <?php foreach( $var as $baris) : ?>
+                                        <?php foreach ($var as $baris) : ?>
                                             <tr class="">
                                                 <td>
                                                     <?= $j ?>
@@ -261,8 +262,9 @@ if(isset($_POST['reset'])){
                                             </tr>
                                             <?php $j++ ?>
                                         <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -422,6 +424,35 @@ if(isset($_POST['reset'])){
         </footer>
 
     </div>
+
+
+
+    <script src="dashboard.js"></script>
+
+
+    <!-- <script>
+        $(document).ready(function() {
+            $("#formpeng").submit(function(e) {
+                e.preventDefault();
+                let nama = $("#transpeng").val();
+                $("#formpeng").load("search.php", {
+                    input: nama
+                });
+            });
+        });
+
+
+
+
+        // $(document).ready(function(){
+        //     $("#cari").click(function(){
+        //         let form = $("#searchinput").val();
+        //         $("#formpeng").load("searchtranspeng.php", {
+        //             nformpeng: form
+        //         });
+        //     });
+        // });
+    </script> -->
 
 </body>
 
