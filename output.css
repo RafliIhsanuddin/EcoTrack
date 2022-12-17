@@ -1370,10 +1370,6 @@ input:checked + .toggle-bg {
   width: 1.5rem;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
-}
-
 .w-64 {
   width: 16rem;
 }
@@ -1884,13 +1880,12 @@ input:checked + .toggle-bg {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-<<<<<<< HEAD
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-=======
+}
+
 .bg-gradient-to-l {
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
->>>>>>> 16306cc (memisahkan transaksi pendapatan dan pengeluaran)
 }
 
 .from-\[\#845EC2\] {
@@ -1923,15 +1918,15 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-\[\#EB66A1\] {
-  --tw-gradient-from: #EB66A1;
-  --tw-gradient-to: rgb(235 102 161 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-\[\#D65DB1\] {
   --tw-gradient-from: #D65DB1;
   --tw-gradient-to: rgb(214 93 177 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[\#EB66A1\] {
+  --tw-gradient-from: #EB66A1;
+  --tw-gradient-to: rgb(235 102 161 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -2250,14 +2245,11 @@ input:checked + .toggle-bg {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-<<<<<<< HEAD
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-=======
->>>>>>> 0ed5f7e (membuat algoritma search)
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(200 30 30 / var(--tw-text-opacity));
@@ -2867,13 +2859,12 @@ input:checked + .toggle-bg {
     width: 11rem;
   }
 
-<<<<<<< HEAD
-  .md\:max-w-5xl {
-    max-width: 64rem;
-=======
   .md\:w-11\/12 {
     width: 91.666667%;
->>>>>>> 16306cc (memisahkan transaksi pendapatan dan pengeluaran)
+  }
+
+  .md\:max-w-5xl {
+    max-width: 64rem;
   }
 
   .md\:max-w-3xl {
