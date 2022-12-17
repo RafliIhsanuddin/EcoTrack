@@ -54,13 +54,12 @@ foreach ($pengeluaran as $row) {
     $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
 }
 // $pendapatan = mysqli_query($conn, "SELECT * FROM pendapatan WHERE id_User = $iduser");
-
+echo $tkeluar;
 $tmasuk = 0;
 // foreach ($pengeluaran as $row) {
 //     $tmasuk = $tmasuk + $row['Jumlah_Barang'] * $row['Harga_Barang'];
 // }
-$total = $tkeluar + $tmasuk;
-// echo $total;
+
 ?>
 
 <!DOCTYPE html>
@@ -105,9 +104,9 @@ $total = $tkeluar + $tmasuk;
 
 
         <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-            <div class="w shadow-lg rounded-lg overflow-hidden">
-                <div class="py-3 px-5 bg-gray-50">Bar chart</div>
-                <canvas class="p-10" id="chartBar"></canvas>
+            <div class="w shadow-lg rounded-lg overflow-hidden mb-auto">
+                <div class="py-3 px-5 bg-gray-50">Arus transaksi</div>
+                <canvas class="p-10 " id="chartBar"></canvas>
             </div>
         </div>
         <!-- content -->
@@ -462,22 +461,25 @@ $total = $tkeluar + $tmasuk;
         </footer>
 
     </div>
+
+
+    <!-- Chart bar -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Chart bar -->
     <script>
-        const labelsBarChart = [
-            "total", "pendapatan", "pengeluaran",
+        const arus_kas = [
+            "pendapatan", "pengeluaran",
         ];
         const dataBarChart = {
-            labels: arus kas,
+            labels: arus_kas,
             datasets: [{
-                label: "My First dataset",
+                label: "arus_kas",
                 backgroundColor: "hsl(252, 82.9%, 67.8%)",
                 borderColor: "hsl(252, 82.9%, 67.8%)",
-                data: [<?php echo $total; ?>,<?php echo $tmasuk; ?> ,<?php echo $tkeluar; ?> ],
-        },],
-            };
+                data: [<?php echo $tmasuk ?>, <?php echo $tkeluar ?>],
+            },],
+        };
 
         const configBarChart = {
             type: "bar",

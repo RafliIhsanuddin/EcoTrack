@@ -3,7 +3,7 @@ require_once 'connect.php';
 require_once 'functions.php';
 
 
-$pengeluaran = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE id_User = $iduser");
+$pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $iduser");
 $total = 0;
 foreach ($pengeluaran as $row){
     $total = $total + $row['Jumlah_Barang'] * $row['Harga_Barang'];
