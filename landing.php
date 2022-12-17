@@ -81,8 +81,8 @@
                         dan melakukan pembukuan keuangan.
                     </p>
                     <div>
-                        <a href="register.html"
-                            class="px-5 py-2 font-bold bg-white text-evendarkerBlue text-center rounded-full">
+                        <a href="register.php"
+                            class="px-5 py-2 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
                             Daftar Sekarang
                         </a>
 
