@@ -6,6 +6,8 @@ session_start();
 
 $iduser = $_SESSION["idakun"];
 
+unset($_SESSION['idtrans']);
+
 
 $jumperhal = 5;
 $jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
@@ -25,16 +27,33 @@ $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
 $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
-$transbar = $_SESSION['transid']+1;
+$transbar = $_SESSION['transid'] + 1;
 
 
 $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
 // $var = querycoba("SELECT * FROM transaksi_pengeluaran");
 
 
-if(!isset($_SESSION['subpeng'])){
+if (!isset($_SESSION['subpeng'])) {
     $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar ";
     mysqli_query($conn, $query);
+}
+
+
+if (isset($_POST['cari'])) {
+    $var = cari($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    $zx = 0;
+    foreach ($var as $baris) {
+        $zx++;
+    }
+
+    if ($zx === 0) {
+        $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    }
+}
+
+if (isset($_POST['reset'])) {
+    $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
 }
 
 
@@ -66,6 +85,7 @@ if(!isset($_SESSION['subpeng'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     <title>Document</title>
     <!-- <style>
         *{
@@ -91,6 +111,22 @@ if(!isset($_SESSION['subpeng'])){
                             <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
                         </form>
                         <div id="contpeng" class="max-lg">
+                            <div class="flex">
+                                <div class="mx-auto">
+                                    <?php if ($halaktif > 1) : ?>
+                                        <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
+                                    <?php endif; ?>
+                                    <?php for ($i = 1; $i <= $jumhal; $i++) : ?>
+                                        <?php if ($i == $halaktif) : ?>
+                                            <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
+                                        <?php else : ?>
+                                            <a href="?halaman= <?= $i; ?>"><?= $i; ?></a>
+                                        <?php endif; ?>
+                                    <?php endfor; ?> <?php if ($halaktif < $jumhal) : ?>
+                                        <a href="?halaman= <?= $halaktif + 1; ?>">&raquo;</a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
@@ -176,6 +212,9 @@ if(!isset($_SESSION['subpeng'])){
             </div>
         </div>
     </div>
+
+    <!-- <script src="dashboard.js"></script> -->
+
 </body>
 
 </html>

@@ -50,6 +50,22 @@ if ($zx === 0) {
 
 ?>
 
+<div class="flex">
+    <div class="mx-auto">
+        <?php if ($halaktif > 1) : ?>
+            <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $jumhal; $i++) : ?>
+            <?php if ($i == $halaktif) : ?>
+                <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
+            <?php else : ?>
+                <a href="?halaman= <?= $i; ?>"><?= $i; ?></a>
+            <?php endif; ?>
+        <?php endfor; ?> <?php if ($halaktif < $jumhal) : ?>
+            <a href="?halaman= <?= $halaktif + 1; ?>">&raquo;</a>
+        <?php endif; ?>
+    </div>
+</div>
 <table class="w-full">
     <thead class="bg-gray-300 border-b-2 border-gray-500">
         <tr>

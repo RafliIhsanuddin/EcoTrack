@@ -11,6 +11,8 @@ $iduser = $_SESSION["idakun"];
 
 
 
+
+
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $nama = htmlspecialchars($_POST['nabar']);
     $harga = htmlspecialchars($_POST['habar']);
@@ -23,6 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$jumlah \r\n <br>";
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
+    $result = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE Nama_Barang = '$nama' AND Referensi = '$toko' ");
+    if(mysqli_fetch_assoc($result) ){
+        echo "<script>
+        alert('barang sudah terdafatar pada toko tersebut!');
+        document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' 
+        </script>";
+        return false;
+    }
+    
 
     $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
     $hasil = $conn->query($query);

@@ -35,6 +35,7 @@ $transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi =
 
 
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+    $idubah = htmlspecialchars($_POST['idubah']);
     $bukti = htmlspecialchars($_POST['buktit']);
     $status = htmlspecialchars($_POST['statust']);
     $jenis = htmlspecialchars($_POST['jenist']);
@@ -46,18 +47,25 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
 
-    $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
+
+    $query = "UPDATE `transaksi_pengeluaran` SET 
+    `jenis_Transaksi` = '$jenis',
+    `status_Transaksi` = '$status',
+    `tanggal_Transaksi` ='$tgl',
+    `bukti_Transaksi` = '$bukti'
+    WHERE Id_Transaksi = $idubah" 
+    ;
 
     $hasil = $conn->query($query);
 
     // var_dump(mysqli_affected_rows($conn));
 
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        echo "<script>alert('Data Transaksi Berhasil Diubah');
         document.location.href = 'transpeng.php' </script>";
         // echo "berhasil";
     } else {
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        echo "<script>alert('Data Transaksi Gagal Diubah');
         document.location.href = 'transpeng.php' </script>";
         // echo "gagal";
     }
@@ -120,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 <body class="bg-gradient-to-r from-[#D65DB1] via-[#FE9F86] to-[#FCE068] min-width-md">
     <div class="">
         <div class="bg-white rounded-xl">
+            
 
             <form action="#" method="POST">
                 <div class="">
@@ -129,22 +138,23 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 </div>
                 <div class="px-5">
                     <div class="bg-white rounded-2xl shadow-2xl mb-3 py-3 md:w-full container mx-auto sm:flex sm:flex-wrap sm:gap-2 sm:justify-center">
+                    <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi']?>">
                         <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
                             <input value="<?= $transaksi['bukti_Transaksi']?>" name="buktit" type="text" id="nama" placeholder="Bukti Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
-                        <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="jenist" type="text" id="nama" placeholder="Jenis Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                        <div class="sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
+                            <input value="<?= $transaksi['jenis_Transaksi']?>" name="jenist" type="text" id="nama" placeholder="Jenis Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
-                        <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="tglt" type="date" id="nama" placeholder="Tanggal Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                        <div class="sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
+                            <input value="<?= $transaksi['tanggal_Transaksi']?>" name="tglt" type="date" id="nama" placeholder="Tanggal Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
-                        <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="not" type="text" id="nama" placeholder="Nomor Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                        <div class="sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
+                            <input value="<?= $transaksi['no_Transaksi']?>" name="not" type="text" id="nama" placeholder="Nomor Transaksi" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
-                        <div class=" sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
-                            <input name="statust" type="text" id="nama" placeholder="Status" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
+                        <div class="sm:mb-0 py-0.5  sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto bg-white mb-2">
+                            <input value="<?= $transaksi['status_Transaksi']?>" name="statust" type="text" id="nama" placeholder="Status" required class="focus:ring-black shadow-lg bg-transparent border-[1.7px] border-black focus:border-black font-bold placeholder:text-slate-500 focus:text-black px-5 rounded-full w-full h-full">
                         </div>
-                        <div class=" sm:mb-0 border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto  mb-2 hover:opacity-[0.95] active:shadow-none mt-1">
+                        <div class="sm:mb-0 border-slate-200 sm:w-64 md:w-[400px] w-3/4 rounded-full mx-auto  mb-2 hover:opacity-[0.95] active:shadow-none mt-1">
                             <input name="" type="submit" id="submit" class="bg-[#9F73AB] py-1 shadow-lg text-2xl font-bold placeholder:text-black px-5 rounded-full w-full">
                         </div>
                     </div>
@@ -211,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi']; ?></td>
-                                        <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
+                                        <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapusubahpeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah2peng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
                                     </tr>
                                     <?php $j++ ?>

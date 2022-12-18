@@ -2,8 +2,12 @@
 
 require 'connect.php';
 require 'functions.php';
+session_start();
 
 $id = $_GET['id'];
+
+$_SESSION['idtrans'];
+
 
 $barang = querycoba("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
 // echo "<br>";
