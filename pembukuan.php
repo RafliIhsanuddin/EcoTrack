@@ -1,3 +1,7 @@
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +22,9 @@
     </style> -->
 </head>
 
-<body class="flex">
-
+<body>
     <div class="justify-center p-10 w-full h-full">
-        <form action="#" method="POST" id="register">
+        <form action="pdf.php" method="POST">
             <div class="w-1/2 mx-auto bg-white rounded-3xl shadow-2xl mt-16">
                 <div class="flex">
                     <div class="mx-auto pt-10 font-poppins font-medium text-xl">Pembukuan</div>
@@ -36,7 +39,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <input  datepicker type="text" name="awal"
+                        <input datepicker type="text" name="awal" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Select date">
                     </div>
@@ -51,36 +54,18 @@
                                     clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <input datepicker type="text" name="akhir"
+                        <input datepicker type="text" name="akhir" required
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Select date">
                     </div>
                 </div>
-                <div class="flex">
-                    <select name="cars" id="cars" class=" rounded-xl mx-auto px-[60px] md:px-[78px] lg:px-[82px] mb-10">
-                        <option value="pdf">pdf</option>
-                        <option value="word">word</option>
-                        <option value="excel">excel</option>
-                    </select>
-                </div>
-
-                <input name="cetak" type="submit" value="Cetak"
-                    class=" m-5 p-4 mb-4 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-            </div>
+                <input type="submit" name="html" value="Tampilkan Data Customer" class=" block py-2 px-4 text-sm
+                    text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" />
         </form>
-            <?php 
-                if(isset($_POST['cobacetak'])){
-                    include("cobacetak.php");
-                }
-                if(isset($_POST['pdf'])){
-                    header("location:pdf.php");
-                }
-            ?>
+    </div>
 
 
-        <script src="node_modules/flowbite/dist/datepicker.js"></script>
-
-
+    <script src="node_modules/flowbite/dist/datepicker.js"></script>
 
 </body>
 

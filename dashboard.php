@@ -7,6 +7,7 @@ require 'functions.php';
 //     header("location: login.php");
 // }
 
+
 if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
@@ -89,7 +90,7 @@ $tmasuk = 0;
                 <!-- nav menu -->
                 <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
                     <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
-                    <li><a href="pembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
+                    <li><a href="cobapembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
                     </li>
                     <li><a href="bantuan.php" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>
