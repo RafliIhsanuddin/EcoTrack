@@ -24,10 +24,10 @@
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="#" class="text-[#845EC2]">Home</a></li>
-                    <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
+                    <!-- <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li> -->
                     <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="login.html"
-                        class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
+                        class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
                     </a>
                 </ul>
@@ -93,6 +93,10 @@
                     </a> -->
                     </div>
                 </div>
+                <!-- right side -->
+                <div class="p-0 m-0">
+                    <img src="img/iconn.png" class="hidden absolute p-0 m-0 opacity-10 bottom-0 right-0 lg:flex lg:w-[600px]">
+                </div>
             </div>
         </div>
 
@@ -138,7 +142,7 @@
         </div>
 
         <!-- third -->
-        <div class="bg-gradient-to-br from-[#FF6F91] to-[#845EC2] h-fit">
+        <div class="bg-gradient-to-br from-[#FF6F91] to-[#845EC2]">
             <div class="container flex flex-col mx-auto justify-center min-w-full p-7">
                 <div class="mx-auto text-white space-y-28 m-14">
                     <h1 class="text-5xl font-semibold text-center">
@@ -164,12 +168,12 @@
                             <img src="img/kitty4.jpg" alt="" class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
                     </div>
-                    <div class="text-center">
-                        <a href="#"
-                            class="px-5 py-2 w-full font-bold bg-white text-evendarkerBlue text-center rounded-full">
+                    <!-- <div class="text-center">
+                        <a href="about.html"
+                            class="px-5 py-2 shadow-md w-full font-bold bg-white text-evendarkerBlue text-center rounded-full">
                             Discover More
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

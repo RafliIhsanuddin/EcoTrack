@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     `status_Transaksi` = '$status',
     `tanggal_Transaksi` ='$tgl',
     `bukti_Transaksi` = '$bukti'
+    `no_Transaksi` = '$no'
     WHERE Id_Transaksi = $idubah" 
     ;
 
