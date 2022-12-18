@@ -123,158 +123,18 @@
                 </div>
             </div>
 
-            <div class="m-8">
-                <div class="mb-4 border-b border-gray-200">
-                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
-                        data-tabs-toggle="#myTabContent" role="tablist">
-                        <li class="mr-2" role="presentation">
-                            <button class="inline-block p-4 rounded-t-lg border-b-2" id="general-tab"
-                                data-tabs-target="#general" type="button" role="tab" aria-controls="general"
-                                aria-selected="false">General</button>
-                        </li>
-                        <li class="mr-2" role="presentation">
-                            <button
-                                class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300"
-                                id="pendapatan-tab" data-tabs-target="#pendapatan" type="button" role="tab"
-                                aria-controls="pendapatan" aria-selected="false">Pendapatan</button>
-                        </li>
-                        <li class="mr-2" role="presentation">
-                            <button
-                                class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300"
-                                id="pengeluaran-tab" data-tabs-target="#pengeluaran" type="button" role="tab"
-                                aria-controls="pengeluaran" aria-selected="false">Pengeluaran</button>
-                        </li>
-                    </ul>
-                </div>
-                <div id="myTabContent">
-                    <!-- first tab -->
-                    <div class="hidden p-4 bg-white rounded-lg border border-gray-300 shadow-sm" id="general"
-                        role="tabpanel" aria-labelledby="general-tab">
-                        <div>
-                            <!-- table section -->
-                            <div class="flex w-full justify-center">
-                                <div class="p-5">
+            <div class="m-6">
 
-                                    <form action="" method="POST" target="" class="pt-5">
-                                        <input type="text" name="keyword" class="rounded-full border-gray-400 h-7 w-80 mb-3 placeholder:text-sm"
-                                            placeholder="Masukkan keyword..." autocomplete="off">
-                                        <button type="submit" name="cari"
-                                            class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[30px] w-20 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
-                                        <button type="reset" name="reset"
-                                            class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[30px] w-20 shadow-xl active:shadow-none active:bg-red-700">Reset</button>
-                                    </form>
-
-                                    <table class="w-full table-auto overflow-hidden rounded-lg pt-5">
-                                        <thead class="bg-transparent border-b border-gray-500">
-                                            <tr>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    No
-                                                </th>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    Transaksi
-                                                </th>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    Tanggal
-                                                </th>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    Jenis
-                                                </th>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    Status
-                                                </th>
-                                                <th
-                                                    class="px-2 py-2 text-sm font-bold tracking-wide text-center">
-                                                    Bukti
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="">
-                                            <tr class="">
-                                                <td>
-                                                    a
-                                                </td>
-                                                <td>
-                                                    b
-                                                </td>
-                                                <td>
-                                                    c
-                                                </td>
-                                                <td>
-                                                    d
-                                                </td>
-                                                <td>
-                                                    e
-                                                </td>
-                                                <td>
-                                                    f
-                                                </td>
-                                            </tr>
-
-                                            <tr class="">
-                                                <td>
-                                                    a
-                                                </td>
-                                                <td>
-                                                    b
-                                                </td>
-                                                <td>
-                                                    c
-                                                </td>
-                                                <td>
-                                                    d
-                                                </td>
-                                                <td>
-                                                    e
-                                                </td>
-                                                <td>
-                                                    f
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- edit hapus tambah -->
-                        <div class="flex py-1 mt-5 h-10 mx-auto min-w-full bg-transparent">
-                            <!-- nav menu -->
-                            <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                                <div><a href="#"
-                                        class="mx-2 px-10 md:mx-10 lg:mx-20 py-1 w-10 font-semibold bg-[#845EC2] hover:bg-[#643EA3] text-white rounded-full">
-                                        Edit
-                                    </a>
-                                </div>
-                                <div><a href="#"
-                                        class="mx-2 px-9 md:mx-10 lg:mx-20 py-1 w-10 font-semibold bg-[#845EC2] hover:bg-[#643EA3] text-white rounded-full">
-                                        Hapus
-                                    </a>
-                                </div>
-                                <div><a href="#"
-                                        class="mx-2 px-7 md:mx-10 lg:mx-20 py-1 w-10 font-semibold bg-[#845EC2] hover:bg-[#643EA3] text-white rounded-full">
-                                        Tambah
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="hidden p-4 bg-white rounded-lg border border-gray-300 shadow-sm" id="pendapatan"
-                        role="tabpanel" aria-labelledby="pendapatan-tab">
-
-                    </div>
-                    <div class="hidden p-4 bg-white rounded-lg border border-gray-300 shadow-sm" id="pengeluaran"
-                        role="tabpanel" aria-labelledby="pengeluaran-tab">
-
-                    </div>
-                </div>
+                <ul class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
+                    <li class="w-full">
+                        <a href="#" class="inline-block p-4 w-full text-gray-900 bg-gray-100 rounded-l-lg">Pendapatan</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="#" class="inline-block p-4 w-full text-gray-900 bg-white rounded-r-lg">Pengeluaran</a>
+                    </li>
+                </ul>
+            
             </div>
-
 
         </main>
 
