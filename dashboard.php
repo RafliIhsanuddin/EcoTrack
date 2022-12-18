@@ -17,7 +17,7 @@ $iduser = $_SESSION["idakun"];
 
 
 
-
+$tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pengeluaran");
 
 if ($tes->num_rows > 0) {
     while ($baris1 = $tes->fetch_assoc()) {
@@ -82,7 +82,7 @@ if ($tes->num_rows > 0) {
 
                 <!-- nav menu -->
                 <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
-                    <li><a href="dashboard.html" class="hover:text-lightGreen">Dashboard</a></li>
+                    <li><a href="dashboard.html" class="hover:text-lightGreen"><?=$iduser?></a></li>
                     <li><a href="#" class="hover:text-lightGreen">Pembukuan</a></li>
                     <li><a href="#" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>
@@ -102,8 +102,18 @@ if ($tes->num_rows > 0) {
 
 
         
-        <div class="tabs flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-            
+        <div class="tabs flex flex-wrap w-full mb-auto p-2 gap-x-1 bg-white">
+            <div>
+                <span class="">Pilih taransaksi</span>
+            </div>
+            <div>
+                <div>
+                    <a href="transpeng.php">Pengeluaran</a>
+                </div>
+                <div>
+                    <a href="transpend.php">Pendapatan</a>
+                </div>
+            </div>
 
         </div>
 

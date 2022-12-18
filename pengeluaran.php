@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // echo "$jumlah \r\n <br>";
     // echo "$satuan \r\n <br>";
     // echo "$toko \r\n <br>";
+    $_SESSION['subpeng'] = true;
 
     $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
 
@@ -48,11 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
-        document.location.href = 'dashboard.php' </script>";
+        document.location.href = 'transpeng.php' </script>";
         // echo "berhasil";
     } else {
         echo "<script>alert('Data Transaksi Gagal Ditambahkan');
-        document.location.href = 'dashboard.php' </script>";
+        document.location.href = 'transpeng.php' </script>";
         // echo "gagal";
     }
 

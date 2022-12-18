@@ -4,7 +4,9 @@ require 'connect.php';
 require 'functions.php';
 session_start();
 
-$id = $_GET['id'];
+$_SESSION['idtrans'] = $_GET['id'];
+
+$id = $_SESSION['idtrans'];
 
 $iduser = $_SESSION["idakun"];
 
@@ -52,11 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
-        document.location.href = 'pengeluaran.php' </script>";
+        document.location.href = 'transpeng.php' </script>";
         // echo "berhasil";
     } else {
         echo "<script>alert('Data Transaksi Gagal Ditambahkan');
-        document.location.href = 'pengeluaran.php' </script>";
+        document.location.href = 'transpeng.php' </script>";
         // echo "gagal";
     }
 
@@ -210,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Satuan']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><?php echo $baris['Referensi']; ?></td>
                                         <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="hapus.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
-                                        <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class="py-3 px-1 md:px-[5px] lg:px-[20px]"><a href="ubah2peng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>
@@ -226,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                         <a href="" class="bg-[#645CAA] py-[6px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Hapus</a>
                     </div>
                     <div class="flex md:mx-auto lg:mx-auto">
-                        <a href="pengtambah.php" class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
+                        <a href="ubahpengtambah.php" class="bg-[#645CAA] py-[7px] w-[300px] md:w-44 h-10 text-center my-2 md:my-4 mx-auto rounded-full hover:opacity-[0.95] active:shadow-none shadow-md">Tambah</a>
                     </div>
                 </div>
             </div>

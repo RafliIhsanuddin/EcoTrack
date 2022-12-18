@@ -1,28 +1,41 @@
 <?php
 
 require "functions.php";
+session_start();
 
 
-// $iduser = $_SESSION["idakun"];
+$iduser = $_SESSION["idakun"];
 
 
-// $jumperhal = 5;
-// $jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
-// $jumhal = ceil($jumdata / $jumperhal);
+$jumperhal = 5;
+$jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
+$jumhal = ceil($jumdata / $jumperhal);
 
 
-// $tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pengeluaran");
+$tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pengeluaran");
+
+if ($tes->num_rows > 0) {
+    while ($baris1 = $tes->fetch_assoc()) {
+        $_SESSION['transid'] = $baris1['MAX(id_Transaksi)'];
+    }
+}
 
 
-// $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+$halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
-// $awaldata = ($jumperhal * $halaktif) - $jumperhal;
+$awaldata = ($jumperhal * $halaktif) - $jumperhal;
+
+$transbar = $_SESSION['transid']+1;
 
 
+$var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
+// $var = querycoba("SELECT * FROM transaksi_pengeluaran");
 
 
-// $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
-$var = querycoba("SELECT * FROM transaksi_pengeluaran");
+if(!isset($_SESSION['subpeng'])){
+    $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar ";
+    mysqli_query($conn, $query);
+}
 
 
 
@@ -81,25 +94,28 @@ $var = querycoba("SELECT * FROM transaksi_pengeluaran");
                             <table class="w-full">
                                 <thead class="bg-gray-300 border-b-2 border-gray-500">
                                     <tr>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
                                             Nomor
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
                                             Jenis
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
                                             Status
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center ">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
+                                            Nomor Transaksi
+                                        </th>
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center ">
                                             Bukti
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center ">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center ">
                                             Ubah
                                         </th>
-                                        <th class="px-2 text-sm md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
                                             Hapus
                                         </th>
                                     </tr>
@@ -108,25 +124,28 @@ $var = querycoba("SELECT * FROM transaksi_pengeluaran");
                                     <?php $j = 1; ?>
                                     <?php foreach ($var as $baris) : ?>
                                         <tr class="">
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?= $j ?>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['tanggal_Transaksi']; ?>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['jenis_Transaksi']; ?>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['status_Transaksi']; ?>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                                <?php echo $baris['no_Transaksi']; ?>
+                                            </td>
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['bukti_Transaksi']; ?>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
                                             </td>
-                                            <td class="text-sm md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <a href="">Hapus</a>
                                             </td>
                                         </tr>
@@ -134,6 +153,23 @@ $var = querycoba("SELECT * FROM transaksi_pengeluaran");
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
+                    <!-- nav menu -->
+                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
+                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Edit
+                            </a>
+                        </div>
+                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Hapus
+                            </a>
+                        </div>
+                        <div><a href="pengeluaran.php" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                                Tambah
+                            </a>
                         </div>
                     </div>
                 </div>
