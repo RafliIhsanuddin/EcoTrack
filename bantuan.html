@@ -5,72 +5,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecotrack - Bantuan</title>
+    <title>Bantuan</title>
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="bg-gradient-to-br from-[#FF9671] to-[#D65DB1]">
+<body class="bg-gray-200">
+    <div class="flex flex-col justify-between">
 
-    <!-- header -->
-    <nav class="container hidden py-5 mx-auto min-w-full bg-transparent md:flex">
-        <!-- logo -->
-        <div class="py-1 ml-10 justify-start items-center">
-            <img src="img/ecotrack2.png" class="w-52">
-        </div>
-        <!-- nav menu -->
-        <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-            <li><a href="landing.html" class="hover:text-[#845EC2]">Home</a></li>
-            <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
-            <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
-            <a href="login.html"
+    <header>
+        <!-- header -->
+        <nav
+            class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
+            <!-- logo -->
+            <div class="py-1 ml-6 justify-start w-fit items-center">
+                <img src="img/ecotrack2.png" class="w-44">
+            </div>
+            <!-- nav menu -->
+            <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
+                </li>
+                <li><a href="pembukuan.html" class="hover:text-[#482C75]">Pembukuan</a></li>
+                <li><a href="bantuan.html" class="bg-white text-evendarkerBlue px-3 py-2 rounded-lg">Bantuan</a></li>
+                <!-- <a href="landing.html"
                 class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
-                Login
-            </a>
-        </ul>
-    </nav>
+                Logout
+            </a> -->
+            </ul>
 
-<!-- dropdown button -->
-<div class="flex">
+            <!-- dropdown button -->
+            <div class="flex">
 
-    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
-        class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:hidden"
-        type="button">
-        <div class="w-10 h-10 rounded-full bg-[#845EC2] flex"><img src="img/menudots.png"
-                class="mx-auto w-10 h-10 p-2" alt=""></div>
-    </button>
-</div>
+                <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
+                    class="text-white bg-transparent mr-4 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-0 text-center inline-flex items-center"
+                    type="button">
+                    <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/acc.png"
+                            class="mx-auto w-10 h-10 p-0" alt=""></div>
+                </button>
+            </div>
 
-<!-- Dropdown menu -->
-<div id="dropdownDivider"
-    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
-        <li>
-            <a href="landing.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
-        </li>
-        <li>
-            <a href="about.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
-        </li>
-        <li>
-            <a href="register.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
-        </li>
-    </ul>
-    <div class="py-1">
-        <a href="login.html"
-            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
-    </div>
-</div>
+            <!-- Dropdown menu -->
+            <div id="dropdownDivider"
+                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                    <li>
+                        <a href="akun.html"
+                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                    </li>
+                    <li>
+                        <a href="landing.html"
+                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- dropdown button -->
+        <div class="flex">
+
+            <button id="dropdownDividerButton2" data-dropdown-toggle="dropdownDivider2"
+                class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center md:hidden"
+                type="button">
+                <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/menudots.png"
+                        class="mx-auto w-10 h-10 p-2" alt=""></div>
+            </button>
+        </div>
+
+        <!-- Dropdown menu -->
+        <div id="dropdownDivider2"
+            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                <li>
+                    <a href="akun.html"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                </li>
+                <li>
+                    <a href="dashboard.html"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                    <a href="pembukuan.html"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                </li>
+            </ul>
+            <div class="py-1">
+                <a href="landing.html"
+                    class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+            </div>
+        </div>
+
+    </header>
 
     <!-- about section -->
-    <section>
-        <div class="container flex flex-col justify-center mt-10 p-10 mx-auto space-y-10 w-full h-full md:max-w-3xl bg-white rounded-lg text-center md:pt-0">
-            <div class="space-y-10">
-                <h1 class="text-5xl pt-10 font-semibold">
+    <main>
+        <div class="container flex flex-col justify-center mt-16 p-10 mx-auto space-y-10 w-3/4 h-full md:w-[700px] lg:w-[900px] bg-white rounded-lg shadow-sm text-center md:pt-0">
+            <div class="">
+                <h1 class="text-2xl pt-10 font-semibold">
                     FAQ
                 </h1>
-                <p>
+                <p class="text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates eos quia, vitae animi
                     saepe et sunt, officiis sint, unde consectetur quisquam quos id provident dolor facilis accusantium tempora cumque.
                 </p>
@@ -101,14 +133,14 @@
               </details>
 
               <div>
-                <textarea name="" id="" cols="60" rows="5" placeholder="Perlu bantuan?" class="w-3/4 rounded-lg"></textarea>
+                <textarea name="" id="" cols="60" rows="5" placeholder="Perlu bantuan?" class="w-3/4 text-sm rounded-lg"></textarea>
               </div>
               <a href="#"
-                            class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-1/3 mx-auto my-7 font-bold justify-center rounded-full md:w-1/4">Submit
+                            class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-1/3 mx-auto my-7 font-semibold justify-center rounded-full md:w-1/4">Submit
                         </a>
 
         </div>
-    </section>
+    </main>
 
     <!-- footer -->
     <footer>
@@ -143,6 +175,8 @@
 
         </div>
     </footer>
+
+    </div>
 
     <script src="node_modules/flowbite/dist/flowbite.js"></script>
 

@@ -2,14 +2,20 @@
 
 require 'connect.php';
 require 'functions.php';
+session_start();
+
+$iduser = $_SESSION["idakun"];
+
+$transid = $_SESSION['transid'];
+$transid++;
 
 $jumperhal = 5;
-$jumdata = count(query("SELECT * FROM pengeluaran"));
-$jumhal = ceil($jumdata/$jumperhal);
+$jumdata = count(querycoba("SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid"));
+$jumhal = ceil($jumdata / $jumperhal);
 
 $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
-$awaldata = ( $jumperhal * $halaktif)-$jumperhal;
+$awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
 // if(isset($_GET['halaman'])){
 //     $halaktif = $_GET['halaman'];
@@ -17,22 +23,53 @@ $awaldata = ( $jumperhal * $halaktif)-$jumperhal;
 //     $halaktif = 1;
 // }
 
+$var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid LIMIT $awaldata,$jumperhal";
+$hasil = $conn->query($var);
 
-$var = "SELECT * FROM pengeluaran LIMIT $awaldata,$jumperhal ";
-$hasil= $conn -> query($var);
+
+
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+    $bukti = htmlspecialchars($_POST['buktit']);
+    $status = htmlspecialchars($_POST['statust']);
+    $jenis = htmlspecialchars($_POST['jenist']);
+    $tgl = htmlspecialchars($_POST['tglt']);
+    $no = htmlspecialchars($_POST['not']);
+    // echo "$nama \r\n <br>";
+    // echo "$harga \r\n <br>";
+    // echo "$jumlah \r\n <br>";
+    // echo "$satuan \r\n <br>";
+    // echo "$toko \r\n <br>";
+
+    $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`, `tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$tgl','$bukti','$iduser')";
+
+    $hasil = $conn->query($query);
+
+    // var_dump(mysqli_affected_rows($conn));
+
+    if (mysqli_affected_rows($conn) > 0) {
+        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        document.location.href = 'dashboard.php' </script>";
+        // echo "berhasil";
+    } else {
+        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        document.location.href = 'dashboard.php' </script>";
+        // echo "gagal";
+    }
+
+
+
+    // header("Location: pengeluaran.php");
+
+    // echo $hasil;
+
+
+
+
+}
+
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>

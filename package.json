@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "flowbite": "^1.5.4",
+    "jquery": "^3.6.2",
     "tw-elements": "^1.0.0-alpha13"
   }
 }
