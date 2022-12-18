@@ -1,59 +1,31 @@
 <?php
 
-require_once('connect.php');
+require 'connect.php';
+require 'functions.php';
 session_start();
 
+$id = $_GET['id'];
+
+$_SESSION['idtrans'];
 
 
-$transid = $_SESSION['idtrans'];
-
-$iduser = $_SESSION["idakun"];
+$barang = querycoba("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
 
 
 
-
-
-if (isset($_POST['submit'])) {
-    $nama = htmlspecialchars($_POST['nabar']);
-    $harga = htmlspecialchars($_POST['habar']);
-    $jumlah = htmlspecialchars($_POST['jumbar']);
-    $satuan = htmlspecialchars($_POST['satuan']);
-    $toko = htmlspecialchars($_POST['toko']);
-
-    $result = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE Nama_Barang = '$nama' AND Referensi = '$toko' AND id_Transaksi = '$transid'");
-    if(mysqli_fetch_assoc($result) ){
-        echo "<script>
-        alert('barang sudah terdafatar pada toko tersebut!');
-        document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' 
-        </script>";
-        return false;
-    }
-    
-
-    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
-    $hasil = $conn->query($query);
-    if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+if(isset($_POST["submit"])){
+    if( ubah($_POST) > 0 ){
+        echo "<script>alert('Data Transaksi Berhasil Diubah');
         document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
-    } else {
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+    }else{
+        echo "<script>alert('Data Transaksi Gagal Diubah');
         document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
     }
-
-
-
-
-
 }
 
+
+
 ?>
-
-
-
-
-
-
-
 
 
 
@@ -167,24 +139,25 @@ if (isset($_POST['submit'])) {
                     <!-- form pengeluaran -->
                     <form action="" method="POST">
                         <div class="flex p-8 mb-3 mt-2 lg:mt-14 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
+                        <input type="hidden" name="id" value="<?= $barang['Id_Barang']?>">
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Nama Barang" required name="nabar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="nabar">
+                                <input type="text" placeholder="Nama Barang" required name="nabar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="nabar" value="<?= $barang['Nama_Barang']?>">
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Harga Barang" required name="habar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="habar">
+                                <input type="text" placeholder="Harga Barang" required name="habar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="habar" value="<?= $barang['Harga_Barang']?>">
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar">
+                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Satuan" required name="satuan" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="satuan">
+                                <input type="text" placeholder="Satuan" required name="satuan" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="satuan" value="<?= $barang['Satuan']?>">
                             </div>
                             <div class="mx-auto">
-                                <input type="text" placeholder="Referensi/Toko" required name="toko" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="toko">
+                                <input type="text" placeholder="Referensi/Toko" required name="toko" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="toko" value="<?= $barang['Referensi']?>">
                             </div>
                             <div class="mx-auto">
                                 <button type="submit" id="submit" name="submit" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm border border-gray-300 px-5 rounded-full w-[280px] h-10">

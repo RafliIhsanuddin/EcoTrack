@@ -8,6 +8,10 @@ $iduser = $_SESSION["idakun"];
 
 unset($_SESSION['idtrans']);
 
+if(isset($_POST["cari"])){
+    $keyword = $_POST['keyword'];
+    $_SESSION['keyword'] = $keyword;
+}
 
 $jumperhal = 5;
 $jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
@@ -29,9 +33,76 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
 $transbar = $_SESSION['transid'] + 1;
 
+// $jumlahlink = 2;
+// if($halaktif > $jumlahlink){
+//     $angmul = $halaktif - $jumlahlink;
+// }else{
+//     $angmul = 1;
+// }
+
+
+// if($halaktif < $jumhal - $jumlahlink){
+//     $angakh = $halaktif + $jumlahlink;
+// }else{
+//     $angakh = $jumhal;
+// }
+
 
 $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
+
 // $var = querycoba("SELECT * FROM transaksi_pengeluaran");
+
+if (isset($_POST['cari'])) {
+    $keyword = $_POST['keyword'];
+    $_SESSION['keyword'] = $keyword;
+    
+    // $jumdataseb = count(cariseb($_POST["keyword"], "transaksi_pengeluaran", $iduser));
+    // $jumhal = ceil($jumdataseb / $jumperhal);
+    // $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+    // $awaldata = ($jumperhal * $halaktif) - $jumperhal;
+    // $var = cari($_SESSION['keyword'],"transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    // $zx = 0;
+    // foreach ($var as $baris) {
+    //     $zx++;
+    // }
+
+    // if ($zx === 0) {
+    //     $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    // }
+}else{
+    $keyword = $_SESSION['keyword'];
+}
+
+
+$jumdataseb = count(cariseb($keyword, "transaksi_pengeluaran", $iduser));
+$jumhal = ceil($jumdataseb / $jumperhal);
+
+$jumlahlink = 2;
+if($halaktif > $jumlahlink){
+    $angmul = $halaktif - $jumlahlink;
+}else{
+    $angmul = 1;
+}
+
+
+if($halaktif < $jumhal - $jumlahlink){
+    $angakh = $halaktif + $jumlahlink;
+}else{
+    $angakh = $jumhal;
+}
+
+
+$var = cari($_SESSION['keyword'],"transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+
+    $zx = 0;
+    foreach ($var as $baris) {
+        $zx++;
+    }
+
+    if ($zx === 0) {
+        $var = cariBarang($_SESSION['keyword'], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    }
+
 
 
 if (!isset($_SESSION['subpeng'])) {
@@ -40,21 +111,11 @@ if (!isset($_SESSION['subpeng'])) {
 }
 
 
-if (isset($_POST['cari'])) {
-    $var = cari($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-    $zx = 0;
-    foreach ($var as $baris) {
-        $zx++;
-    }
 
-    if ($zx === 0) {
-        $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-    }
-}
 
-if (isset($_POST['reset'])) {
-    $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
-}
+// if (isset($_POST['reset'])) {
+//     $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
+// }
 
 
 
@@ -87,6 +148,11 @@ if (isset($_POST['reset'])) {
     <link rel="stylesheet" href="output.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     <title>Document</title>
+    <script>
+        if (window.history.neplacestate) {
+            window.history.replacestate(null, null, window.location.href);
+        }
+    </script>
     <!-- <style>
         *{
             border: 1px solid black;
@@ -106,9 +172,9 @@ if (isset($_POST['reset'])) {
                 <div class="flex w-full justify-center">
                     <div class="p-2">
                         <form action="" id="formpeng" method="POST">
-                            <input type="text" id="transpeng" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off">
+                            <input type="text" id="transpeng" name="keyword" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off" value="<?php echo $keyword ?>">
                             <button type="submit" id="cari" name="cari" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
-                            <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button>
+                            <!-- <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button> -->
                         </form>
                         <div id="contpeng" class="max-lg">
                             <div class="flex">
@@ -116,7 +182,7 @@ if (isset($_POST['reset'])) {
                                     <?php if ($halaktif > 1) : ?>
                                         <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
                                     <?php endif; ?>
-                                    <?php for ($i = 1; $i <= $jumhal; $i++) : ?>
+                                    <?php for ($i = $angmul; $i <= $angakh; $i++) : ?>
                                         <?php if ($i == $halaktif) : ?>
                                             <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
                                         <?php else : ?>
@@ -157,7 +223,7 @@ if (isset($_POST['reset'])) {
                                     </tr>
                                 </thead>
                                 <tbody class="bg-gray-100">
-                                    <?php $j = 1; ?>
+                                    <?php $j = 1 + $awaldata; ?>
                                     <?php foreach ($var as $baris) : ?>
                                         <tr class="">
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
@@ -175,8 +241,8 @@ if (isset($_POST['reset'])) {
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['no_Transaksi']; ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
-                                                <?php echo $baris['bukti_Transaksi']; ?>
+                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><img src="upload/<?php echo $baris['bukti_Transaksi']; ?>" alt="" width="50">
+
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>

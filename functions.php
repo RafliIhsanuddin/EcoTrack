@@ -2,8 +2,6 @@
 require 'connect.php';
 
 
-
-
 function hapus($id) {
     global $conn;
     mysqli_query($conn,"DELETE FROM pengeluaran WHERE Id_Barang = $id");
@@ -87,10 +85,22 @@ function cari($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
 
     return querycoba($query);
 }
+function cariseb($keyword,$namatabel,$iduser){
+    $query = "SELECT * FROM $namatabel WHERE id_User = $iduser 
+    AND tanggal_Transaksi 
+    LIKE '%$keyword%' 
+    OR status_Transaksi 
+    LIKE '%$keyword%' 
+    OR jenis_Transaksi
+    LIKE '%$keyword%' 
+    ";
+
+    return querycoba($query);
+}
 
 
 function cariBarang($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
-    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser
+    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi,$namatabel.no_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser
     AND pengeluaran.Nama_Barang 
     LIKE '%$keyword%' 
     OR pengeluaran.Referensi 
@@ -103,6 +113,23 @@ function cariBarang($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
     LIKE '%$keyword%' 
     GROUP BY $namatabel.id_Transaksi 
     LIMIT $awaldata,$jumperhal";
+
+    return querycoba($query);
+}
+
+function cariBarangseb($keyword,$namatabel,$iduser){
+    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi,$namatabel.no_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser
+    AND pengeluaran.Nama_Barang 
+    LIKE '%$keyword%' 
+    OR pengeluaran.Referensi 
+    LIKE '%$keyword%'
+    OR $namatabel.tanggal_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.status_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.jenis_Transaksi
+    LIKE '%$keyword%' 
+    GROUP BY $namatabel.id_Transaksi ";
 
     return querycoba($query);
 }
@@ -133,6 +160,76 @@ function ubah($data){
     return mysqli_affected_rows($conn);
 }
 
+
+
+function upload(){
+
+    $namaFile = $_FILES['buktit']['name'];
+    $ukuranFile = $_FILES['buktit']['size'];
+    $error = $_FILES['buktit']['error'];
+    $tmpname = $_FILES['buktit']['tmp_name'];
+
+    if($error === 4){
+        echo "<script> 
+        alert('pilih gambar terlebih dahulu')
+        </script>
+        ";
+        return false;
+    }
+
+    $EksistensiGambarValid = ['jpeg', 'jpg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if(!in_array($ekstensiGambar,$EksistensiGambarValid)){
+        echo "<script> 
+        alert('yang anda upload bukan gambar')
+        </script>
+        ";
+        return false;
+    }
+
+    if($ukuranFile > 1000000){
+        echo "<script> 
+        alert('ukuran gambar terlalu besar')
+        </script>
+        ";
+        return false;
+    }
+
+    move_uploaded_file($tmpname, 'upload/'.$namaFile);
+
+    return $namaFile;
+
+
+}
+
+
+
+
+function tambahbarpeng($data,$iduser){
+    global $conn;
+    
+    // $bukti = htmlspecialchars($_POST['buktit']);
+    
+    
+    $status = htmlspecialchars($data['statust']);
+    $jenis = htmlspecialchars($data['jenist']);
+    $tgl = htmlspecialchars($data['tglt']);
+    $no = htmlspecialchars($data['not']);
+    
+
+    $bukti = upload();
+    if(!$bukti){
+        return false;
+    }
+
+    $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`,`no_Transaksi`,`tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$no','$tgl','$bukti','$iduser')";
+
+    mysqli_query($conn, $query);
+
+
+    return mysqli_affected_rows($conn);
+}
 
 
 
