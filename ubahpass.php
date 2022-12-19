@@ -1,3 +1,8 @@
+<?php
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,8 @@
     <div class="flex flex-col h-screen justify-between">
 
         <!-- header -->
-        <nav class="container hidden py-5 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
+        <nav
+            class="container hidden py-5 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
             <!-- logo -->
             <div class="py-1 ml-10 justify-start items-center">
                 <img src="img/ecotrack2.png" class="w-52">
@@ -72,7 +78,7 @@
                         Informasi dasar terkait akun pengguna.
                     </p>
                 </div>
-                
+
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Nama</p>
                     <p>Nama disini</p>
@@ -87,11 +93,12 @@
                     <p class="text-sm text-gray-400 font-semibold">Email</p>
                     <p>Email disini</p>
                 </div>
-                
+
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Password</p>
                     <p>Password disini</p>
-                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah password?</a>
+                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah
+                        password?</a>
                 </div>
 
                 <div class="space-y-2 text-left mb-7 pt-10">
@@ -99,7 +106,7 @@
                         Contact Info
                     </h2>
                 </div>
-                
+
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Email</p>
                     <p>Email disini</p>

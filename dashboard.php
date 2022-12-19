@@ -55,7 +55,7 @@ foreach ($pengeluaran as $row) {
     $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
 }
 // $pendapatan = mysqli_query($conn, "SELECT * FROM pendapatan WHERE id_User = $iduser");
-echo $tkeluar;
+// echo $tkeluar;
 $tmasuk = 0;
 // foreach ($pengeluaran as $row) {
 //     $tmasuk = $tmasuk + $row['Jumlah_Barang'] * $row['Harga_Barang'];
@@ -90,7 +90,7 @@ $tmasuk = 0;
                 <!-- nav menu -->
                 <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
                     <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
-                    <li><a href="cobapembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
+                    <li><a href="pembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
                     </li>
                     <li><a href="bantuan.php" class="hover:text-lightGreen">Bantuan</a></li>
                 </ul>

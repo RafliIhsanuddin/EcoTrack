@@ -17,12 +17,20 @@ ON pengeluaran.id_Transaksi = transaksi_pengeluaran.id_Transaksi
 WHERE  transaksi_pengeluaran.id_User = $id AND tanggal_Transaksi BETWEEN '$awal'  AND '$akhir' "
 );
 // $q1 = mysqli_query($conn, " ");
-
+$pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $id");
+$tkeluar = 0;
+foreach ($pengeluaran as $row) {
+    $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
+}
 use Mpdf\Mpdf;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$mpdf = new \Mpdf\Mpdf();
+$mpdf = new Mpdf([
+    'mode' => 'utf-8',
+    'format' => 'A4-L',
+    'orientation' => 'L'
+]);
 $html = '<!DOCTYPE html>
 <html lang="en">
 
@@ -40,30 +48,37 @@ $html = '<!DOCTYPE html>
     th {
         background-color: #dedede;
         color: #333333;
+        margin: auto;
         font-weight: bold;
     }
-
+    td{
+        margin: auto;
+        text-align: center;
+    }
     table {
         border-collapse: collapse;
+        margin: auto;
+        padding: 10px;
         width: 100%;
     }
     </style>
 
 </head>
 <body>
+<h3>Pengeluaran</h3>
 <table border="1">
-    <legend>Pengeluaran</legend>
+
     <thead>
         <tr>
-            <th style="width:5%">No.</th>
-            <th style="width:5%">Id Transaksi</th>
+            <th style="width:4%">No.</th>
+            <th style="width:6%">No transaksi</th>
             <th style="width:10%">Jenis Transaksi</th>
-            <th style="width:10%">tanggal</th>
+            <th style="width:10%">Tanggal</th>
             <th style="width:10%">Nama barang</th>
-            <th style="width:10%">harga barang</th>
-            <th style="width:5%">Jumlah barang</th>
-            <th style="width:5%">satuan</th>
-            <th style="width:5%">total harga barang</th>
+            <th style="width:15%">Harga barang</th>
+            <th style="width:10%">Jumlah barang</th>
+            <th style="width:10%">Satuan</th>
+            <th style="width:15%">Total harga barang</th>
             <th style="width:10%">Referensi</th>
         </tr>
     </thead>
@@ -73,23 +88,63 @@ $i = 1;
 while ($r2 = mysqli_fetch_assoc($q2)) {
     $total = $r2['Jumlah_Barang'] * $r2['Harga_Barang'];
     $html .= ' <tr>
-            <td style="width:5%">' . $i++ . '</td>
-            <td style="width:5%">' . $r2['id_Transaksi'] . '</td>
+            <td style="width:4%">' . $i++ . '</td>
+            <td style="width:6%">' . $r2['no_Transaksi'] . '</td>
             <td style="width:10%">' . $r2['jenis_Transaksi'] . '</td>
             <td style="width:10%">' . $r2['tanggal_Transaksi'] . '</td>
             <td style="width:10%">' . $r2['Nama_Barang'] . '</td>
-            <td style="width:10%">' . $r2['Harga_Barang'] . '</td>
+            <td style="width:15%">' . rupiah($r2['Harga_Barang']) . '</td>
             <td style="width:10%">' . $r2['Jumlah_Barang'] . '</td>
             <td style="width:10%">' . $r2['Satuan'] . '</td>
-            <td style="width:10%">' . $total . '</td>
+            <td style="width:15%">' . rupiah($total) . '</td>
             <td style="width:10%">' . $r2['Referensi'] . '</td>
-            <tr>';
+            </tr>
+            <tr>
+            <td colspan="8"> pengeluaran </td>
+            <td colspan="2">' . rupiah($tkeluar) . '</td>
+            </tr>';
 }
 $html .= '
     </tbody>
     </table>
-</body>
+
+    <h3>pendapatan</h3>
+    <table border="1">
+    <thead>
+        <tr>
+            <th style="width:4%">No.</th>
+            <th style="width:6%">Id Transaksi</th>
+            <th style="width:10%">Jenis Transaksi</th>
+            <th style="width:10%">Tanggal</th>
+            <th style="width:10%">Nama barang</th>
+            <th style="width:15%">Harga barang</th>
+            <th style="width:10%">Jumlah barang</th>
+            <th style="width:10%">Satuan</th>
+            <th style="width:15%">Total harga barang</th>
+            <th style="width:10%">Referensi</th>
+        </tr>
+    </thead>
+    <tbody>';
+$j = 1;
+while ($r2 = mysqli_fetch_assoc($q2)) {
+    $total = $r2['Jumlah_Barang'] * $r2['Harga_Barang'];
+    $html .= ' <tr>
+            <td style="width:4%">' . $i++ . '</td>
+            <td style="width:6%">' . $r2['id_Transaksi'] . '</td>
+            <td style="width:10%">' . $r2['jenis_Transaksi'] . '</td>
+            <td style="width:10%">' . $r2['tanggal_Transaksi'] . '</td>
+            <td style="width:10%">' . $r2['Nama_Barang'] . '</td>
+            <td style="width:15%">' . rupiah($r2['Harga_Barang']) . '</td>
+            <td style="width:10%">' . $r2['Jumlah_Barang'] . '</td>
+            <td style="width:10%">' . $r2['Satuan'] . '</td>
+            <td style="width:15%">' . rupiah($total) . '</td>
+            <td style="width:10%">' . $r2['Referensi'] . '</td>
+            <tr>';
+}
+$html .= '</tbody>
+    </table>
+    </body>
 </html>
 ';
 $mpdf->WriteHTML($html);
-$mpdf->Output('Pembukuan-transaksi-pengeluaran.pdf', \Mpdf\Output\Destination::INLINE);
+$mpdf->Output('Pembukuan-transaksi.pdf', \Mpdf\Output\Destination::INLINE);

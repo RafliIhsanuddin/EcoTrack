@@ -1,8 +1,7 @@
 <?php
 session_start();
 ob_start();
-// $awal = date_format(date_create($_POST["awal"]), "Y-m-d");
-// $akhir = date_format(date_create($_POST["akhir"]), "Y-m-d");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +16,6 @@ ob_start();
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,800;1,300&display=swap"
         rel="stylesheet">
     <title>EcoTrack-Pembukuan</title>
-    <!-- <style>
-        * {
-            border: 1px solid black;
-        }
-    </style> -->
 </head>
 
 <body>

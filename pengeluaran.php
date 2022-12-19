@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                                     <?php echo $baris['Nama_Barang']; ?>
                                 </td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]">
-                                    <?php echo $baris['Harga_Barang']; ?>
+                                    <?php echo rupiah($baris['Harga_Barang']); ?>
                                 </td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]">
                                     <?php echo $baris['Jumlah_Barang']; ?>
@@ -217,7 +217,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                                     <?php echo $baris['Satuan']; ?>
                                 </td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]">
-                                    <?php echo $baris['Jumlah_Barang'] * $baris['Satuan']; ?>
+                                    <?php echo rupiah($baris['Jumlah_Barang'] * $baris['Harga_Barang']); ?>
                                 </td>
                                 <td class="py-3 px-1 md:px-[5px] lg:px-[20px]">
                                     <?php echo $baris['Referensi']; ?>
