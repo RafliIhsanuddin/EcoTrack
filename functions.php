@@ -212,8 +212,7 @@ function upload(){
 
     move_uploaded_file($tmpname, 'upload/'.$namaFileBaru);
 
-    return $namaFile;
-
+    return $namaFileBaru;
 
 }
 

@@ -307,7 +307,8 @@ if (!isset($_SESSION['subpeng'])) {
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['no_Transaksi']; ?>
                                             </td>
-                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><a href="upload/<?php echo $baris['bukti_Transaksi']; ?>">lihat Bukti</a>
+                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                                <a href="upload/<?php echo $baris['bukti_Transaksi']; ?>">lihat Bukti</a>
 
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
