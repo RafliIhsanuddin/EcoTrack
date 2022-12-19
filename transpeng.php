@@ -102,6 +102,9 @@ if ($zx === 0) {
 
 
 if (!isset($_SESSION['subpeng'])) {
+    echo "<script>
+        alert('data barang dan transaksi gagal ditambahkan,tekan submit terlebih dahulu pada transaksi');
+        </script>";
     $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar";
     mysqli_query($conn, $query);
 }
