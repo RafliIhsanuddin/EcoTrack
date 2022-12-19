@@ -14,7 +14,7 @@ function hapus($id) {
 function hapustransbar($id){
     global $conn;
     mysqli_query($conn,"DELETE FROM pengeluaran WHERE Id_Transaksi = $id");
-    mysqli_query($conn,"DELETE FROM transaksipengeluaran WHERE Id_Transaksi = $id");
+    mysqli_query($conn,"DELETE FROM transaksi_pengeluaran WHERE Id_Transaksi = $id");
     return mysqli_affected_rows($conn);
 }
 
