@@ -66,8 +66,15 @@ if (isset($_POST['cari'])) {
     //     $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
     // }
 } else {
-    $keyword = "";
+    // $keyword = $_SESSION['keyword'];
+    if(isset($_SESSION['keyword'])){
+        $keyword = $_SESSION['keyword'];
+    }else{
+        $keyword = "";
+    }
+    
 }
+
 
 
 $jumdataseb = count(cariseb($keyword, "transaksi_pengeluaran", $iduser));
