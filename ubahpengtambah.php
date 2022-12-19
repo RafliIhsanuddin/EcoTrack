@@ -20,6 +20,8 @@ if (isset($_POST['submit'])) {
     $satuan = htmlspecialchars($_POST['satuan']);
     $toko = htmlspecialchars($_POST['toko']);
 
+    $_SESSION['tambar'] = true;
+
     $result = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE Nama_Barang = '$nama' AND Referensi = '$toko' AND id_Transaksi = '$transid'");
     if(mysqli_fetch_assoc($result) ){
         echo "<script>
@@ -33,10 +35,10 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
     $hasil = $conn->query($query);
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        echo "<script>alert('Barang Berhasil Ditambahkan');
         document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
     } else {
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        echo "<script>alert('Barang Gagal Ditambahkan');
         document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
     }
 

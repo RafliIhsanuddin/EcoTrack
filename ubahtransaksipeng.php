@@ -65,9 +65,16 @@ if (isset($_POST['submit'])) {
         document.location.href = 'transpeng.php' </script>";
         // echo "berhasil";
     } else {
-        echo "<script>alert('Data Transaksi Gagal Diubah');
-        document.location.href = 'transpeng.php' </script>";
-        // echo "gagal";
+        if (isset($_SESSION['tambar'])) {
+            echo "<script>alert('Data Barang Berhasil Diubah');
+            </script>";
+            echo "<script>alert('Data Transaksi Gagal Diubah');
+            document.location.href = 'transpeng.php' </script>";
+            unset($_SESSION['tambar']);
+        } else {
+            echo "<script>alert('Data Barang Gagal Diubah');
+            document.location.href = 'transpeng.php' </script>";
+        }
     }
 }
 
@@ -84,6 +91,8 @@ if ($halaktif < $jumhal - $jumlahlink) {
 } else {
     $angakh = $jumhal;
 }
+
+
 
 
 ?>

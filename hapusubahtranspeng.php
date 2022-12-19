@@ -12,13 +12,13 @@ $_SESSION['idtrans'];
 
 if( hapus($id) > 0){
     echo "<script>
-            alert('Data Transaksi Berhasil dihapus!');
+            alert('Barang Berhasil dihapus!');
             document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' 
         </script>"
     ;
 }else{
     echo "<script>
-            alert('Data Transaksi Gagal dihapus!');
+            alert('Barang Gagal dihapus!');
             document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' 
         </script>"
     ;
