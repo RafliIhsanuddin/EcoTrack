@@ -66,7 +66,7 @@ if (isset($_POST['cari'])) {
     //     $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
     // }
 } else {
-    $keyword = $_SESSION['keyword'];
+    $keyword = "";
 }
 
 
@@ -96,7 +96,7 @@ foreach ($var as $baris) {
 }
 
 if ($zx === 0) {
-    $var = cariBarang($_SESSION['keyword'], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+    $var = cariBarang($keyword, "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
 }
 
 
