@@ -35,23 +35,30 @@ $transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi =
 
 if (isset($_POST['submit'])) {
     $idubah = htmlspecialchars($_POST['idubah']);
-    $bukti = htmlspecialchars($_POST['buktit']);
     $status = htmlspecialchars($_POST['statust']);
     $jenis = htmlspecialchars($_POST['jenist']);
     $tgl = htmlspecialchars($_POST['tglt']);
     $no = htmlspecialchars($_POST['not']);
+    $buktilama = htmlspecialchars($_POST['buktiLama']);
 
+    if($_FILES['buktit']['error'] === 4 ){
+        $bukti = $buktilama;
+    }else{
+        $bukti = upload();
+    }
+
+    
 
     $query = "UPDATE `transaksi_pengeluaran` SET 
     `jenis_Transaksi` = '$jenis',
     `status_Transaksi` = '$status',
     `tanggal_Transaksi` ='$tgl',
-    `bukti_Transaksi` = '$bukti'
+    `bukti_Transaksi` = '$bukti',
     `no_Transaksi` = '$no'
-    WHERE Id_Transaksi = $idubah" 
-    ;
+    WHERE Id_Transaksi = $idubah";
 
-    $hasil = $conn->query($query);
+    mysqli_query($conn, $query);
+    
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Diubah');
@@ -180,11 +187,14 @@ if($halaktif < $jumhal - $jumlahlink){
                 <div class="flex mx-auto container flex-col">
 
                     <!-- form transaksi -->
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype=multipart/form-data>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                         <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi']?>">
+                        <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi']?>">
                             <div class="mx-auto">
-                                <input name="buktit" type="file" value="<?= $transaksi['bukti_Transaksi']?>" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
+                                <input name="buktit" type="file" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
+                                <div>Gambar Lama</div>
+                                <img class="w-48" src="upload/<?= $transaksi['bukti_Transaksi']?>" alt="">
                             </div>
                             <div class="mx-auto">
                                 <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi']?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">

@@ -9,6 +9,16 @@ function hapus($id) {
 }
 
 
+
+
+function hapustransbar($id){
+    global $conn;
+    mysqli_query($conn,"DELETE FROM pengeluaran WHERE Id_Transaksi = $id");
+    mysqli_query($conn,"DELETE FROM transaksipengeluaran WHERE Id_Transaksi = $id");
+    return mysqli_affected_rows($conn);
+}
+
+
 function querycoba($query){
     global $conn;
     $result = mysqli_query($conn, $query);
@@ -196,7 +206,11 @@ function upload(){
         return false;
     }
 
-    move_uploaded_file($tmpname, 'upload/'.$namaFile);
+    $namaFileBaru = uniqid();
+    $namaFileBaru .='.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpname, 'upload/'.$namaFileBaru);
 
     return $namaFile;
 

@@ -241,14 +241,14 @@ if (!isset($_SESSION['subpeng'])) {
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['no_Transaksi']; ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><img src="upload/<?php echo $baris['bukti_Transaksi']; ?>" alt="" width="50">
+                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><img src="upload/<?php echo $baris['bukti_Transaksi']; ?>" alt="">
 
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
-                                                <a href="">Hapus</a>
+                                                <a href="hapustransaksi.php?id=<?= $baris['id_Transaksi']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a>
                                             </td>
                                         </tr>
                                         <?php $j++ ?>
