@@ -41,13 +41,13 @@ if (isset($_POST['submit'])) {
     $no = htmlspecialchars($_POST['not']);
     $buktilama = htmlspecialchars($_POST['buktiLama']);
 
-    if($_FILES['buktit']['error'] === 4 ){
+    if ($_FILES['buktit']['error'] === 4) {
         $bukti = $buktilama;
-    }else{
+    } else {
         $bukti = upload();
     }
 
-    
+
 
     $query = "UPDATE `transaksi_pengeluaran` SET 
     `jenis_Transaksi` = '$jenis',
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
     WHERE Id_Transaksi = $idubah";
 
     mysqli_query($conn, $query);
-    
+
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Diubah');
@@ -72,16 +72,16 @@ if (isset($_POST['submit'])) {
 }
 
 $jumlahlink = 2;
-if($halaktif > $jumlahlink){
+if ($halaktif > $jumlahlink) {
     $angmul = $halaktif - $jumlahlink;
-}else{
+} else {
     $angmul = 1;
 }
 
 
-if($halaktif < $jumhal - $jumlahlink){
+if ($halaktif < $jumhal - $jumlahlink) {
     $angakh = $halaktif + $jumlahlink;
-}else{
+} else {
     $angakh = $jumhal;
 }
 
@@ -189,32 +189,32 @@ if($halaktif < $jumhal - $jumlahlink){
                     <!-- form transaksi -->
                     <form action="" method="POST" enctype=multipart/form-data>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
-                        <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi']?>">
-                        <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi']?>">
+                            <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">
+                            <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi'] ?>">
                             <div class="mx-auto">
                                 <input name="buktit" type="file" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
                                 <div>Gambar Lama</div>
-                                <img class="w-48" src="upload/<?= $transaksi['bukti_Transaksi']?>" alt="">
+                                <img class="w-48" src="upload/<?= $transaksi['bukti_Transaksi'] ?>" alt="">
                             </div>
                             <div class="mx-auto">
-                                <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi']?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi'] ?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                             </div>
 
                             <div class="relative mx-auto">
-                                <input name="tglt" type="date" value="<?= $transaksi['tanggal_Transaksi']?>" name="tglt" class="bg-white border border-gray-300 text-gray-900 text-sm px-5 h-10 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[280px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" placeholder="Tanggal Transaksi">
+                                <input name="tglt" type="date" value="<?= $transaksi['tanggal_Transaksi'] ?>" name="tglt" class="bg-white border border-gray-300 text-gray-900 text-sm px-5 h-10 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[280px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" placeholder="Tanggal Transaksi">
                             </div>
 
                             <div class="mx-auto">
-                                <input name="not" type="text" value="<?= $transaksi['no_Transaksi']?>" id="nomor" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <input name="not" type="text" value="<?= $transaksi['no_Transaksi'] ?>" id="nomor" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                             </div>
                             <div class="mx-auto">
                                 <!-- <input type="text" id="status"  placeholder="Status" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10"> -->
                                 <select name="statust" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
-                                <!-- <option value="" disabled selected hidden>Status Transaksi</option> -->
-                                <option value="<?= $transaksi['status_Transaksi']?>"selected hidden><?= $transaksi['status_Transaksi']?></option>
-                                <option value="lunas">lunas</option>
-                                <option value="belum">belum</option>
-                            </select>
+                                    <!-- <option value="" disabled selected hidden>Status Transaksi</option> -->
+                                    <option value="<?= $transaksi['status_Transaksi'] ?>" selected hidden><?= $transaksi['status_Transaksi'] ?></option>
+                                    <option value="lunas">lunas</option>
+                                    <option value="belum">belum</option>
+                                </select>
                             </div>
                             <div class="mx-auto">
                                 <button type="submit" id="submit" name="submit" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm border border-gray-300 px-5 rounded-full w-[280px] h-10">

@@ -19,6 +19,20 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 $var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $transid LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
 
+$jumlahlink = 2;
+if ($halaktif > $jumlahlink) {
+    $angmul = $halaktif - $jumlahlink;
+} else {
+    $angmul = 1;
+}
+
+
+if ($halaktif < $jumhal - $jumlahlink) {
+    $angakh = $halaktif + $jumlahlink;
+} else {
+    $angakh = $jumhal;
+}
+
 // if (isset($_POST['cari'])) {
 //     $var = cari($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
 //     $zx = 0;
@@ -82,6 +96,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
                     <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
@@ -193,7 +208,7 @@ if (isset($_POST['submit'])) {
                             <?php if ($halaktif > 1) : ?>
                                 <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
                             <?php endif; ?>
-                            <?php for ($i = 1; $i <= $jumhal; $i++) : ?>
+                            <?php for ($i = $angmul; $i <= $angakh; $i++) : ?>
                                 <?php if ($i == $halaktif) : ?>
                                     <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
                                 <?php else : ?>
@@ -235,7 +250,7 @@ if (isset($_POST['submit'])) {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="">
+                        <tbody class="text-center">
                             <?php if ($hasil->num_rows > 0) : ?>
                                 <?php $j = 1; ?>
                                 <?php while ($baris = $hasil->fetch_assoc()) : ?>

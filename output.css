@@ -1435,10 +1435,6 @@ input:checked + .toggle-bg {
   width: 80%;
 }
 
-.w-28 {
-  width: 7rem;
-}
-
 .w-64 {
   width: 16rem;
 }
@@ -1449,10 +1445,6 @@ input:checked + .toggle-bg {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-36 {
-  width: 9rem;
 }
 
 .min-w-full {
@@ -2232,6 +2224,11 @@ input:checked + .toggle-bg {
 .px-\[2px\] {
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pt-10 {

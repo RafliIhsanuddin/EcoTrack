@@ -60,10 +60,10 @@ if ($tes->num_rows > 0) {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="dashboard.html" class="bg-white text-evendarkerBlue px-3 py-2 rounded-lg">Dashboard</a>
+                    <li><a href="dashboard.php" class="bg-white text-evendarkerBlue px-3 py-2 rounded-lg">Dashboard</a>
                     </li>
-                    <li><a href="pembukuan.html" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                 </ul>
                 
                 <div class="flex">
@@ -81,11 +81,11 @@ if ($tes->num_rows > 0) {
                     class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html"
+                            <a href="akun.php"
                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html"
+                            <a href="logout.php"
                                 class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
@@ -108,20 +108,20 @@ if ($tes->num_rows > 0) {
                 class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="akun.html"
+                        <a href="akun.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                     </li>
                     <li>
-                        <a href="pembukuan.html"
+                        <a href="pembukuan.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
                     <li>
-                        <a href="bantuan.html"
+                        <a href="bantuan.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="landing.html"
+                    <a href="logout.php"
                         class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                 </div>
             </div>
@@ -197,7 +197,7 @@ if ($tes->num_rows > 0) {
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 

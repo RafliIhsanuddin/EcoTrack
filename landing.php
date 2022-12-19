@@ -26,7 +26,7 @@
                     <li><a href="#" class="text-[#845EC2]">Home</a></li>
                     <!-- <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li> -->
                     <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
-                    <a href="login.html"
+                    <a href="login.php"
                         class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
                     </a>

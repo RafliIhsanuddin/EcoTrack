@@ -151,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <div class="flex mx-auto container flex-col">
 
                     <!-- form pengeluaran -->
-                    <form action="">
+                    <form action="" method="POST">
                         <div class="flex p-8 mb-3 mt-2 lg:mt-14 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
 
                             <div class="mx-auto">

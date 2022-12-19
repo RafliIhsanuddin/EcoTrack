@@ -8,10 +8,6 @@ $iduser = $_SESSION["idakun"];
 
 unset($_SESSION['idtrans']);
 
-if(isset($_POST["cari"])){
-    $keyword = $_POST['keyword'];
-    $_SESSION['keyword'] = $keyword;
-}
 
 $jumperhal = 5;
 $jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
@@ -55,7 +51,7 @@ $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LI
 if (isset($_POST['cari'])) {
     $keyword = $_POST['keyword'];
     $_SESSION['keyword'] = $keyword;
-    
+
     // $jumdataseb = count(cariseb($_POST["keyword"], "transaksi_pengeluaran", $iduser));
     // $jumhal = ceil($jumdataseb / $jumperhal);
     // $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
@@ -69,7 +65,7 @@ if (isset($_POST['cari'])) {
     // if ($zx === 0) {
     //     $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
     // }
-}else{
+} else {
     $keyword = $_SESSION['keyword'];
 }
 
@@ -78,35 +74,35 @@ $jumdataseb = count(cariseb($keyword, "transaksi_pengeluaran", $iduser));
 $jumhal = ceil($jumdataseb / $jumperhal);
 
 $jumlahlink = 2;
-if($halaktif > $jumlahlink){
+if ($halaktif > $jumlahlink) {
     $angmul = $halaktif - $jumlahlink;
-}else{
+} else {
     $angmul = 1;
 }
 
 
-if($halaktif < $jumhal - $jumlahlink){
+if ($halaktif < $jumhal - $jumlahlink) {
     $angakh = $halaktif + $jumlahlink;
-}else{
+} else {
     $angakh = $jumhal;
 }
 
 
-$var = cari($_SESSION['keyword'],"transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+$var = cari($keyword, "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
 
-    $zx = 0;
-    foreach ($var as $baris) {
-        $zx++;
-    }
+$zx = 0;
+foreach ($var as $baris) {
+    $zx++;
+}
 
-    if ($zx === 0) {
-        $var = cariBarang($_SESSION['keyword'], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-    }
+if ($zx === 0) {
+    $var = cariBarang($_SESSION['keyword'], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
+}
 
 
 
 if (!isset($_SESSION['subpeng'])) {
-    $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar ";
+    $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar";
     mysqli_query($conn, $query);
 }
 
@@ -162,6 +158,76 @@ if (!isset($_SESSION['subpeng'])) {
 
 <body class="bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F]">
     <div class="w-full h-full">
+        <header>
+            <!-- header -->
+            <nav class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
+                <!-- logo -->
+                <div class="py-1 ml-6 justify-start w-fit items-center">
+                    <img src="img/ecotrack2.png" class="w-44">
+                </div>
+                <!-- nav menu -->
+                <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
+                    </li>
+                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <!-- <a href="landing.html"
+                    class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
+                    Logout
+                </a> -->
+                </ul>
+
+                <!-- dropdown button -->
+                <div class="flex">
+
+                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" class="text-white bg-transparent mr-4 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-0 text-center inline-flex items-center" type="button">
+                        <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/acc.png" class="mx-auto w-10 h-10 p-0" alt=""></div>
+                    </button>
+                </div>
+
+                <!-- Dropdown menu -->
+                <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                        <li>
+                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        </li>
+                        <li>
+                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- dropdown button -->
+            <div class="flex">
+
+                <button id="dropdownDividerButton2" data-dropdown-toggle="dropdownDivider2" class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center md:hidden" type="button">
+                    <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/menudots.png" class="mx-auto w-10 h-10 p-2" alt=""></div>
+                </button>
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="dropdownDivider2" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                    <li>
+                        <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="pembukuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                    </li>
+                    <li>
+                        <a href="bantuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                    </li>
+                </ul>
+                <div class="py-1">
+                    <a href="landing.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                </div>
+            </div>
+
+        </header>
         <div class="flex object-scale-down">
             <label for="pengeluaran" class="my-3 mx-auto bg-[#FFC75F] rounded-lg p-4 text-white font-bold">
                 Pengeluaran
@@ -241,7 +307,7 @@ if (!isset($_SESSION['subpeng'])) {
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
                                                 <?php echo $baris['no_Transaksi']; ?>
                                             </td>
-                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><img src="upload/<?php echo $baris['bukti_Transaksi']; ?>" alt="">
+                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center"><a href="upload/<?php echo $baris['bukti_Transaksi']; ?>">lihat Bukti</a>
 
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
@@ -277,6 +343,38 @@ if (!isset($_SESSION['subpeng'])) {
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="px-12 py-20 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
+                <div class=" w-full py-3">
+                    <div class="">
+                        <h2>Address</h2>
+                    </div>
+                    <div class="">
+                        <p>Kaliurang, Yogyakarta</p>
+                    </div>
+                </div>
+                <div class=" w-full py-3">
+                    <div class="">
+                        <h2 class="">Contacts</h2>
+                    </div>
+                    <div class="">
+                        <p class="">123 456 7890</p>
+                    </div>
+                    <div class="">
+                        <p>aurora@email.com</p>
+                    </div>
+                </div>
+                <div class=" w-full py-3">
+                    <div class="">
+                        <h2>FAQ</h2>
+                    </div>
+                    <div class="">
+                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
     </div>
 
     <!-- <script src="dashboard.js"></script> -->
