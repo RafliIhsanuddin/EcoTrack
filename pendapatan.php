@@ -3,80 +3,22 @@
 require 'connect.php';
 require 'functions.php';
 session_start();
-
-$_SESSION['idtrans'] = $_GET['id'];
-
-$id = $_SESSION['idtrans'];
+unset($_SESSION['keywordpend']);
 
 $iduser = $_SESSION["idakun"];
 
+$transid = $_SESSION['transidpend'];
+$transid++;
+
 $jumperhal = 5;
-$jumdata = count(querycoba("SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id"));
+$jumdata = count(querycoba("SELECT * FROM pendapatan WHERE id_User = $iduser AND id_Transaksi = $transid"));
 $jumhal = ceil($jumdata / $jumperhal);
 
 $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 
 $awaldata = ($jumperhal * $halaktif) - $jumperhal;
-
-// if(isset($_GET['halaman'])){
-//     $halaktif = $_GET['halaman'];
-// }else{
-//     $halaktif = 1;
-// }
-
-$var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id LIMIT $awaldata,$jumperhal";
+$var = "SELECT * FROM pendapatan WHERE id_User = $iduser AND id_Transaksi = $transid LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
-
-$transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi = $id")[0];
-
-
-
-
-
-if (isset($_POST['submit'])) {
-    $idubah = htmlspecialchars($_POST['idubah']);
-    $status = htmlspecialchars($_POST['statust']);
-    $jenis = htmlspecialchars($_POST['jenist']);
-    $tgl = htmlspecialchars($_POST['tglt']);
-    $no = htmlspecialchars($_POST['not']);
-    $buktilama = htmlspecialchars($_POST['buktiLama']);
-
-    if ($_FILES['buktit']['error'] === 4) {
-        $bukti = $buktilama;
-    } else {
-        $bukti = upload();
-    }
-
-
-
-    $query = "UPDATE `transaksi_pengeluaran` SET 
-    `jenis_Transaksi` = '$jenis',
-    `status_Transaksi` = '$status',
-    `tanggal_Transaksi` ='$tgl',
-    `bukti_Transaksi` = '$bukti',
-    `no_Transaksi` = '$no'
-    WHERE Id_Transaksi = $idubah";
-
-    mysqli_query($conn, $query);
-
-
-    if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Diubah');
-        document.location.href = 'transpeng.php' </script>";
-        // echo "berhasil";
-    } else {
-        if (isset($_SESSION['tambar'])) {
-            echo "<script>alert('Data Barang Berhasil Diubah');
-            </script>";
-            echo "<script>alert('Data Transaksi Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-            unset($_SESSION['tambar']);
-        } else {
-            echo "<script>alert('Data Barang Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-        }
-    }
-}
 
 $jumlahlink = 2;
 if ($halaktif > $jumlahlink) {
@@ -94,6 +36,18 @@ if ($halaktif < $jumhal - $jumlahlink) {
 
 
 
+if (isset($_POST['submit'])) {
+
+    $_SESSION['subpend'] = true;
+
+    if (tambahbarpend($_POST,$iduser) > 0) {
+        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        document.location.href = 'transpend.php' </script>";
+    } else {
+        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        document.location.href = 'transpend.php' </script>";
+    }
+}
 
 ?>
 
@@ -109,34 +63,23 @@ if ($halaktif < $jumhal - $jumlahlink) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <!-- <style>
-        * {
-            border: 1px solid black;
-        }
-    </style> -->
-    <title>Pengeluaran</title>
+    <title>pendapatan</title>
 </head>
 
 <body class="bg-gray-200">
     <div class="flex flex-col justify-between">
 
         <header>
-            <!-- header -->
             <nav class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
-                <!-- logo -->
                 <div class="py-1 ml-6 justify-start w-fit items-center">
                     <img src="img/ecotrack2.png" class="w-44">
                 </div>
-                <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
+                    <li><a href="transpend.php" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
+                    <li><a href="dashboard.html" class="hover:text-[#FFC75F]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
-                    <!-- <a href="landing.html"
-                    class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
-                    Logout
-                </a> -->
+                    <li><a href="#" class="hover:text-[#FFC75F]">Pembukuan</a></li>
+                    <li><a href="bantuan.html" class="hover:text-[#FFC75F]">Bantuan</a></li>
                 </ul>
 
                 <!-- dropdown button -->
@@ -194,42 +137,38 @@ if ($halaktif < $jumhal - $jumlahlink) {
         <main>
             <div class="w-[90%] h-fit mx-auto bg-white rounded-lg shadow-sm mt-16 md:w-[700px] lg:w-[900px]">
                 <div class="p-8">
-                    <h1 class="text-2xl font-semibold">Pengeluaran</h1>
+                    <h1 class="text-2xl font-semibold">pendapatan</h1>
                     <p class="text-sm">Lorem ipsum dolor sit amet</p>
                 </div>
 
                 <div class="flex mx-auto container flex-col">
 
                     <!-- form transaksi -->
-                    <form action="" method="POST" enctype=multipart/form-data>
-                        <div class="flex">
-                            <div class="mx-auto ml-[110px]">Jika tidak pilih file dibawah maka gambar sama</div>
-                        </div>
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
-                            <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">
-                            <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi'] ?>">
+
                             <div class="mx-auto">
-                                <input name="buktit" type="file" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
+                                <input type="file" id="bukti" name="buktit" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
                             </div>
                             <div class="mx-auto">
-                                <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi'] ?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <input type="text" id="jenis" name="jenist" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                             </div>
 
                             <div class="relative mx-auto">
-                                <input name="tglt" type="date" value="<?= $transaksi['tanggal_Transaksi'] ?>" name="tglt" class="bg-white border border-gray-300 text-gray-900 text-sm px-5 h-10 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[280px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" placeholder="Tanggal Transaksi">
+                                
+                                <input type="date" name="tglt" class="bg-white border border-gray-300 text-gray-900 text-sm px-5 h-10 rounded-full focus:ring-blue-500 focus:border-blue-500 block w-[280px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" placeholder="Tanggal Transaksi">
                             </div>
 
                             <div class="mx-auto">
-                                <input name="not" type="text" value="<?= $transaksi['no_Transaksi'] ?>" id="nomor" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <input type="text" id="nomor" name="not" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                             </div>
                             <div class="mx-auto">
                                 <!-- <input type="text" id="status"  placeholder="Status" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10"> -->
                                 <select name="statust" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
-                                    <!-- <option value="" disabled selected hidden>Status Transaksi</option> -->
-                                    <option value="<?= $transaksi['status_Transaksi'] ?>" selected hidden><?= $transaksi['status_Transaksi'] ?></option>
-                                    <option value="lunas">lunas</option>
-                                    <option value="belum">belum</option>
-                                </select>
+                                <option value="" disabled selected hidden>Status Transaksi</option>
+                                <option value="lunas">lunas</option>
+                                <option value="belum">belum</option>
+                            </select>
                             </div>
                             <div class="mx-auto">
                                 <button type="submit" id="submit" name="submit" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm border border-gray-300 px-5 rounded-full w-[280px] h-10">
@@ -242,16 +181,16 @@ if ($halaktif < $jumhal - $jumlahlink) {
                     <div class="flex">
                         <div class="mx-auto">
                             <?php if ($halaktif > 1) : ?>
-                                <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $halaktif - 1; ?>">&laquo;</a>
+                                <a href="?halaman= <?= $halaktif - 1; ?>">&laquo;</a>
                             <?php endif; ?>
                             <?php for ($i = $angmul; $i <= $angakh; $i++) : ?>
                                 <?php if ($i == $halaktif) : ?>
-                                    <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
+                                    <a href="?halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
                                 <?php else : ?>
-                                    <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $i; ?>"><?= $i; ?></a>
+                                    <a href="?halaman= <?= $i; ?>"><?= $i; ?></a>
                                 <?php endif; ?>
                             <?php endfor; ?> <?php if ($halaktif < $jumhal) : ?>
-                                <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $halaktif + 1; ?>">&raquo;</a>
+                                <a href="?halaman= <?= $halaktif + 1; ?>">&raquo;</a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -288,7 +227,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                         </thead>
                         <tbody class="text-center">
                             <?php if ($hasil->num_rows > 0) : ?>
-                                <?php $j = 1 + $awaldata; ?>
+                                <?php $j = 1; ?>
                                 <?php while ($baris = $hasil->fetch_assoc()) : ?>
                                     <tr class="">
                                         <td class=""><?= $j ?></td>
@@ -297,8 +236,8 @@ if ($halaktif < $jumhal - $jumlahlink) {
                                         <td class=""><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class=""><?php echo $baris['Satuan']; ?></td>
                                         <td class=""><?php echo $baris['Referensi']; ?></td>
-                                        <td class=""><a href="hapusubahtranspeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
-                                        <td class=""><a href="ubahtransbarpeng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class=""><a href="hapusbarpeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
+                                        <td class=""><a href="ubahbarpeng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>
@@ -323,7 +262,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                             </a>
                         </div>
                         <div class="w-[280px] md:w-[150px]">
-                            <a href="ubahpengtambah.php">
+                            <a href="pendtambah.php">
                                 <button type="button" id="tambah" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 mb-5 rounded-full h-10">
                                     Tambah
                                 </button>

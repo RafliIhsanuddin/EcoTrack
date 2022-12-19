@@ -4,6 +4,8 @@ require 'connect.php';
 require 'functions.php';
 session_start();
 
+unset($_SESSION['keyword']);
+
 $iduser = $_SESSION["idakun"];
 
 $transid = $_SESSION['transid'];
@@ -33,30 +35,11 @@ if ($halaktif < $jumhal - $jumlahlink) {
     $angakh = $jumhal;
 }
 
-// if (isset($_POST['cari'])) {
-//     $var = cari($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-//     $zx = 0;
-//     foreach ($var as $baris) {
-//         $zx++;
-//     }
-
-//     if ($zx === 0) {
-//         $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-//     }
-// }
-
-// if (isset($_POST['reset'])) {
-//     $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
-// }
-
 
 
 if (isset($_POST['submit'])) {
 
     $_SESSION['subpeng'] = true;
-
-
-    // $bukti = htmlspecialchars($_POST['buktit']);
 
     if (tambahbarpeng($_POST,$iduser) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
@@ -88,23 +71,16 @@ if (isset($_POST['submit'])) {
     <div class="flex flex-col justify-between">
 
         <header>
-            <!-- header -->
             <nav class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
-                <!-- logo -->
                 <div class="py-1 ml-6 justify-start w-fit items-center">
                     <img src="img/ecotrack2.png" class="w-44">
                 </div>
-                <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
                     <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
-                    <!-- <a href="landing.html"
-                    class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
-                    Logout
-                </a> -->
                 </ul>
 
                 <!-- dropdown button -->

@@ -1229,8 +1229,16 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
 }
 
+.ml-\[116px\] {
+  margin-left: 116px;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.ml-\[110px\] {
+  margin-left: 110px;
 }
 
 .block {
@@ -1423,16 +1431,16 @@ input:checked + .toggle-bg {
   width: 280px;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .w-1\/6 {
   width: 16.666667%;
 }
 
 .w-\[300px\] {
   width: 300px;
-}
-
-.w-\[80\%\] {
-  width: 80%;
 }
 
 .w-64 {
@@ -2201,6 +2209,11 @@ input:checked + .toggle-bg {
   padding-right: 60px;
 }
 
+.px-\[2px\] {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -2219,11 +2232,6 @@ input:checked + .toggle-bg {
 .py-\[7px\] {
   padding-top: 7px;
   padding-bottom: 7px;
-}
-
-.px-\[2px\] {
-  padding-left: 2px;
-  padding-right: 2px;
 }
 
 .py-20 {
@@ -2659,6 +2667,11 @@ input:checked + .toggle-bg {
 .hover\:text-evendarkerBlue:hover {
   --tw-text-opacity: 1;
   color: rgb(16 13 41 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#FFC75F\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 199 95 / var(--tw-text-opacity));
 }
 
 .hover\:text-red-700:hover {

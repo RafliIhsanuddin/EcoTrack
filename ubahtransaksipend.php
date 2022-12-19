@@ -11,7 +11,7 @@ $id = $_SESSION['idtrans'];
 $iduser = $_SESSION["idakun"];
 
 $jumperhal = 5;
-$jumdata = count(querycoba("SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id"));
+$jumdata = count(querycoba("SELECT * FROM pendapatan WHERE id_User = $iduser AND id_Transaksi = $id"));
 $jumhal = ceil($jumdata / $jumperhal);
 
 $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
@@ -24,10 +24,10 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 //     $halaktif = 1;
 // }
 
-$var = "SELECT * FROM pengeluaran WHERE id_User = $iduser AND id_Transaksi = $id LIMIT $awaldata,$jumperhal";
+$var = "SELECT * FROM pendapatan WHERE id_User = $iduser AND id_Transaksi = $id LIMIT $awaldata,$jumperhal";
 $hasil = $conn->query($var);
 
-$transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi = $id")[0];
+$transaksi = querycoba("SELECT * FROM transaksi_pendapatan WHERE id_Transaksi = $id")[0];
 
 
 
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
 
 
-    $query = "UPDATE `transaksi_pengeluaran` SET 
+    $query = "UPDATE `transaksi_pendapatan` SET 
     `jenis_Transaksi` = '$jenis',
     `status_Transaksi` = '$status',
     `tanggal_Transaksi` ='$tgl',
@@ -109,12 +109,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <!-- <style>
-        * {
-            border: 1px solid black;
-        }
-    </style> -->
-    <title>Pengeluaran</title>
+    <title>Pendapatan</title>
 </head>
 
 <body class="bg-gray-200">
@@ -202,14 +197,13 @@ if ($halaktif < $jumhal - $jumlahlink) {
 
                     <!-- form transaksi -->
                     <form action="" method="POST" enctype=multipart/form-data>
-                        <div class="flex">
-                            <div class="mx-auto ml-[110px]">Jika tidak pilih file dibawah maka gambar sama</div>
-                        </div>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                             <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">
                             <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi'] ?>">
                             <div class="mx-auto">
                                 <input name="buktit" type="file" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
+                                <div>Gambar Lama</div>
+                                <img class="w-48" src="upload/<?= $transaksi['bukti_Transaksi'] ?>" alt="">
                             </div>
                             <div class="mx-auto">
                                 <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi'] ?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">

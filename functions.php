@@ -18,6 +18,13 @@ function hapustransbar($id){
     return mysqli_affected_rows($conn);
 }
 
+function hapustransbarpend($id){
+    global $conn;
+    mysqli_query($conn,"DELETE FROM pendapatan WHERE Id_Transaksi = $id");
+    mysqli_query($conn,"DELETE FROM transaksi_pendapatan WHERE Id_Transaksi = $id");
+    return mysqli_affected_rows($conn);
+}
+
 
 function querycoba($query){
     global $conn;
@@ -237,6 +244,31 @@ function tambahbarpeng($data,$iduser){
     }
 
     $query = "INSERT INTO `transaksi_pengeluaran` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`,`no_Transaksi`,`tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$no','$tgl','$bukti','$iduser')";
+
+    mysqli_query($conn, $query);
+
+
+    return mysqli_affected_rows($conn);
+}
+
+function tambahbarpend($data,$iduser){
+    global $conn;
+    
+    // $bukti = htmlspecialchars($_POST['buktit']);
+    
+    
+    $status = htmlspecialchars($data['statust']);
+    $jenis = htmlspecialchars($data['jenist']);
+    $tgl = htmlspecialchars($data['tglt']);
+    $no = htmlspecialchars($data['not']);
+    
+
+    $bukti = upload();
+    if(!$bukti){
+        return false;
+    }
+
+    $query = "INSERT INTO `transaksi_pendapatan` (`id_Transaksi`, `jenis_Transaksi`, `status_Transaksi`,`no_Transaksi`,`tanggal_Transaksi`, `bukti_Transaksi`,`id_User`) VALUES ('','$jenis','$status','$no','$tgl','$bukti','$iduser')";
 
     mysqli_query($conn, $query);
 

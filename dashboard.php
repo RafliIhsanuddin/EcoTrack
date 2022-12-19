@@ -3,13 +3,17 @@ session_start();
 
 require_once 'connect.php';
 require  'functions.php';
+
+
+unset($_SESSION['keywordpend']);
+unset($_SESSION['keyword']);
 global $conn;
 
 
-if (!isset($_SESSION["login"])) {
-    header("location: login.php");
-    exit;
-}
+// if (!isset($_SESSION["login"])) {
+//     header("location: login.php");
+//     exit;
+// }
 
 $iduser = $_SESSION["idakun"];
 
@@ -23,7 +27,13 @@ if ($tes->num_rows > 0) {
     }
 }
 
+$tes2 = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pendapatan");
 
+if ($tes2->num_rows > 0) {
+    while ($baris2 = $tes->fetch_assoc()) {
+        $_SESSION['transidpend'] = $baris2['MAX(id_Transaksi)'];
+    }
+}
 
 
 
