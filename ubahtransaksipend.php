@@ -4,6 +4,11 @@ require 'connect.php';
 require 'functions.php';
 session_start();
 
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
 $_SESSION['idtranspend'] = $_GET['id'];
 
 $id = $_SESSION['idtranspend'];

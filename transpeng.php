@@ -4,6 +4,12 @@ require "functions.php";
 session_start();
 
 
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
+
 $iduser = $_SESSION["idakun"];
 
 unset($_SESSION['idtrans']);
@@ -29,44 +35,12 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
 $transbar = $_SESSION['transid'] + 1;
 
-// $jumlahlink = 2;
-// if($halaktif > $jumlahlink){
-//     $angmul = $halaktif - $jumlahlink;
-// }else{
-//     $angmul = 1;
-// }
-
-
-// if($halaktif < $jumhal - $jumlahlink){
-//     $angakh = $halaktif + $jumlahlink;
-// }else{
-//     $angakh = $jumhal;
-// }
-
-
 $var = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal");
-
-// $var = querycoba("SELECT * FROM transaksi_pengeluaran");
 
 if (isset($_POST['cari'])) {
     $keyword = $_POST['keyword'];
     $_SESSION['keyword'] = $keyword;
-
-    // $jumdataseb = count(cariseb($_POST["keyword"], "transaksi_pengeluaran", $iduser));
-    // $jumhal = ceil($jumdataseb / $jumperhal);
-    // $halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
-    // $awaldata = ($jumperhal * $halaktif) - $jumperhal;
-    // $var = cari($_SESSION['keyword'],"transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-    // $zx = 0;
-    // foreach ($var as $baris) {
-    //     $zx++;
-    // }
-
-    // if ($zx === 0) {
-    //     $var = cariBarang($_POST["keyword"], "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
-    // }
 } else {
-    // $keyword = $_SESSION['keyword'];
     if(isset($_SESSION['keyword'])){
         $keyword = $_SESSION['keyword'];
     }else{

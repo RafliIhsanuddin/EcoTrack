@@ -2,6 +2,13 @@
 session_start();
 require_once 'connect.php';
 require 'cobaubahpass.php';
+
+
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
 global $conn;
 $id = $_SESSION['idakun'];
 $akunuser = mysqli_query($conn, "SELECT * FROM user where id_user = $id;");

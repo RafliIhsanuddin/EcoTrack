@@ -3,6 +3,11 @@
 require_once('connect.php');
 session_start();
 
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
 
 
 $transid = $_SESSION['transid'];
@@ -77,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                <li><a href="pengeluaran.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Pengeluaran</a></li>
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>

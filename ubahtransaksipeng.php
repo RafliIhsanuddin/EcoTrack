@@ -31,8 +31,6 @@ $transaksi = querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_Transaksi =
 
 
 
-
-
 if (isset($_POST['submit'])) {
     $idubah = htmlspecialchars($_POST['idubah']);
     $status = htmlspecialchars($_POST['statust']);

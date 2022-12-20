@@ -2,9 +2,13 @@
 session_start();
 require "functions.php";
 
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
 if (isset($_POST["submit"])) {
 }
-// $keyword = $_GET["keyword"];
 $keyword = $_POST['input'];
 $iduser = $_SESSION["idakun"];
 
@@ -17,19 +21,7 @@ $awaldata = ($jumperhal * $halaktif) - $jumperhal;
 
 
 
-// $var = "SELECT transaksi_pengeluaran.id_Transaksi,transaksi_pengeluaran.jenis_Transaksi,transaksi_pengeluaran.status_Transaksi,transaksi_pengeluaran.tanggal_Transaksi,transaksi_pengeluaran.bukti_Transaksi FROM transaksi_pengeluaran JOIN pengeluaran ON pengeluaran.id_Transaksi = transaksi_pengeluaran.id_Transaksi WHERE pengeluaran.id_User = $iduser
-// AND pengeluaran.Nama_Barang 
-// LIKE '%$keyword%' 
-// OR pengeluaran.Referensi 
-// LIKE '%$keyword%'
-// OR transaksi_pengeluaran.tanggal_Transaksi
-// LIKE '%$keyword%' 
-// OR transaksi_pengeluaran.status_Transaksi
-// LIKE '%$keyword%' 
-// OR transaksi_pengeluaran.jenis_Transaksi
-// LIKE '%$keyword%' 
-// GROUP BY transaksi_pengeluaran.id_Transaksi 
-// LIMIT $awaldata,$jumperhal";
+
 
 $var = cari($keyword, "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
 $zx = 0;
@@ -41,11 +33,6 @@ if ($zx === 0) {
     $var = cariBarang($keyword, "transaksi_pengeluaran", $iduser, $awaldata, $jumperhal);
 }
 
-// $var = "SELECT * FROM transaksi_pengeluaran";
-
-// $bartranspeng = querycoba("SELECT * FROM transaksi_pengeluaran");
-
-// var_dump($bartranspeng);
 
 
 ?>

@@ -3,6 +3,11 @@
 require_once('connect.php');
 session_start();
 
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
+
 
 
 $transid = $_SESSION['idtrans'];
@@ -22,30 +27,25 @@ if (isset($_POST['submit'])) {
 
     $_SESSION['tambar'] = true;
 
-    $result = mysqli_query($conn,"SELECT * FROM pengeluaran WHERE Nama_Barang = '$nama' AND Referensi = '$toko' AND id_Transaksi = '$transid'");
-    if(mysqli_fetch_assoc($result) ){
+    $result = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE Nama_Barang = '$nama' AND Referensi = '$toko' AND id_Transaksi = '$transid'");
+    if (mysqli_fetch_assoc($result)) {
         echo "<script>
         alert('barang sudah terdafatar pada toko tersebut!');
-        document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' 
+        document.location.href = 'ubahtransaksipeng.php?id=" . $_SESSION['idtrans'] . "' 
         </script>";
         return false;
     }
-    
+
 
     $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
     $hasil = $conn->query($query);
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Barang Berhasil Ditambahkan');
-        document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
+        document.location.href = 'ubahtransaksipeng.php?id=" . $_SESSION['idtrans'] . "' </script>";
     } else {
         echo "<script>alert('Barang Gagal Ditambahkan');
-        document.location.href = 'ubahtransaksipeng.php?id=".$_SESSION['idtrans']."' </script>";
+        document.location.href = 'ubahtransaksipeng.php?id=" . $_SESSION['idtrans'] . "' </script>";
     }
-
-
-
-
-
 }
 
 ?>
@@ -93,6 +93,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="ubahtransaksipeng.php?id=<?= $transid; ?>" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
                     <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>

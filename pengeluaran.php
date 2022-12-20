@@ -3,6 +3,7 @@
 require 'connect.php';
 require 'functions.php';
 session_start();
+
 if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
@@ -81,7 +82,6 @@ if (isset($_POST['submit'])) {
                 </div>
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
-                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
