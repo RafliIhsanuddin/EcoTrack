@@ -297,7 +297,7 @@ if (isset($_SESSION['ubahtambarpend'])){
                                                 <a href="ubahtransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
                                             </td>
                                             <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
-                                                <a href="hapustransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a>
+                                                <a href="hapustransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus transaksi?')" class="hover:text-red-700">Hapus</a>
                                             </td>
                                         </tr>
                                         <?php $j++ ?>

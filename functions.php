@@ -243,7 +243,7 @@ function upload(){
         return false;
     }
 
-    $EksistensiGambarValid = ['jpeg', 'jpg', 'png'];
+    $EksistensiGambarValid = ['jpeg','jpg','png','pdf'];
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if(!in_array($ekstensiGambar,$EksistensiGambarValid)){
@@ -254,13 +254,13 @@ function upload(){
         return false;
     }
 
-    if($ukuranFile > 1000000){
-        echo "<script> 
-        alert('ukuran gambar terlalu besar')
-        </script>
-        ";
-        return false;
-    }
+    // if($ukuranFile > 1000000){
+    //     echo "<script> 
+    //     alert('ukuran gambar terlalu besar')
+    //     </script>
+    //     ";
+    //     return false;
+    // }
 
     $namaFileBaru = uniqid();
     $namaFileBaru .='.';
