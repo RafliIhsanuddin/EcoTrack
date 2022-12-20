@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <title>pendapatan</title>
+    <title>Pendapatan</title>
 </head>
 
 <body class="bg-gray-200">
@@ -81,11 +81,12 @@ if (isset($_POST['submit'])) {
                     <img src="img/ecotrack2.png" class="w-44">
                 </div>
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="transpend.php" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
-                    <li><a href="dashboard.html" class="hover:text-[#FFC75F]">Dashboard</a>
+                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#FFC75F]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#FFC75F]">Bantuan</a></li>
+                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <li><a href="transpend.php" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
+
                 </ul>
 
                 <!-- dropdown button -->
@@ -100,10 +101,10 @@ if (isset($_POST['submit'])) {
                 <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                            <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                            <a href="landing.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -121,20 +122,23 @@ if (isset($_POST['submit'])) {
             <div id="dropdownDivider2" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                     </li>
                     <li>
-                        <a href="dashboard.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        <a href="dashboard.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="pembukuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                        <a href="pembukuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
                     <li>
-                        <a href="bantuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                        <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                    </li>
+                    <li>
+                        <a href="transpend.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transaksi Pendapatan</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="landing.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                    <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                 </div>
             </div>
 
@@ -143,7 +147,7 @@ if (isset($_POST['submit'])) {
         <main>
             <div class="w-[90%] h-fit mx-auto bg-white rounded-lg shadow-sm mt-16 md:w-[700px] lg:w-[900px]">
                 <div class="p-8">
-                    <h1 class="text-2xl font-semibold">pendapatan</h1>
+                    <h1 class="text-2xl font-semibold">Pendapatan</h1>
                     <p class="text-sm">Lorem ipsum dolor sit amet</p>
                 </div>
 
@@ -170,7 +174,7 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="mx-auto">
                                 <!-- <input type="text" id="status"  placeholder="Status" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10"> -->
-                                <select name="statust" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <select name="status" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                                 <option value="" disabled selected hidden>Status Transaksi</option>
                                 <option value="lunas">lunas</option>
                                 <option value="belum">belum</option>
@@ -253,7 +257,7 @@ if (isset($_POST['submit'])) {
 
                     <!-- hapus ubah tambah -->
                     <div class="flex flex-col mx-auto gap-0 space-y-2 w-90% p-8 md:max-w-2xl md:space-x-4 md:space-y-0 md:flex-row">
-                        <div class="w-[280px] md:w-[150px]">
+                        <!-- <div class="w-[280px] md:w-[150px]">
                             <a href="">
                                 <button type="button" id="hapus" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 rounded-full h-10">
                                     Hapus
@@ -266,7 +270,7 @@ if (isset($_POST['submit'])) {
                                     Ubah
                                 </button>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="w-[280px] md:w-[150px]">
                             <a href="pendtambah.php">
                                 <button type="button" id="tambah" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 mb-5 rounded-full h-10">
@@ -306,7 +310,7 @@ if (isset($_POST['submit'])) {
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
@@ -332,7 +336,7 @@ if (isset($_POST['submit'])) {
         }
 
         function mytex() {
-            document.getElementById("status").type = 'text';
+            document.getElementById("statust").type = 'text';
         }
     </script>
 </body>

@@ -49,7 +49,7 @@
                 class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="landing.html"
+                        <a href="landing.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
                     </li>
                     <li>
@@ -82,11 +82,11 @@
                     </p>
                     <div>
                         <a href="register.php"
-                            class="px-5 py-2 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                            class="px-5 py-2 font-bold bg-white shadow-md text-evendarkerBlue text-center rounded-full">
                             Daftar Sekarang
                         </a>
                         <!-- hover stuff with transition-->
-                        <!-- <a href="register.html" target="_blank"
+                        <!-- <a href="register.php" target="_blank"
                         class="transition-colors ease-in-out duration-500 delay-100 hover:bg-teal hover:text-evendarkerBlue px-5 py-2 font-bold bg-[#FF6F91] text-evendarkerBlue text-center rounded-full">
                         Daftar Sekarang
                     </a> -->
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center">
-                        <a href="about.html"
+                        <a href="about.php"
                             class="px-5 py-2 shadow-md w-full font-bold bg-white text-evendarkerBlue text-center rounded-full">
                             Discover More
                         </a>
@@ -210,7 +210,7 @@
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 

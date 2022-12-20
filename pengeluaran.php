@@ -81,10 +81,12 @@ if (isset($_POST['submit'])) {
                     <img src="img/ecotrack2.png" class="w-44">
                 </div>
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
+                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
+
                 </ul>
 
                 <!-- dropdown button -->
@@ -131,6 +133,9 @@ if (isset($_POST['submit'])) {
                     <li>
                         <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                     </li>
+                    <li>
+                        <a href="transpeng.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transaksi Pengeluaran</a>
+                    </li>
                 </ul>
                 <div class="py-1">
                     <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
@@ -169,7 +174,7 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="mx-auto">
                                 <!-- <input type="text" id="status"  placeholder="Status" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10"> -->
-                                <select name="statust" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <select name="status" placeholder="Status" id="status" required class="invalid:text-slate-500 focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                                 <option value="" disabled selected hidden>Status Transaksi</option>
                                 <option value="lunas">lunas</option>
                                 <option value="belum">belum</option>
@@ -241,8 +246,8 @@ if (isset($_POST['submit'])) {
                                         <td class=""><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class=""><?php echo $baris['Satuan']; ?></td>
                                         <td class=""><?php echo $baris['Referensi']; ?></td>
-                                        <td class=""><a href="hapusbarpeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                         <td class=""><a href="ubahbarpeng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class=""><a href="hapusbarpeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>
@@ -252,7 +257,7 @@ if (isset($_POST['submit'])) {
 
                     <!-- hapus ubah tambah -->
                     <div class="flex flex-col mx-auto gap-0 space-y-2 w-90% p-8 md:max-w-2xl md:space-x-4 md:space-y-0 md:flex-row">
-                        <div class="w-[280px] md:w-[150px]">
+                        <!-- <div class="w-[280px] md:w-[150px]">
                             <a href="">
                                 <button type="button" id="hapus" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 rounded-full h-10">
                                     Hapus
@@ -265,7 +270,7 @@ if (isset($_POST['submit'])) {
                                     Ubah
                                 </button>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="w-[280px] md:w-[150px]">
                             <a href="pengtambah.php">
                                 <button type="button" id="tambah" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 mb-5 rounded-full h-10">
@@ -331,7 +336,7 @@ if (isset($_POST['submit'])) {
         }
 
         function mytex() {
-            document.getElementById("status").type = 'text';
+            document.getElementById("statust").type = 'text';
         }
     </script>
 </body>

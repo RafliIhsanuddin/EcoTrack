@@ -144,8 +144,8 @@ if (isset($_SESSION['ubahtambarpend'])){
     </style> -->
 </head>
 
-<body class="bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F]">
-    <div class="w-full h-full">
+<body class="bg-gray-200">
+    <div class="flex flex-col justify-between">
         <header>
             <!-- header -->
             <nav class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
@@ -158,8 +158,8 @@ if (isset($_SESSION['ubahtambarpend'])){
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
-                    <!-- <a href="landing.html"
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <!-- <a href="landing.php"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                     Logout
                 </a> -->
@@ -177,10 +177,10 @@ if (isset($_SESSION['ubahtambarpend'])){
                 <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                            <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                            <a href="landing.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -198,35 +198,32 @@ if (isset($_SESSION['ubahtambarpend'])){
             <div id="dropdownDivider2" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                     </li>
                     <li>
-                        <a href="dashboard.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        <a href="dashboard.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="pembukuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                        <a href="pembukuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
                     <li>
-                        <a href="bantuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                        <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="landing.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                    <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                 </div>
             </div>
 
         </header>
-        <div class="flex object-scale-down">
-            <label for="pendapatan" class="my-3 mx-auto bg-[#845EC2] rounded-lg p-4 text-white font-bold">
-                Pendapatan
-            </label>
-        </div>
-        <div class="flex object-scale-down">
-            <div class="w-full p-10 bg-white md:w-11/12 rounded-xl order-1 mx-auto">
+
+        <main class="min-h-[500px] h-fit">
+        <!-- <div class="flex object-scale-down"> --> 
+            <div class="w-full p-10 mt-16 bg-white md:w-[700px] lg:w-5/6 rounded-lg shadow-sm border border-gray-300 order-1 mx-auto">
                 <div class="flex w-full justify-center">
                     <div class="p-2">
                         <form action="" id="formpeng" method="POST">
-                            <input type="text" id="transpeng" name="keywordpend" class="rounded-full h-7 w-48 mb-3" placeholder="masukkan keyword..." autocomplete="off" value="<?php echo $keyword ?>">
+                            <input type="text" id="transpeng" name="keywordpend" class="rounded-full text-sm h-7 w-48 mb-3" placeholder="Masukkan keyword..." autocomplete="off" value="<?php echo $keyword ?>">
                             <button type="submit" id="cari" name="caripend" class="text-white bg-blue-500 hover:bg-blue-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-blue-700">Cari</button>
                             <!-- <button type="submit" name="reset" class="text-white bg-red-500 hover:bg-red-700 rounded-full h-[29px] w-14 shadow-xl active:shadow-none active:bg-red-700">RESET</button> -->
                         </form>
@@ -247,11 +244,11 @@ if (isset($_SESSION['ubahtambarpend'])){
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <table class="w-full">
-                                <thead class="bg-gray-300 border-b-2 border-gray-500">
+                            <table class="w-full table-auto">
+                                <thead class="bg-transparent border-b border-gray-500">
                                     <tr>
-                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
-                                            Nomor
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
+                                            No
                                         </th>
                                         <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
                                             Tanggal
@@ -269,40 +266,40 @@ if (isset($_SESSION['ubahtambarpend'])){
                                             Bukti
                                         </th>
                                         <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Ubah
+                                            Edit
                                         </th>
-                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
+                                        <th class="px-2 md:px-3 lg:px-8 py-2 text-sm font-bold tracking-wide text-center">
                                             Hapus
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-gray-100">
+                                <tbody class="">
                                     <?php $j = 1 + $awaldata; ?>
                                     <?php foreach ($var as $baris) : ?>
                                         <tr class="">
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <?= $j ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <?php echo $baris['tanggal_Transaksi']; ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <?php echo $baris['jenis_Transaksi']; ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <?php echo $baris['status_Transaksi']; ?>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <?php echo $baris['no_Transaksi']; ?>
                                             </td>
-                                            <td class="w-48 md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
-                                                <a href="upload/<?php echo $baris['bukti_Transaksi']; ?>">lihat Bukti</a>
+                                            <td class="py-2 text-sm text-center">
+                                                <a href="upload/<?php echo $baris['bukti_Transaksi']; ?>">Lihat bukti</a>
 
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
-                                                <a href="ubahtransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Ubah</a>
+                                            <td class="py-2 text-sm text-center">
+                                                <a href="ubahtransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" class="hover:text-green-700">Edit</a>
                                             </td>
-                                            <td class=" md:px-3 lg:px-8 py-2 text-sm md:text-lg text-center">
+                                            <td class="py-2 text-sm text-center">
                                                 <a href="hapustransaksipend.php?id=<?= $baris['id_Transaksi']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus transaksi?')" class="hover:text-red-700">Hapus</a>
                                             </td>
                                         </tr>
@@ -314,24 +311,17 @@ if (isset($_SESSION['ubahtambarpend'])){
                     </div>
                 </div>
                 <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
-                    <!-- nav menu -->
-                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#" class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Edit
-                            </a>
-                        </div>
-                        <div><a href="#" class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Hapus
-                            </a>
-                        </div>
-                        <div><a href="pendapatan.php" class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
+                    <div class="flex justify-end items-center mx-auto text-white">
+                        <div><a href="pendapatan.php" class="mx-2 px-12 md:mx-10 lg:mx-12 pt-2 py-2 w-10 h-10 text-sm bg-[#845EC2] text-white rounded-full">
                                 Tambah
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
+        </main>
+
         <footer>
             <div class="px-12 py-20 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
                 <div class=" w-full py-3">
@@ -358,7 +348,7 @@ if (isset($_SESSION['ubahtambarpend'])){
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
@@ -366,7 +356,8 @@ if (isset($_SESSION['ubahtambarpend'])){
         </footer>
     </div>
 
-    <!-- <script src="dashboard.js"></script> -->
+    <script src="node_modules/flowbite/dist/flowbite.js"></script>
+
 
 </body>
 

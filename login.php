@@ -68,7 +68,7 @@ if (isset($_POST["login"])){
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
-                    <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li>
+                    <!-- <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li> -->
                     <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="#"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
@@ -155,18 +155,18 @@ if (isset($_POST["login"])){
                             </div>
                             <div>
                                 <input type="email" id="email" required name="email"
-                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
+                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 shadow-md rounded-full bg-white md:w-3/4 md:mx-10">
                             </div>
                             <div>
                                 <label for="pass" class=" mx-16 text-sm p-3 w-20 md:w-3/4 md:mx-10">Password</label>
                             </div>
                             <div class="">
                                 <input type="password" id="pass" required name="password"
-                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 rounded-full bg-lightGreen md:w-3/4 md:mx-10">
+                                    class="mx-16 my-1 px-3 py-0.5 w-3/4 shadow-md rounded-full bg-white md:w-3/4 md:mx-10">
                             </div>
                         </div>
                         <input name="login" type="submit" value="Login"
-                            class="flex p-1 bg-customPurple hover:bg-lighterPurple text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">
+                            class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-3/4 my-5 font-bold text-center justify-center mx-16 rounded-full md:mx-10">
                     </form>
                 </div>
                 <!-- right (no acc? register)-->
@@ -177,7 +177,7 @@ if (isset($_POST["login"])){
                     <p class="text-center text-sm my-5 max-w-md md:text-left">
                         Buat akun dan mulai blah blah blah
                     </p>
-                    <a href="register.phpS"
+                    <a href="register.php"
                         class="py-1 w-3/4 bg-[#845EC2] hover:bg-[#643EA3] text-white font-bold text-center mx-auto rounded-full">Register
                         Now</a>
                 </div>

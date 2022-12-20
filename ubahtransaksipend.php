@@ -199,7 +199,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                     <!-- form transaksi -->
                     <form action="" method="POST" enctype=multipart/form-data>
                         <div class="flex">
-                            <div class="mx-auto ml-[180px]">Jika tidak pilih file,gambar sama</div>
+                            <div class="mx-auto ml-[180px]">Jika tidak pilih file, gambar sama</div>
                         </div>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                             <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">
@@ -293,8 +293,8 @@ if ($halaktif < $jumhal - $jumlahlink) {
                                         <td class=""><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class=""><?php echo $baris['Satuan']; ?></td>
                                         <td class=""><?php echo $baris['Referensi']; ?></td>
-                                        <td class=""><a href="hapusubahtranspend.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                         <td class=""><a href="ubahtransbarpend.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class=""><a href="hapusubahtranspend.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>
@@ -304,7 +304,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
 
                     <!-- hapus ubah tambah -->
                     <div class="flex flex-col mx-auto gap-0 space-y-2 w-90% p-8 md:max-w-2xl md:space-x-4 md:space-y-0 md:flex-row">
-                        <div class="w-[280px] md:w-[150px]">
+                        <!-- <div class="w-[280px] md:w-[150px]">
                             <a href="">
                                 <button type="button" id="hapus" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 rounded-full h-10">
                                     Hapus
@@ -317,7 +317,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                                     Ubah
                                 </button>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="w-[280px] md:w-[150px]">
                             <a href="ubahpendtambah.php">
                                 <button type="button" id="tambah" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 mb-5 rounded-full h-10">

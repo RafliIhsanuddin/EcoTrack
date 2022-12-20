@@ -82,11 +82,11 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                <li><a href="pengeluaran.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Pengeluaran</a></li>
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <li><a href="pengeluaran.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Pengeluaran</a></li>
                     <!-- <a href="landing.html"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                     Logout
