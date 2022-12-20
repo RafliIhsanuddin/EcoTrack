@@ -1,4 +1,9 @@
 <?php
+require_once 'connect.php';
+require 'cobaubahpass.php';
+global $conn;
+
+
 ?>
 
 
@@ -69,90 +74,68 @@
         <!-- main section -->
         <section>
             <div
-                class="container flex flex-col border-gray-300 border justify-center text-left text-evendarkerBlue mt-10 p-10 mx-auto w-full h-full max-w-[90%] md:max-w-5xl bg-white rounded-lg md:pt-0">
-                <div class="space-y-2 text-left mb-7">
-                    <h2 class="text-3xl pt-5">
-                        Basic Info
-                    </h2>
-                    <p>
-                        Informasi dasar terkait akun pengguna.
-                    </p>
-                </div>
-
+                class="container flex flex-col border-gray-300 border justify-center text-left text-evendarkerBlue mt-10 p-10 mx-auto w-full h-full max-w-[90%] md:max-w-5xl bg-white rounded-lg md:pt-0 ">
+                <form action="" id="submit" method="POST">
                 <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Nama</p>
-                    <p>Nama disini</p>
+                    <p class="text-sm text-gray-400 font-semibold">Ubah Password</p>
+                    <div>
+                        <label for="passlama" class="text-sm p-3">Password lama</label>
+                    </div>
+                    <input type="password" id="pass" required
+                        class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-1/4"
+                        name="passlama"><br>
+                    <div>
+                        <label for="passbaru" class="text-sm p-3">Password baru</label>
+                    </div>
+                    <input type="password" id="konfirmpass" required
+                        class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-1/4"
+                        name="passbaru"><br>
+                    <label for="konfirmpass" class="text-sm p-3">konfirmasi password</label>
                 </div>
-
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Username</p>
-                    <p>Username disini</p>
-                </div>
-
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Email</p>
-                    <p>Email disini</p>
-                </div>
-
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Password</p>
-                    <p>Password disini</p>
-                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah
-                        password?</a>
-                </div>
-
-                <div class="space-y-2 text-left mb-7 pt-10">
-                    <h2 class="text-3xl pt-5">
-                        Contact Info
-                    </h2>
-                </div>
-
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Email</p>
-                    <p>Email disini</p>
-                </div>
-
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">No. Telp</p>
-                    <p>No. Telp disini</p>
-                </div>
-
+                <input type="password" id="konfirmpass" required
+                    class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-1/4"
+                    name="konfirmasi"><br>
+                <button type="submit" name="submit"
+                    class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-1/4">Submit</button>
             </div>
-        </section>
 
-        <!-- footer -->
-        <footer>
-            <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
-                <div class=" w-full py-3">
-                    <div class="">
-                        <h2>Address</h2>
-                    </div>
-                    <div class="">
-                        <p>Kaliurang, Yogyakarta</p>
-                    </div>
-                </div>
-                <div class=" w-full py-3">
-                    <div class="">
-                        <h2 class="">Contacts</h2>
-                    </div>
-                    <div class="">
-                        <p class="">123 456 7890</p>
-                    </div>
-                    <div class="">
-                        <p>aurora@email.com</p>
-                    </div>
-                </div>
-                <div class=" w-full py-3">
-                    <div class="">
-                        <h2>FAQ</h2>
-                    </div>
-                    <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
-                    </div>
-                </div>
+    </div>
+    </form>
+    </section>
 
+    <!-- footer -->
+    <footer>
+        <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2>Address</h2>
+                </div>
+                <div class="">
+                    <p>Kaliurang, Yogyakarta</p>
+                </div>
             </div>
-        </footer>
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2 class="">Contacts</h2>
+                </div>
+                <div class="">
+                    <p class="">123 456 7890</p>
+                </div>
+                <div class="">
+                    <p>aurora@email.com</p>
+                </div>
+            </div>
+            <div class=" w-full py-3">
+                <div class="">
+                    <h2>FAQ</h2>
+                </div>
+                <div class="">
+                    <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
     </div>
 

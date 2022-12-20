@@ -145,7 +145,7 @@ require 'cobaregister.php';
                                     </div>
                                     </p>
                                     <button type="submit" name="register" class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register</button>
-                                    <a href="register.php" class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
+                                    <a href="login.php" class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
                                         Sudah punya akun? Kembali ke halaman Login.
                                     </a>
                                 </div>

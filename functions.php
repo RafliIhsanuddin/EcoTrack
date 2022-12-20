@@ -1,4 +1,5 @@
 <?php
+use LDAP\Result;
 require 'connect.php';
 
 
@@ -251,6 +252,38 @@ function tambahbarpeng($data,$iduser){
 }
 
 
+function ubahpass($data)
+{
+    global $conn;
+
+    $id = $_SESSION['idakun'];
+    $passlama = mysqli_real_escape_string($conn, $_POST['passlama']);
+    $passbaru = mysqli_real_escape_string($conn, $_POST['passbaru']);
+    $konfirmasi = mysqli_real_escape_string($conn, $_POST['konfirmasi']);
+    $result = mysqli_query($conn,"SELECT password_User FROM user WHERE id_User= '$id' ");
+    $pass =mysqli_fetch_assoc($result);
+    if (!password_verify($passlama , $pass['password_User'])) {
+        echo "<script>
+        alert('Password lama anda salah')
+        </script>";
+        return false;
+    }
+    if($passbaru !== $konfirmasi){
+        echo "<script>
+        alert('konfirmasi tidak sesuai')
+        </script>";
+        return false;
+    }
+    $password = password_hash($passbaru, PASSWORD_DEFAULT);
+    $query = "UPDATE user SET
+        password_User = '$password'
+        WHERE  id_User= '$id'"
+    ;
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
 
 
 

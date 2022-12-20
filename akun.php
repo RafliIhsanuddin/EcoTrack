@@ -1,3 +1,16 @@
+<?php
+session_start();
+require_once 'connect.php';
+require 'functions.php';
+global $conn;
+$id = $_SESSION['idakun'];
+$akunuser = mysqli_query($conn, "SELECT * FROM user where id_user = $id;");
+$akun = $akunuser->fetch_assoc();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +26,17 @@
     <div class="flex flex-col h-screen justify-between">
 
         <!-- header -->
-        <nav class="container hidden py-5 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
+        <nav
+            class="container hidden py-5 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
             <!-- logo -->
             <div class="py-1 ml-10 justify-start items-center">
                 <img src="img/ecotrack2.png" class="w-52">
             </div>
             <!-- nav menu -->
             <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-                <li><a href="dashboard.html" class="hover:text-[#845EC2]">Dashboard</a></li>
-                <li><a href="bantuan.html" class="hover:text-[#845EC2]">Bantuan</a></li>
-                <a href="landing.html"
+                <li><a href="dashboard.php" class="hover:text-[#845EC2]">Dashboard</a></li>
+                <li><a href="bantuan.php" class="hover:text-[#845EC2]">Bantuan</a></li>
+                <a href="landing.php"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                     Logout
                 </a>
@@ -46,16 +60,16 @@
             class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                 <li>
-                    <a href="dashboard.html"
+                    <a href="dashboard.php"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                 </li>
                 <li>
-                    <a href="bantuan.html"
+                    <a href="bantuan.php"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                 </li>
             </ul>
             <div class="py-1">
-                <a href="landing.html"
+                <a href="landing.php"
                     class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
             </div>
         </div>
@@ -72,26 +86,25 @@
                         Informasi dasar terkait akun pengguna.
                     </p>
                 </div>
-                
-                <div class="bg-transparent border-t py-5">
-                    <p class="text-sm text-gray-400 font-semibold">Nama</p>
-                    <p>Nama disini</p>
-                </div>
 
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Username</p>
-                    <p>Username disini</p>
+                    <p>
+                        <?php echo $akun['nama_User']; ?>
+                    </p>
                 </div>
 
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Email</p>
-                    <p>Email disini</p>
+                    <p>
+                        <?php echo $akun['email_User']; ?>
+                    </p>
                 </div>
-                
+
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Password</p>
-                    <p>Password disini</p>
-                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah password?</a>
+                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah
+                        password?</a>
                 </div>
 
                 <div class="space-y-2 text-left mb-7 pt-10">
@@ -99,15 +112,18 @@
                         Contact Info
                     </h2>
                 </div>
-                
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Email</p>
-                    <p>Email disini</p>
+                    <p>
+                        <?php echo $akun['email_User']; ?>
+                    </p>
                 </div>
 
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">No. Telp</p>
-                    <p>No. Telp disini</p>
+                    <p>
+                        <?php echo $akun['telp_User']; ?>
+                    </p>
                 </div>
 
             </div>
@@ -140,7 +156,7 @@
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
