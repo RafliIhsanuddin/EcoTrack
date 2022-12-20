@@ -1,4 +1,5 @@
 <?php
+use LDAP\Result;
 require 'connect.php';
 
 
@@ -68,7 +69,7 @@ function registrasi($data){
     $telepon = $data['telp'];
     $konfirmasi = mysqli_real_escape_string($conn,$data['konfirmasi']);
 
-    $result = mysqli_query($conn,"SELECT nama_User FROM user WHERE nama_User = '$username'");
+    $result = mysqli_query($conn,"SELECT nama_User FROM user WHERE nama_User = '$username' ");
     if(mysqli_fetch_assoc($result) ){
         echo "<script>
         alert('username sudah terdaftar!')
@@ -94,6 +95,12 @@ function registrasi($data){
     // var_dump($password);die;
 
     
+}
+
+function rupiah($angka)
+{
+    $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
+    return $hasil_rupiah;
 }
 
 function cari($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
@@ -326,14 +333,38 @@ function tambahbarpend($data,$iduser){
 }
 
 
+function ubahpass($data)
+{
+    global $conn;
 
+    $id = $_SESSION['idakun'];
+    $passlama = mysqli_real_escape_string($conn, $_POST['passlama']);
+    $passbaru = mysqli_real_escape_string($conn, $_POST['passbaru']);
+    $konfirmasi = mysqli_real_escape_string($conn, $_POST['konfirmasi']);
+    $result = mysqli_query($conn,"SELECT password_User FROM user WHERE id_User= '$id' ");
+    $pass =mysqli_fetch_assoc($result);
+    if (!password_verify($passlama , $pass['password_User'])) {
+        echo "<script>
+        alert('Password lama anda salah')
+        </script>";
+        return false;
+    }
+    if($passbaru !== $konfirmasi){
+        echo "<script>
+        alert('konfirmasi tidak sesuai')
+        </script>";
+        return false;
+    }
+    $password = password_hash($passbaru, PASSWORD_DEFAULT);
+    $query = "UPDATE user SET
+        password_User = '$password'
+        WHERE  id_User= '$id'"
+    ;
 
+    mysqli_query($conn, $query);
 
-
-
-
-
-
+    return mysqli_affected_rows($conn);
+}
 
 
 

@@ -24,7 +24,7 @@ module.exports = {
 
       },
       fontFamily: {
-        
+
       },
       backgroundImage: {
         'zigzag': "url('http://www.transparenttextures.com/patterns/zig-zag.png')",

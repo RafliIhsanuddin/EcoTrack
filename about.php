@@ -19,53 +19,54 @@
         </div>
         <!-- nav menu -->
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-            <li><a href="landing.html" class="hover:text-[#845EC2]">Home</a></li>
+            <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
             <li><a href="#" class="text-[#845EC2]">About</a></li>
-            <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
-            <a href="login.html"
+            <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
+            <a href="login.php"
                 class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                 Login
             </a>
         </ul>
     </nav>
 
-<!-- dropdown button -->
-<div class="flex">
+    <!-- dropdown button -->
+    <div class="flex">
 
-    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
-        class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:hidden"
-        type="button">
-        <div class="w-10 h-10 rounded-full bg-[#845EC2] flex"><img src="img/menudots.png"
-                class="mx-auto w-10 h-10 p-2" alt=""></div>
-    </button>
-</div>
-
-<!-- Dropdown menu -->
-<div id="dropdownDivider"
-    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
-        <li>
-            <a href="landing.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
-        </li>
-        <li>
-            <a href="about.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
-        </li>
-        <li>
-            <a href="register.html"
-                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
-        </li>
-    </ul>
-    <div class="py-1">
-        <a href="login.html"
-            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
+        <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
+            class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:hidden"
+            type="button">
+            <div class="w-10 h-10 rounded-full bg-[#845EC2] flex"><img src="img/menudots.png"
+                    class="mx-auto w-10 h-10 p-2" alt=""></div>
+        </button>
     </div>
-</div>
+
+    <!-- Dropdown menu -->
+    <div id="dropdownDivider"
+        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+            <li>
+                <a href="landing.html"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
+            </li>
+            <li>
+                <a href="about.html"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
+            </li>
+            <li>
+                <a href="register.html"
+                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
+            </li>
+        </ul>
+        <div class="py-1">
+            <a href="login.html"
+                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
+        </div>
+    </div>
 
     <!-- about section -->
     <section>
-        <div class="container flex flex-col justify-center mt-10 pt-10 mx-auto space-y-10 w-full h-full text-white text-center md:pt-0">
+        <div
+            class="container flex flex-col justify-center mt-10 pt-10 mx-auto space-y-10 w-full h-full text-white text-center md:pt-0">
             <div class="space-y-10">
                 <h1 class="text-5xl font-semibold">
                     About
@@ -78,7 +79,8 @@
                 </p>
             </div>
             <!-- images -->
-            <div class="flex flex-col space-y-5 justify-center mx-auto text-center md:space-y-0 md:space-x-5 md:flex-row">
+            <div
+                class="flex flex-col space-y-5 justify-center mx-auto text-center md:space-y-0 md:space-x-5 md:flex-row">
                 <!-- member 1 -->
                 <div class="">
                     <img src="img/kitty.jpg" alt="" class="w-auto mx-auto max-w-[320px] h-auto max-h-[320px]">

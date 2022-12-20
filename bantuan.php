@@ -10,8 +10,8 @@ if (isset($_POST['submit'])) {
     $keluhan = $_POST['keluhan'];
     $query = "INSERT INTO `bantuan` (`id`,`keluhan`,`id_User`) VALUES ('','$keluhan','$iduser')";
     mysqli_query($conn, $query);
-    echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
-        document.location.href = 'transpeng.php' </script>";
+    echo "<script>alert('Keluhan berhasil dikirim');
+        document.location.href = 'dashboard.php' </script>";
 }
 
 

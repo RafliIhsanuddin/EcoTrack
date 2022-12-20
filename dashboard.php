@@ -10,6 +10,7 @@ unset($_SESSION['keyword']);
 global $conn;
 
 
+
 if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
@@ -39,6 +40,18 @@ if ($tes2->num_rows > 0) {
 
 
 
+$pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $iduser");
+$tkeluar = 0;
+foreach ($pengeluaran as $keluar) {
+    $tkeluar = $tkeluar + $keluar['Jumlah_Barang'] * $keluar['Harga_Barang'];
+}
+$totk= mysqli_query($conn, "SELECT * FROM `transaksi_pengeluaran` WHERE id_User = $iduser;");
+$tot = 0;
+foreach ($totk as $k) {
+    $tot = $tot + 1;
+}
+
+$tmasuk = 0;
 
 ?>
 
@@ -75,7 +88,7 @@ if ($tes2->num_rows > 0) {
                     <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                 </ul>
-                
+
                 <div class="flex">
 
                     <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
@@ -138,37 +151,45 @@ if ($tes2->num_rows > 0) {
 
         </header>
 
+        <!-- middle section -->
+
+
         <main>
             <div class="">
                 <div class="m-7 mb-0">
                     <h1 class="text-2xl font-semibold">Dashboard</h1>
                     <p class="text-sm">Statistik umum seluruh transaksi</p>
-                </div>
-                <div class="flex flex-col m-6 space-y-5 space-x-0 md:flex-row md:space-y-0 md:space-x-5">
+                    <div class="flex flex-col m-6 space-y-5 space-x-0 md:flex-row md:space-y-0 md:space-x-5">
                     <div
                         class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
                         <h2 class="font-semibold">Total Transaksi</h2>
-                        <p class="font-semibold text-right mr-5 text-3xl">7</p>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo $tot; ?></p>
                     </div>
                     <div
                         class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
                         <h2 class="font-semibold">Total Pendapatan</h2>
-                        <p class="font-semibold text-right mr-5 text-3xl"><sup>Rp</sup> 770.000,-</p>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo rupiah($tmasuk); ?></p>
                     </div>
                     <div
                         class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
                         <h2 class="font-semibold">Total Pengeluaran</h2>
-                        <p class="font-semibold text-right mr-5 text-3xl"><sup>Rp</sup> 7.000.000,-</p>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo rupiah($tkeluar); ?></p>
                     </div>
                 </div>
-                <div class="m-6 bg-white rounded-lg border border-gray-300 shadow-sm max-w-[1300px] h-[200px]">
-
+                    <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
+                        <div class="w shadow-lg rounded-lg overflow-hidden mb-auto">
+                            <div class="py-3 px-5 bg-gray-50">Arus transaksi</div>
+                            <canvas class="p-10 " id="chartBar"></canvas>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
 
             <div class="m-6">
 
-                <ul class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
+                <ul
+                    class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
                     <li class="w-full">
                         <a href="transpend.php" class="inline-block p-4 w-full text-white bg-[#845EC2] hover:text-[#FFC75F] rounded-l-lg">Pendapatan</a>
                     </li>
@@ -176,7 +197,7 @@ if ($tes2->num_rows > 0) {
                         <a href="transpeng.php" class="inline-block p-4 w-full text-white bg-[#FFC75F] hover:text-[#845EC2] rounded-r-lg">Pengeluaran</a>
                     </li>
                 </ul>
-            
+
             </div>
 
         </main>
@@ -217,6 +238,36 @@ if ($tes2->num_rows > 0) {
 
     </div>
 
+
+    <!-- Chart bar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart bar -->
+    <script>
+        const arus_kas = [
+            "pendapatan", "pengeluaran",
+        ];
+        const dataBarChart = {
+            labels: arus_kas,
+            datasets: [{
+                label: "arus_kas",
+                backgroundColor: "hsl(252, 82.9%, 67.8%)",
+                borderColor: "hsl(252, 82.9%, 67.8%)",
+                data: [<?php echo $tmasuk ?>, <?php echo $tkeluar ?>],
+            },],
+        };
+
+        const configBarChart = {
+            type: "bar",
+            data: dataBarChart,
+            options: {},
+        };
+
+        var chartBar = new Chart(
+            document.getElementById("chartBar"),
+            configBarChart
+        );
+    </script>
     <script src="node_modules/flowbite/dist/flowbite.js"></script>
 
 </body>

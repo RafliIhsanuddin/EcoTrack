@@ -16,8 +16,6 @@ if (isset($_POST["login"])){
 
     $result = mysqli_query($conn,"SELECT * FROM user WHERE email_User = '$email' ");
 
-    
-    
     if(mysqli_num_rows($result) === 1){
         $row = mysqli_fetch_assoc($result);
         if(password_verify($password,$row["password_User"])){
@@ -69,8 +67,8 @@ if (isset($_POST["login"])){
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="landing.html" class="hover:text-[#845EC2]">Home</a></li>
-                    <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
+                    <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
+                    <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li>
                     <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="#"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
@@ -95,11 +93,11 @@ if (isset($_POST["login"])){
         class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
             <li>
-                <a href="landing.html"
+                <a href="landing.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
             </li>
             <li>
-                <a href="about.html"
+                <a href="about.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
             </li>
             <li>
@@ -108,7 +106,7 @@ if (isset($_POST["login"])){
             </li>
         </ul>
         <div class="py-1">
-            <a href="login.html"
+            <a href="login.php"
                 class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
         </div>
     </div>
@@ -125,9 +123,9 @@ if (isset($_POST["login"])){
                     <h1 class="text-center font-bold text-3xl pt-5 mb-5">
                         Login
                     </h1>
-                    <?php if (isset($_GET['error'])): ?>
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <span class="block sm:inline"><?php echo $_GET['error']?>
+                    <?php if (isset($_GET['error'])) : ?>
+                    <!-- <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <span class="block sm:inline"><?php echo $_GET['error'] ?>
                         </span>
                         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                             <title>Close</title>
@@ -135,6 +133,19 @@ if (isset($_POST["login"])){
                                 d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
                             </svg>
                         </span>
+                    </div> -->
+                    <div class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+                        role="alert">
+                        <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Info</span>
+                        <div>
+                            <span class="font-medium"></span><?php echo $_GET['error'] ?>
+                        </div>
                     </div>
                     <?php endif ?>
                     <form action="#" id="login" method="POST">
@@ -201,7 +212,7 @@ if (isset($_POST["login"])){
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
