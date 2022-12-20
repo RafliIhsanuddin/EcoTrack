@@ -50,9 +50,18 @@ $tot = 0;
 foreach ($totk as $k) {
     $tot = $tot + 1;
 }
+$totm= mysqli_query($conn, "SELECT * FROM `transaksi_pendapatan` WHERE id_User = $iduser;");
+
+foreach ($totm as $k) {
+    $tot = $tot + 1;
+}
 
 $tmasuk = 0;
-
+$pendapatan = mysqli_query($conn, "SELECT * FROM pendapatan WHERE id_User = $iduser");
+$tmasuk = 0;
+foreach ($pendapatan as $masuk) {
+    $tmasuk= $tmasuk + $masuk['Jumlah_Barang'] * $masuk['Harga_Barang'];
+}
 ?>
 
 
