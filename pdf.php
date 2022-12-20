@@ -16,12 +16,17 @@ JOIN pengeluaran
 ON pengeluaran.id_Transaksi = transaksi_pengeluaran.id_Transaksi
 WHERE  transaksi_pengeluaran.id_User = $id AND tanggal_Transaksi BETWEEN '$awal'  AND '$akhir' "
 );
+
+$q3 = mysqli_query(
+    $conn,
+    "SELECT *
+FROM transaksi_pendapatan
+JOIN pendapatan
+ON pendapatan.id_Transaksi = transaksi_pendapatan.id_Transaksi
+WHERE  transaksi_pendapatan.id_User = $id AND tanggal_Transaksi BETWEEN '$awal'  AND '$akhir' "
+);
 // $q1 = mysqli_query($conn, " ");
 $pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $id");
-$tkeluar = 0;
-foreach ($pengeluaran as $row) {
-    $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
-}
 use Mpdf\Mpdf;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -87,6 +92,7 @@ $html = '<!DOCTYPE html>
 $i = 1;
 while ($r2 = mysqli_fetch_assoc($q2)) {
     $total = $r2['Jumlah_Barang'] * $r2['Harga_Barang'];
+    $tkeluar = $tkeluar + $total;
     $html .= ' <tr>
             <td style="width:4%">' . $i++ . '</td>
             <td style="width:6%">' . $r2['no_Transaksi'] . '</td>
@@ -126,21 +132,26 @@ $html .= '
     </thead>
     <tbody>';
 $j = 1;
-while ($r2 = mysqli_fetch_assoc($q2)) {
-    $total = $r2['Jumlah_Barang'] * $r2['Harga_Barang'];
+while ($r3 = mysqli_fetch_assoc($q3)) {
+    $total = $r3['Jumlah_Barang'] * $r3['Harga_Barang'];
+    $tmasuk = $tmasuk + $total;
     $html .= ' <tr>
-            <td style="width:4%">' . $i++ . '</td>
-            <td style="width:6%">' . $r2['id_Transaksi'] . '</td>
-            <td style="width:10%">' . $r2['jenis_Transaksi'] . '</td>
-            <td style="width:10%">' . $r2['tanggal_Transaksi'] . '</td>
-            <td style="width:10%">' . $r2['Nama_Barang'] . '</td>
-            <td style="width:15%">' . rupiah($r2['Harga_Barang']) . '</td>
-            <td style="width:10%">' . $r2['Jumlah_Barang'] . '</td>
-            <td style="width:10%">' . $r2['Satuan'] . '</td>
+            <td style="width:4%">' . $j++ . '</td>
+            <td style="width:6%">' . $r3['id_Transaksi'] . '</td>
+            <td style="width:10%">' . $r3['jenis_Transaksi'] . '</td>
+            <td style="width:10%">' . $r3['tanggal_Transaksi'] . '</td>
+            <td style="width:10%">' . $r3['Nama_Barang'] . '</td>
+            <td style="width:15%">' . rupiah($r3['Harga_Barang']) . '</td>
+            <td style="width:10%">' . $r3['Jumlah_Barang'] . '</td>
+            <td style="width:10%">' . $r3['Satuan'] . '</td>
             <td style="width:15%">' . rupiah($total) . '</td>
-            <td style="width:10%">' . $r2['Referensi'] . '</td>
+            <td style="width:10%">' . $r3['Referensi'] . '</td>
             <tr>';
 }
+$html .= '   <tr>
+            <td colspan="8"> pendapatan </td>
+            <td colspan="2">' . rupiah($tmasuk) . '</td>
+            </tr>';
 $html .= '</tbody>
     </table>
     </body>

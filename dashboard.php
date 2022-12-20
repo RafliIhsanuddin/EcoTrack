@@ -45,6 +45,7 @@ $tkeluar = 0;
 foreach ($pengeluaran as $keluar) {
     $tkeluar = $tkeluar + $keluar['Jumlah_Barang'] * $keluar['Harga_Barang'];
 }
+// total transaksi
 $totk= mysqli_query($conn, "SELECT * FROM `transaksi_pengeluaran` WHERE id_User = $iduser;");
 $tot = 0;
 foreach ($totk as $k) {
