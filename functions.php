@@ -8,6 +8,12 @@ function hapus($id) {
     return mysqli_affected_rows($conn);
 }
 
+function hapuspend($id) {
+    global $conn;
+    mysqli_query($conn,"DELETE FROM pendapatan WHERE Id_Barang = $id");
+    return mysqli_affected_rows($conn);
+}
+
 
 
 
@@ -134,6 +140,24 @@ function cariBarang($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
     return querycoba($query);
 }
 
+function cariBarangpend($keyword,$namatabel,$iduser,$awaldata,$jumperhal){
+    $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi,$namatabel.no_Transaksi FROM $namatabel JOIN pendapatan ON pendapatan.id_Transaksi = $namatabel.id_Transaksi WHERE pendapatan.id_User = $iduser
+    AND pendapatan.Nama_Barang 
+    LIKE '%$keyword%' 
+    OR pendapatan.Referensi 
+    LIKE '%$keyword%'
+    OR $namatabel.tanggal_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.status_Transaksi
+    LIKE '%$keyword%' 
+    OR $namatabel.jenis_Transaksi
+    LIKE '%$keyword%' 
+    GROUP BY $namatabel.id_Transaksi 
+    LIMIT $awaldata,$jumperhal";
+
+    return querycoba($query);
+}
+
 function cariBarangseb($keyword,$namatabel,$iduser){
     $query = "SELECT $namatabel.id_Transaksi,$namatabel.jenis_Transaksi,$namatabel.status_Transaksi,$namatabel.tanggal_Transaksi,$namatabel.bukti_Transaksi,$namatabel.no_Transaksi FROM $namatabel JOIN pengeluaran ON pengeluaran.id_Transaksi = $namatabel.id_Transaksi WHERE pengeluaran.id_User = $iduser
     AND pengeluaran.Nama_Barang 
@@ -164,6 +188,31 @@ function ubah($data){
     $toko = htmlspecialchars($_POST['toko']);
 
     $query = "UPDATE `pengeluaran` SET 
+        `Nama_Barang` = '$nama',
+        `Satuan` = '$satuan',
+        `Jumlah_Barang` ='$jumlah',
+        `Harga_Barang` = '$harga',
+        `Referensi` = '$toko'
+        WHERE Id_Barang = $id" 
+        ;
+
+    mysqli_query($conn,$query);
+
+    return mysqli_affected_rows($conn);
+}
+
+
+function ubahpend($data){
+    global $conn;
+
+    $id = $data['id'];
+    $nama = htmlspecialchars($_POST['nabar']);
+    $harga = htmlspecialchars($_POST['habar']);
+    $jumlah = htmlspecialchars($_POST['jumbar']);
+    $satuan = htmlspecialchars($_POST['satuan']);
+    $toko = htmlspecialchars($_POST['toko']);
+
+    $query = "UPDATE `pendapatan` SET 
         `Nama_Barang` = '$nama',
         `Satuan` = '$satuan',
         `Jumlah_Barang` ='$jumlah',

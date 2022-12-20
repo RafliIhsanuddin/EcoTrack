@@ -1229,16 +1229,32 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
 }
 
-.ml-\[116px\] {
-  margin-left: 116px;
+.ml-\[120px\] {
+  margin-left: 120px;
 }
 
 .mb-1 {
   margin-bottom: 0.25rem;
 }
 
-.ml-\[110px\] {
-  margin-left: 110px;
+.ml-\[1px\] {
+  margin-left: 1px;
+}
+
+.ml-\[130px\] {
+  margin-left: 130px;
+}
+
+.ml-\[13px\] {
+  margin-left: 13px;
+}
+
+.ml-\[170px\] {
+  margin-left: 170px;
+}
+
+.ml-\[180px\] {
+  margin-left: 180px;
 }
 
 .block {

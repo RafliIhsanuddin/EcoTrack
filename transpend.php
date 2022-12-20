@@ -17,8 +17,9 @@ $jumhal = ceil($jumdata / $jumperhal);
 $tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pendapatan");
 
 if ($tes->num_rows > 0) {
-    while ($baris1 = $tes->fetch_assoc()) {
-        $_SESSION['transidpend'] = $baris1['MAX(id_Transaksi)'];
+    while ($baris = $tes->fetch_assoc()) {
+        $_SESSION['transidpend'] = $baris['MAX(id_Transaksi)'];
+        $jadilah = $baris['MAX(id_Transaksi)'] + 1;
     }
 }
 
@@ -67,12 +68,13 @@ if ($halaktif < $jumhal - $jumlahlink) {
 $var = cari($keyword, "transaksi_pendapatan", $iduser, $awaldata, $jumperhal);
 
 $zx = 0;
+
 foreach ($var as $baris) {
     $zx++;
 }
 
 if ($zx === 0) {
-    $var = cariBarang($keyword, "transaksi_pendapatan", $iduser, $awaldata, $jumperhal);
+    $var = cariBarangpend($keyword, "transaksi_pendapatan", $iduser, $awaldata, $jumperhal);
 }
 
 
@@ -80,6 +82,17 @@ if ($zx === 0) {
 if (!isset($_SESSION['subpend'])) {
     $query = "DELETE FROM pendapatan WHERE id_Transaksi = $transbar";
     mysqli_query($conn, $query);
+}else{
+    unset($_SESSION['subpend']);
+}
+
+if (isset($_SESSION['ubahtambarpend'])){
+    if (isset($_SESSION['tambarpend'])) {
+        echo "<script>alert('Data Barang Berhasil Diubah');
+        document.location.href = 'transpend.php' </script>";
+        unset($_SESSION['tambarpend']);
+    }
+    unset($_SESSION['ubahtambarpend']);
 }
 
 

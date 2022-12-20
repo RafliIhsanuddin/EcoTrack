@@ -4,9 +4,9 @@ require 'connect.php';
 require 'functions.php';
 session_start();
 
-$_SESSION['idtrans'] = $_GET['id'];
+$_SESSION['idtranspend'] = $_GET['id'];
 
-$id = $_SESSION['idtrans'];
+$id = $_SESSION['idtranspend'];
 
 $iduser = $_SESSION["idakun"];
 
@@ -62,21 +62,16 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_affected_rows($conn) > 0) {
         echo "<script>alert('Data Transaksi Berhasil Diubah');
-        document.location.href = 'transpeng.php' </script>";
-        // echo "berhasil";
+        document.location.href = 'transpend.php' </script>";
     } else {
-        if (isset($_SESSION['tambar'])) {
-            echo "<script>alert('Data Barang Berhasil Diubah');
-            </script>";
-            echo "<script>alert('Data Transaksi Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-            unset($_SESSION['tambar']);
-        } else {
-            echo "<script>alert('Data Barang Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-        }
+        echo "<script>alert('Data Transaksi Gagal Diubah');
+        document.location.href = 'transpend.php' </script>";
     }
 }
+
+
+$_SESSION['ubahtambarpend'] = true;
+
 
 $jumlahlink = 2;
 if ($halaktif > $jumlahlink) {
@@ -124,6 +119,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="transpend.php" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
                     <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
@@ -189,7 +185,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
         <main>
             <div class="w-[90%] h-fit mx-auto bg-white rounded-lg shadow-sm mt-16 md:w-[700px] lg:w-[900px]">
                 <div class="p-8">
-                    <h1 class="text-2xl font-semibold">Pengeluaran</h1>
+                    <h1 class="text-2xl font-semibold">Pendapatan</h1>
                     <p class="text-sm">Lorem ipsum dolor sit amet</p>
                 </div>
 
@@ -197,13 +193,14 @@ if ($halaktif < $jumhal - $jumlahlink) {
 
                     <!-- form transaksi -->
                     <form action="" method="POST" enctype=multipart/form-data>
+                        <div class="flex">
+                            <div class="mx-auto ml-[180px]">Jika tidak pilih file,gambar sama</div>
+                        </div>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                             <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">
                             <input type="hidden" name="buktiLama" value="<?= $transaksi['bukti_Transaksi'] ?>">
                             <div class="mx-auto">
                                 <input name="buktit" type="file" id="bukti" class="rounded-full w-[280px] text-sm h-10 border border-gray-300 ">
-                                <div>Gambar Lama</div>
-                                <img class="w-48" src="upload/<?= $transaksi['bukti_Transaksi'] ?>" alt="">
                             </div>
                             <div class="mx-auto">
                                 <input name="jenist" type="text" value="<?= $transaksi['jenis_Transaksi'] ?>" id="jenis" placeholder="Jenis Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
@@ -236,16 +233,16 @@ if ($halaktif < $jumhal - $jumlahlink) {
                     <div class="flex">
                         <div class="mx-auto">
                             <?php if ($halaktif > 1) : ?>
-                                <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $halaktif - 1; ?>">&laquo;</a>
+                                <a href="ubahtransaksipend.php?id=<?= $id ?>&halaman= <?= $halaktif - 1; ?>">&laquo;</a>
                             <?php endif; ?>
                             <?php for ($i = $angmul; $i <= $angakh; $i++) : ?>
                                 <?php if ($i == $halaktif) : ?>
-                                    <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
+                                    <a href="ubahtransaksipend.php?id=<?= $id ?>&halaman= <?= $i; ?>" style="font-weight:bold; color:red;"><?= $i; ?></a>
                                 <?php else : ?>
-                                    <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $i; ?>"><?= $i; ?></a>
+                                    <a href="ubahtransaksipend.php?id=<?= $id ?>&halaman= <?= $i; ?>"><?= $i; ?></a>
                                 <?php endif; ?>
                             <?php endfor; ?> <?php if ($halaktif < $jumhal) : ?>
-                                <a href="ubahtransaksipeng.php?id=<?= $id ?>&halaman= <?= $halaktif + 1; ?>">&raquo;</a>
+                                <a href="ubahtransaksipend.php?id=<?= $id ?>&halaman= <?= $halaktif + 1; ?>">&raquo;</a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -291,8 +288,8 @@ if ($halaktif < $jumhal - $jumlahlink) {
                                         <td class=""><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class=""><?php echo $baris['Satuan']; ?></td>
                                         <td class=""><?php echo $baris['Referensi']; ?></td>
-                                        <td class=""><a href="hapusubahtranspeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
-                                        <td class=""><a href="ubahtransbarpeng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class=""><a href="hapusubahtranspend.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
+                                        <td class=""><a href="ubahtransbarpend.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>
@@ -317,7 +314,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                             </a>
                         </div>
                         <div class="w-[280px] md:w-[150px]">
-                            <a href="ubahpengtambah.php">
+                            <a href="ubahpendtambah.php">
                                 <button type="button" id="tambah" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm w-full border border-gray-300 px-5 mb-5 rounded-full h-10">
                                     Tambah
                                 </button>

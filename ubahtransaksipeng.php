@@ -65,18 +65,22 @@ if (isset($_POST['submit'])) {
         document.location.href = 'transpeng.php' </script>";
         // echo "berhasil";
     } else {
-        if (isset($_SESSION['tambar'])) {
-            echo "<script>alert('Data Barang Berhasil Diubah');
-            </script>";
-            echo "<script>alert('Data Transaksi Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-            unset($_SESSION['tambar']);
-        } else {
-            echo "<script>alert('Data Barang Gagal Diubah');
-            document.location.href = 'transpeng.php' </script>";
-        }
+        echo "<script>alert('Data Transaksi Gagal Diubah');
+        document.location.href = 'transpeng.php' </script>";
     }
 }
+
+$_SESSION['ubahtambar'] = true;
+
+// if (isset($_SESSION['tambar'])) {
+//     echo "<script>alert('Data Barang Berhasil Diubah');
+//      document.location.href = 'transpeng.php' </script>";
+    
+//     unset($_SESSION['tambar']);
+// } else {
+//     echo "<script>alert('Data Barang Gagal Diubah');
+//     document.location.href = 'transpeng.php' </script>";
+// }
 
 $jumlahlink = 2;
 if ($halaktif > $jumlahlink) {
@@ -129,6 +133,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="transpeng.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Transaksi Pengeluaran</a></li>
                     <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
@@ -203,7 +208,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                     <!-- form transaksi -->
                     <form action="" method="POST" enctype=multipart/form-data>
                         <div class="flex">
-                            <div class="mx-auto ml-[110px]">Jika tidak pilih file dibawah maka gambar sama</div>
+                            <div class="mx-auto ml-[180px]">Jika tidak pilih file,gambar sama</div>
                         </div>
                         <div class="flex p-5 mb-3 py-3 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                             <input type="hidden" name="idubah" value="<?= $transaksi['id_Transaksi'] ?>">

@@ -3,7 +3,7 @@
 require 'connect.php';
 require 'functions.php';
 session_start();
-unset($_SESSION['keywordpend']);
+unset($_SESSION['keyword']);
 
 $iduser = $_SESSION["idakun"];
 

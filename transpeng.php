@@ -111,9 +111,19 @@ if ($zx === 0) {
 if (!isset($_SESSION['subpeng'])) {
     $query = "DELETE FROM pengeluaran WHERE id_Transaksi = $transbar";
     mysqli_query($conn, $query);
+}else{
+    unset($_SESSION['subpeng']);
 }
 
-
+if (isset($_SESSION['ubahtambar'])){
+    if (isset($_SESSION['tambar'])) {
+        echo "<script>alert('Data Barang Berhasil Diubah');
+         document.location.href = 'transpeng.php' </script>";
+        
+        unset($_SESSION['tambar']);
+    }
+    unset($_SESSION['ubahtambar']);
+}
 
 
 // if (isset($_POST['reset'])) {
