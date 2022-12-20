@@ -3,9 +3,8 @@ session_start();
 
 require_once 'connect.php';
 require 'functions.php';
-// if (!isset($_SESSION['nama']) || !isset($_SESSION['id'])) {
-//     header("location: login.php");
-// }
+global $conn;
+
 
 
 if (!isset($_SESSION["login"])) {
@@ -16,13 +15,8 @@ if (!isset($_SESSION["login"])) {
 $iduser = $_SESSION["idakun"];
 
 
-$jumperhal = 5;
-$jumdata = count(querycoba("SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser"));
-$jumhal = ceil($jumdata / $jumperhal);
-
 
 $tes = $conn->query("SELECT MAX(id_Transaksi) FROM transaksi_pengeluaran");
-
 
 if ($tes->num_rows > 0) {
     while ($baris1 = $tes->fetch_assoc()) {
@@ -30,30 +24,20 @@ if ($tes->num_rows > 0) {
     }
 }
 
-
-
-
-
-$halaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
-
-$awaldata = ($jumperhal * $halaktif) - $jumperhal;
-
-
-// if(isset($_GET['halaman'])){
-//     $halaktif = $_GET['halaman'];
-// }else{
-//     $halaktif = 1;
-// }
-
-
-$var = "SELECT * FROM transaksi_pengeluaran WHERE id_User = $iduser LIMIT $awaldata,$jumperhal";
-$hasil = $conn->query($var);
-
 $pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $iduser");
 $tkeluar = 0;
-foreach ($pengeluaran as $row) {
-    $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
+foreach ($pengeluaran as $keluar) {
+    $tkeluar = $tkeluar + $keluar['Jumlah_Barang'] * $keluar['Harga_Barang'];
 }
+$totk= mysqli_query($conn, "SELECT * FROM `transaksi_pengeluaran` WHERE id_User = $iduser;");
+$tot = 0;
+foreach ($totk as $k) {
+    $tot = $tot + 1;
+}
+
+// echo count($totk);
+// echo $iduser;
+// echo $tkeluar;
 // $pendapatan = mysqli_query($conn, "SELECT * FROM pendapatan WHERE id_User = $iduser");
 // echo $tkeluar;
 $tmasuk = 0;
@@ -63,6 +47,10 @@ $tmasuk = 0;
 
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,366 +58,145 @@ $tmasuk = 0;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecotrack - Dashboard</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="output.css">
-    <!-- <style>
-        * {
-            border: 1px solid black;
-        }
-    </style> -->
 </head>
 
-<body class="bg-darkerBlue">
+<body class="bg-gray-200">
+    <div class="flex flex-col justify-between">
 
-    <div class="flex flex-col h-screen justify-between">
-
-        <!-- top navbar -->
         <header>
-            <nav class="container flex py-1 mx-auto min-w-full h-12 bg-darkerBlue text-white border-b-2 border-b-white">
-
+            <!-- header -->
+            <nav
+                class="container hidden py-1 mx-auto min-w-full bg-gradient-to-r from-[#845EC2] via-[#FF6F91] to-[#FFC75F] md:flex">
+                <!-- logo -->
+                <div class="py-1 ml-6 justify-start w-fit items-center">
+                    <img src="img/ecotrack2.png" class="w-44">
+                </div>
                 <!-- nav menu -->
-                <ul class="flex flex-1 items-center gap-10 mx-10 font-semibold">
-                    <li><a href="dashboard.php" class="hover:text-lightGreen">Dashboard</a></li>
-                    <li><a href="pembukuan.php" class="hover:text-lightGreen">Pembukuan</a>
+                <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
+                    <li><a href="dashboard.php" class="bg-white text-evendarkerBlue px-3 py-2 rounded-lg">Dashboard</a>
                     </li>
-                    <li><a href="bantuan.php" class="hover:text-lightGreen">Bantuan</a></li>
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                 </ul>
 
-                <div>
-                    <a href="logout.php" class="flex flex-1 hover:text-lightGreen font-semibold p-2 mx-10">Logout</a>
+                <div class="flex">
+
+                    <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
+                        class="text-white bg-transparent mr-4 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-0 text-center inline-flex items-center"
+                        type="button">
+                        <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/acc.png"
+                                class="mx-auto w-10 h-10 p-0" alt=""></div>
+                    </button>
+                </div>
+
+                <!-- Dropdown menu -->
+                <div id="dropdownDivider"
+                    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                        <li>
+                            <a href="akun.php"
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        </li>
+                        <li>
+                            <a href="logout.php"
+                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
+
+            <!-- dropdown button -->
+            <div class="flex">
+
+                <button id="dropdownDividerButton2" data-dropdown-toggle="dropdownDivider2"
+                    class="text-white bg-transparent mr-0 mx-auto hover:font-bold focus:outline-none font-medium rounded-lg text-lg px-4 py-2.5 text-center inline-flex items-center md:hidden"
+                    type="button">
+                    <div class="w-10 h-10 rounded-full bg-[#645CAA] flex"><img src="img/menudots.png"
+                            class="mx-auto w-10 h-10 p-2" alt=""></div>
+                </button>
+            </div>
+
+            <!-- Dropdown menu -->
+            <div id="dropdownDivider2"
+                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
+                    <li>
+                        <a href="akun.php"
+                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                    </li>
+                    <li>
+                        <a href="pembukuan.php"
+                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                    </li>
+                    <li>
+                        <a href="bantuan.php"
+                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                    </li>
+                </ul>
+                <div class="py-1">
+                    <a href="logout.php"
+                        class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                </div>
+            </div>
+
         </header>
 
         <!-- middle section -->
 
 
-        <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-            <div class="w shadow-lg rounded-lg overflow-hidden mb-auto">
-                <div class="py-3 px-5 bg-gray-50">Arus transaksi</div>
-                <canvas class="p-10 " id="chartBar"></canvas>
-            </div>
-        </div>
-        <!-- content -->
-
-        <?php ?>;
-
-
-        <!-- tabs -->
-        <div class="tabs flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-            <input type="radio" name="tabs" id="general" checked="checked" class="hidden">
-            <label for="general" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
-                General
-            </label>
-            <div class="tab w-full p-10 bg-white order-1 hidden">
-                <?php if (isset($_GET['success'])): ?>
-                <div class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-                    role="alert">
-                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Info</span>
-                    <div>
-                        <span class="font-medium">login berhasil </span>
-                        <?php echo $_GET['success'] ?>
-                    </div>
-                </div>
-
-                <?php endif ?>
-                <?php
-                ?>
-                <div>
-                    <!-- table section -->
-                    <div class="flex w-full justify-center">
-                        <div class="p-5">
-
-                            <table class="w-full overflow-hidden rounded-2xl">
-                                <thead class="bg-gray-300 border-b-2 border-gray-500">
-                                    <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
-                                            Nomor
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Tanggal
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Jenis
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Status
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
-                                            Bukti
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-gray-100">
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
-
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+        <main>
+            <div class="">
+                <div class="m-7 mb-0">
+                    <h1 class="text-2xl font-semibold">Dashboard</h1>
+                    <p class="text-sm">Statistik umum seluruh transaksi</p>
+                    <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
+                        <div class="w shadow-lg rounded-lg overflow-hidden mb-auto">
+                            <div class="py-3 px-5 bg-gray-50">Arus transaksi</div>
+                            <canvas class="p-10 " id="chartBar"></canvas>
                         </div>
                     </div>
                 </div>
-                <!-- edit hapus tambah -->
-            </div>
-
-            <input type="radio" name="tabs" id="pengeluaran" class="hidden">
-            <label for="pengeluaran" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
-                Pengeluaran
-            </label>
-            <div class="tab w-full p-10 bg-white order-1 hidden">
-                <div>
-                    <!-- table section -->
-                    <div class="flex w-full justify-center">
-                        <div class="p-5">
-
-                            <table class="w-full">
-                                <thead class="bg-gray-300 border-b-2 border-gray-500">
-                                    <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
-                                            Nomor
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Tanggal
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Jenis
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Status
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Bukti
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center ">
-                                            Hapus
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
-                                            Ubah
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-gray-100">
-                                    <?php if ($hasil->num_rows > 0): ?>
-                                    <?php $j = 1; ?>
-                                    <?php while ($baris = $hasil->fetch_assoc()): ?>
-                                    <?php ?>
-                                    <tr class="">
-                                        <td>
-                                            <?= $j ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $baris['tanggal_Transaksi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $baris['jenis_Transaksi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $baris['status_Transaksi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $baris['bukti_Transaksi']; ?>
-                                        </td>
-                                        <td>
-                                            <a href="ubahtransaksipeng.php?id=<?= $baris['id_Transaksi']; ?>"
-                                                class="hover:text-green-700">Ubah</a>
-                                        </td>
-                                        <td>
-                                            <a href="">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <?php $j++ ?>
-                                    <?php endwhile ?>
-                                    <?php endif ?>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="flex flex-col m-6 space-y-5 space-x-0 md:flex-row md:space-y-0 md:space-x-5">
+                    <div
+                        class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
+                        <h2 class="font-semibold">Total Transaksi</h2>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo $tot; ?></p>
                     </div>
-                </div>
-                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
-                    <!-- nav menu -->
-                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#"
-                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Edit
-                            </a>
-                        </div>
-                        <div><a href="#"
-                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Hapus
-                            </a>
-                        </div>
-                        <div><a href="pengeluaran.php"
-                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Tambah
-                            </a>
-                        </div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
+                        <h2 class="font-semibold">Total Pendapatan</h2>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo rupiah($tmasuk); ?></p>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
+                        <h2 class="font-semibold">Total Pengeluaran</h2>
+                        <p class="font-semibold text-right mr-5 text-3xl"><?php echo rupiah($tkeluar); ?></p>
                     </div>
                 </div>
             </div>
 
-            <input type="radio" name="tabs" id="pendapatan" class="hidden">
-            <label for="pendapatan" class="p-4 bg-evendarkerPurple text-white rounded-t-xl font-bold">
-                Pendapatan
-            </label>
-            <div class="tab w-full p-10 bg-white order-1 hidden">
-                <div>
-                    <!-- table section -->
-                    <div class="flex w-full justify-center">
-                        <div class="p-5">
+            <div class="m-6">
 
-                            <table class="w-full">
-                                <thead class="bg-gray-300 border-b-2 border-gray-500">
-                                    <tr>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tl-lg">
-                                            Nomor
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Tanggal
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Jenis
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center">
-                                            Status
-                                        </th>
-                                        <th
-                                            class="px-2 md:px-6 lg:px-10 py-2 text-sm font-bold tracking-wide text-center rounded-tr-lg">
-                                            Bukti
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-gray-100">
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
+                <ul
+                    class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
+                    <li class="w-full">
+                        <a href="transpend.php"
+                            class="inline-block p-4 w-full text-gray-900 bg-gray-100 rounded-l-lg">Pendapatan</a>
+                    </li>
+                    <li class="w-full">
+                        <a href="transpeng.php"
+                            class="inline-block p-4 w-full text-gray-900 bg-white rounded-r-lg">Pengeluaran</a>
+                    </li>
+                </ul>
 
-                                    <tr class="">
-                                        <td>
-                                            a
-                                        </td>
-                                        <td>
-                                            b
-                                        </td>
-                                        <td>
-                                            c
-                                        </td>
-                                        <td>
-                                            d
-                                        </td>
-                                        <td>
-                                            e
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex py-1 h-10 mx-auto min-w-full bg-transparent">
-                    <!-- nav menu -->
-                    <div class="flex justify-center items-center mx-auto text-white font-semibold">
-                        <div><a href="#"
-                                class="mx-2 px-5 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Edit
-                            </a>
-                        </div>
-                        <div><a href="#"
-                                class="mx-2 px-3 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Hapus
-                            </a>
-                        </div>
-                        <div><a href=""
-                                class="mx-2 px-2 md:mx-10 lg:mx-20 py-1 w-10 font-bold bg-lightGreen text-evendarkerBlue rounded-full">
-                                Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-        </div>
+        </main>
 
-
-
-
-
-
-
-
-
-
-
-        <!-- footer -->
         <footer>
-            <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-[#645CAA] text-white">
+            <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
                 <div class=" w-full py-3">
                     <div class="">
                         <h2>Address</h2>
@@ -454,12 +221,13 @@ $tmasuk = 0;
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="" class="underline hover:text-[#A084CA]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
             </div>
         </footer>
+
 
     </div>
 
@@ -493,6 +261,8 @@ $tmasuk = 0;
             configBarChart
         );
     </script>
+    <script src="node_modules/flowbite/dist/flowbite.js"></script>
+
 </body>
 
 </html>

@@ -71,7 +71,7 @@ if (isset($_POST["login"])){
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="landing.html" class="hover:text-[#845EC2]">Home</a></li>
                     <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li>
-                    <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
+                    <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="#"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
@@ -103,7 +103,7 @@ if (isset($_POST["login"])){
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
             </li>
             <li>
-                <a href="register.html"
+                <a href="register.php"
                     class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
             </li>
         </ul>
@@ -179,7 +179,7 @@ if (isset($_POST["login"])){
                     <p class="text-center text-sm my-5 max-w-md md:text-left">
                         Buat akun dan mulai blah blah blah
                     </p>
-                    <a href="register.html"
+                    <a href="register.phpS"
                         class="py-1 w-3/4 bg-[#845EC2] hover:bg-[#643EA3] text-white font-bold text-center mx-auto rounded-full">Register
                         Now</a>
                 </div>

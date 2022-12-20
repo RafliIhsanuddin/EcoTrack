@@ -2,7 +2,7 @@
 session_start();
 require_once 'connect.php';
 require_once 'functions.php';
-echo $awal = $_POST['awal'];
+
 $id = $_SESSION['idakun'];
 
 $awal = date_format(date_create($_POST["awal"]), "Y-m-d");

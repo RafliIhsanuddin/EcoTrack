@@ -125,35 +125,27 @@ require 'cobaregister.php';
                                         <div>
                                             <label for="email" class="text-sm p-3">Email</label>
                                         </div>
-                                        <input type="email" id="email" name="email" required
-                                            class="my-1 px-3 py-0.5 shadow-xl block rounded-full bg-white w-full border-[1px] md:w-full"><br>
+                                        <input type="email" id="email" name="email" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full bg-white w-full border-[1px] md:w-full"><br>
                                         <div>
                                             <label for="username" class="text-sm p-3">Username</label>
                                         </div>
-                                        <input type="text" id="username" name="username" required
-                                            class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
+                                        <input type="text" id="username" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="username" ><br>
                                         <div>
                                             <label for="telp" class="text-sm p-3">No. Telp</label>
                                         </div>
-                                        <input type="tel" id="telp" name="telp" required
-                                            class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
+                                        <input type="tel" id="telp" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
                                         <div>
                                             <label for="pass" class="text-sm p-3">Password</label>
                                         </div>
-                                        <input type="password" id="pass" name="password" required
-                                            class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"><br>
+                                        <input type="password" id="pass" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full" name="password"><br>
                                         <div>
                                             <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
                                         </div>
-                                        <input type="password" id="konfirmpass" name="konfirmasi" required class=" my-1
-                                            px-3 py-0.5 shadow-xl block rounded-full bg-white w-full border-[1px]
-                                            md:w-full"><br>
+                                        <input type="password" id="konfirmpass" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full" name="konfirmasi"><br>
                                     </div>
                                     </p>
-                                    <input type="submit" name="register" href="#"
-                                        class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register
-                                    <a href="register.php"
-                                        class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
+                                    <button type="submit" name="register" class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register</button>
+                                    <a href="register.php" class="text-center no-underline font-semibold text-sm text-black hover:text-darkBlue hover:underline decoration-inherit">
                                         Sudah punya akun? Kembali ke halaman Login.
                                     </a>
                                 </div>
@@ -193,7 +185,7 @@ require 'cobaregister.php';
                     <h2>FAQ</h2>
                 </div>
                 <div class="">
-                    <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                    <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                 </div>
             </div>
 
