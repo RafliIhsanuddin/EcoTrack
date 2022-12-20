@@ -98,12 +98,12 @@ while ($r2 = mysqli_fetch_assoc($q2)) {
             <td style="width:10%">' . $r2['Satuan'] . '</td>
             <td style="width:15%">' . rupiah($total) . '</td>
             <td style="width:10%">' . $r2['Referensi'] . '</td>
-            </tr>
-            <tr>
+            </tr>';
+}
+$html .= '   <tr>
             <td colspan="8"> pengeluaran </td>
             <td colspan="2">' . rupiah($tkeluar) . '</td>
             </tr>';
-}
 $html .= '
     </tbody>
     </table>
