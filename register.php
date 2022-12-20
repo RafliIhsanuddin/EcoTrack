@@ -9,7 +9,7 @@ require 'cobaregister.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecotrack - Register</title>
+    <title>Register</title>
     <link rel="stylesheet" href="output.css">
     <!-- <style>
         *{
@@ -29,10 +29,10 @@ require 'cobaregister.php';
         </div>
         <!-- nav menu -->
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
-            <li><a href="landing.php" class="hover:text-[#A084CA]">Home</a></li>
-            <li><a href="about.php" class="hover:text-[#A084CA]">About</a></li>
-            <li><a href="register.php" class="text-[#A084CA]">Daftar</a></li>
-            <a href="login.php" class="px-2 py-2 mr-10 w-20 font-bold bg-[#A084CA] text-evendarkerBlue text-center rounded-full">
+            <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
+            <!-- <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li> -->
+            <li><a href="register.php" class="text-[#845EC2]">Daftar</a></li>
+            <a href="login.php" class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                 Login
                 
             </a>
@@ -109,23 +109,23 @@ require 'cobaregister.php';
                                         <div>
                                             <label for="email" class="text-sm p-3">Email</label>
                                         </div>
-                                        <input type="email" id="email" name="email" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full bg-white w-full border-[1px] md:w-full"><br>
+                                        <input type="email" id="email" name="email" required class="my-1 px-3 py-0.5 shadow-md block rounded-full bg-white w-full border-[1px] md:w-full"><br>
                                         <div>
                                             <label for="username" class="text-sm p-3">Username</label>
                                         </div>
-                                        <input type="text" id="username" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="username" ><br>
+                                        <input type="text" id="username" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full"  name="username" ><br>
                                         <div>
                                             <label for="telp" class="text-sm p-3">No. Telp</label>
                                         </div>
-                                        <input type="tel" id="telp" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
+                                        <input type="tel" id="telp" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
                                         <div>
                                             <label for="pass" class="text-sm p-3">Password</label>
                                         </div>
-                                        <input type="password" id="pass" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full" name="password"><br>
+                                        <input type="password" id="pass" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full" name="password"><br>
                                         <div>
                                             <label for="konfirmpass" class="text-sm p-3">Konfirmasi Password</label>
                                         </div>
-                                        <input type="password" id="konfirmpass" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full" name="konfirmasi"><br>
+                                        <input type="password" id="konfirmpass" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full" name="konfirmasi"><br>
                                     </div>
                                     </p>
                                     <button type="submit" name="register" class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-full my-7 font-bold justify-center rounded-full md:w-full">Register</button>
@@ -169,7 +169,7 @@ require 'cobaregister.php';
                     <h2>FAQ</h2>
                 </div>
                 <div class="">
-                    <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                    <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                 </div>
             </div>
 

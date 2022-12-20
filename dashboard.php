@@ -170,10 +170,10 @@ if ($tes2->num_rows > 0) {
 
                 <ul class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
                     <li class="w-full">
-                        <a href="transpend.php" class="inline-block p-4 w-full text-white bg-[#845EC2] hover:text-[#FFC75F] rounded-l-lg">Pendapatan</a>
+                        <a href="transpend.php" class="inline-block p-4 w-full bg-white hover:bg-[#845EC2] hover:text-white rounded-l-lg">Pendapatan</a>
                     </li>
                     <li class="w-full">
-                        <a href="transpeng.php" class="inline-block p-4 w-full text-white bg-[#FFC75F] hover:text-[#845EC2] rounded-r-lg">Pengeluaran</a>
+                        <a href="transpeng.php" class="inline-block p-4 w-full bg-white hover:bg-[#845EC2] hover:text-white rounded-r-lg">Pengeluaran</a>
                     </li>
                 </ul>
             

@@ -24,8 +24,8 @@
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="#" class="text-[#845EC2]">Home</a></li>
-                    <!-- <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li> -->
-                    <li><a href="register.html" class="hover:text-[#845EC2]">Daftar</a></li>
+                    <!-- <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li> -->
+                    <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="login.php"
                         class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
@@ -49,20 +49,20 @@
                 class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="landing.html"
+                        <a href="landing.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</a>
                     </li>
                     <li>
-                        <a href="about.html"
+                        <a href="about.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">About</a>
                     </li>
                     <li>
-                        <a href="register.html"
+                        <a href="register.php"
                             class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="login.html"
+                    <a href="login.php"
                         class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Login</a>
                 </div>
             </div>
@@ -82,12 +82,12 @@
                     </p>
                     <div>
                         <a href="register.php"
-                            class="px-5 py-2 font-bold bg-lightGreen text-evendarkerBlue text-center rounded-full">
+                            class="px-5 py-2 font-bold bg-white shadow-md text-evendarkerBlue text-center rounded-full">
                             Daftar Sekarang
                         </a>
 
                         <!-- hover stuff with transition-->
-                        <!-- <a href="register.html" target="_blank"
+                        <!-- <a href="register.php" target="_blank"
                         class="transition-colors ease-in-out duration-500 delay-100 hover:bg-teal hover:text-evendarkerBlue px-5 py-2 font-bold bg-[#FF6F91] text-evendarkerBlue text-center rounded-full">
                         Daftar Sekarang
                     </a> -->
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center">
-                        <a href="about.html"
+                        <a href="about.php"
                             class="px-5 py-2 shadow-md w-full font-bold bg-white text-evendarkerBlue text-center rounded-full">
                             Discover More
                         </a>
@@ -205,7 +205,7 @@
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
