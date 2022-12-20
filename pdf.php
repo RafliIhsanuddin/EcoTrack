@@ -18,10 +18,6 @@ WHERE  transaksi_pengeluaran.id_User = $id AND tanggal_Transaksi BETWEEN '$awal'
 );
 // $q1 = mysqli_query($conn, " ");
 $pengeluaran = mysqli_query($conn, "SELECT * FROM pengeluaran WHERE id_User = $id");
-$tkeluar = 0;
-foreach ($pengeluaran as $row) {
-    $tkeluar = $tkeluar + $row['Jumlah_Barang'] * $row['Harga_Barang'];
-}
 use Mpdf\Mpdf;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -87,6 +83,7 @@ $html = '<!DOCTYPE html>
 $i = 1;
 while ($r2 = mysqli_fetch_assoc($q2)) {
     $total = $r2['Jumlah_Barang'] * $r2['Harga_Barang'];
+    $tkeluar = $tkeluar + $total;
     $html .= ' <tr>
             <td style="width:4%">' . $i++ . '</td>
             <td style="width:6%">' . $r2['no_Transaksi'] . '</td>
@@ -141,6 +138,10 @@ while ($r2 = mysqli_fetch_assoc($q2)) {
             <td style="width:10%">' . $r2['Referensi'] . '</td>
             <tr>';
 }
+$html .= '   <tr>
+            <td colspan="8"> pengeluaran </td>
+            <td colspan="2">' . rupiah($tmasuk) . '</td>
+            </tr>';
 $html .= '</tbody>
     </table>
     </body>
