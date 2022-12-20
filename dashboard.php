@@ -10,10 +10,10 @@ unset($_SESSION['keyword']);
 global $conn;
 
 
-// if (!isset($_SESSION["login"])) {
-//     header("location: login.php");
-//     exit;
-// }
+if (!isset($_SESSION["login"])) {
+    header("location: login.php");
+    exit;
+}
 
 $iduser = $_SESSION["idakun"];
 
