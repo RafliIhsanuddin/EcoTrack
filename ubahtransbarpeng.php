@@ -146,11 +146,11 @@ if(isset($_POST["submit"])){
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Harga Barang" required name="habar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="habar" value="<?= $barang['Harga_Barang']?>">
+                                <input type="number" placeholder="Harga Barang" required name="habar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="habar" value="<?= $barang['Harga_Barang']?>">
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">
+                                <input type="number" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">
                             </div>
 
                             <div class="mx-auto">

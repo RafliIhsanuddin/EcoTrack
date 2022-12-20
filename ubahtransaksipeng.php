@@ -225,7 +225,7 @@ if ($halaktif < $jumhal - $jumlahlink) {
                             </div>
 
                             <div class="mx-auto">
-                                <input name="not" type="text" value="<?= $transaksi['no_Transaksi'] ?>" id="nomor" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
+                                <input name="not" type="number" value="<?= $transaksi['no_Transaksi'] ?>" id="nomor" placeholder="Nomor Transaksi" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10">
                             </div>
                             <div class="mx-auto">
                                 <!-- <input type="text" id="status"  placeholder="Status" required class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10"> -->

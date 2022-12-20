@@ -248,7 +248,7 @@ function upload(){
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if(!in_array($ekstensiGambar,$EksistensiGambarValid)){
         echo "<script> 
-        alert('yang anda upload bukan gambar')
+        alert('yang anda upload bukan gambar ataupun pdf')
         </script>
         ";
         return false;
