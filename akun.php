@@ -1,11 +1,12 @@
 <?php
 session_start();
 require_once 'connect.php';
-require 'functions.php';
+require 'cobaubahpass.php';
 global $conn;
 $id = $_SESSION['idakun'];
 $akunuser = mysqli_query($conn, "SELECT * FROM user where id_user = $id;");
 $akun = $akunuser->fetch_assoc();
+
 
 ?>
 
@@ -103,10 +104,23 @@ $akun = $akunuser->fetch_assoc();
 
                 <div class="bg-transparent border-t py-5">
                     <p class="text-sm text-gray-400 font-semibold">Password</p>
-                    <a href="ubahpass.php" class="text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">Ubah
-                        password?</a>
-                </div>
+                    <p>Password disini</p>
 
+                    <details>
+                        <summary class="hover:cursor-pointer text-xs text-[#845EC2] hover:text-[#645CAA] font-semibold">
+                            Ubah password?</summary>
+                        <form action="" id="submit" method="POST">
+                            <input type="password" id="newpass" name="passlama" placeholder="Masukkan password lama"
+                                class="mt-2 rounded-full text-xs h-8">
+                            <input type="password" id="newpass" name="passbaru" placeholder="Masukkan password baru"
+                                class="mt-2 rounded-full text-xs h-8">
+                            <input type="password" id="newpasskonf" name="konfirmasi" placeholder="Konfirmasi password"
+                                class="mt-2 rounded-full text-xs h-8">
+                            <button type="submit" name="submit"
+                                class="rounded-full bg-[#845EC2] hover:bg-[#645CAA] text-white font-semibold border px-2 text-xs h-8">Submit</button>
+                        </form>
+                    </details>
+                </div>
                 <div class="space-y-2 text-left mb-7 pt-10">
                     <h2 class="text-3xl pt-5">
                         Contact Info
