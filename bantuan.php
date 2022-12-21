@@ -121,33 +121,44 @@ if (isset($_POST['submit'])) {
                         FAQ
                     </h1>
                     <p class="text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates eos quia, vitae animi
-                        saepe et sunt, officiis sint, unde consectetur quisquam quos id provident dolor facilis accusantium tempora cumque.
+                        Pada halaman bantuan, terdapat beberapa pertanyaan yang sering ditanyakan seputar penggunaan Ecotrack. Jika ada pertanyaan yang tidak tertera di halaman ini, silahkan masukkan pertanyaan ke dalam kolom text.
                     </p>
                 </div>
                 <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center  text-evendarkerBlue hover:text-[#845EC2]">Question 1</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <summary class="flex justify-between text-lg font-semibold items-center  text-evendarkerBlue hover:text-[#845EC2]">Bagaimana cara menggunakan Ecotrack?
+                    </summary>
+                    <p class="text-evendarkerBlue text-sm text-left">
+                        Ecotrack telah dibuat dengan sederhana untuk memudahkan pengguna melakukan pencatatan transaksi. Setelah membuat akun dan login ke dalam akun, pengguna akan masuk ke halaman dashboard, yang menampilkan statistik sederhana data yang telah dimasukkan. Adapun pilihan pendapatan atau pengeluaran, yang akan membawa pengguna ke dalam halaman yang berisikan data transaksi yang dapat dimasukkan.
+
+                    </p>
                 </details>
 
                 <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 2</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Jenis dokumen apa yang bisa saya upload sebagai bukti transaksi?
+                    </summary>
+                    <p class="text-evendarkerBlue text-sm text-left">Jenis dokumen yang dapat diterima sebagai bukti transaksi adalah jpeg, jpg, png dan pdf.
+                    </p>
                 </details>
 
                 <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 3</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Bagaimana cara mengunduh data transaksi yang sudah dimasukkan?
+                    </summary>
+                    <p class="text-evendarkerBlue text-sm text-left">Dalam halaman pembukuan, terdapat pilihan tanggal awal dan tanggal akhir, sebagai jangka waktu data yang ingin diunduh. Terdapat juga pilihan jenis dokumen yang bisa anda pilih dokumen data transaksi anda.
+                    </p>
                 </details>
 
                 <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 4</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Bagaimana jika saya perlu mengubah password?
+
+                    </summary>
+                    <p class="text-evendarkerBlue text-sm text-left">Password dapat diubah kapan saja di halaman akun. Pilih ubah password, lalu masukkan password baru yang diinginkan.
+                    </p>
                 </details>
 
                 <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 5</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Bagaimana jika saya mengalami masalah dengan data saya?
+                    </summary>
+                    <p class="text-evendarkerBlue text-sm text-left">Jika ada masalah yang ingin ditanyakan, silahkan masukkan pertanyaan ke dalam kolom text di bawah.</p>
                 </details>
 
                 <form action="" method="POST">

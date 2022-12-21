@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
             <div class="w-[90%] h-fit mx-auto bg-white rounded-lg shadow-sm mt-16 md:w-[700px] lg:w-[900px]">
                 <div class="p-8">
                     <h1 class="text-2xl font-semibold">Pendapatan</h1>
-                    <p class="text-sm">Lorem ipsum dolor sit amet</p>
+                    <p class="text-sm">Pencatatan data pendapatan beserta barangnya</p>
                 </div>
 
                 <div class="flex mx-auto container flex-col">
