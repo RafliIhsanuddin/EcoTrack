@@ -1,9 +1,11 @@
 <?php
 
 require_once('connect.php');
+require_once('functions.php');
+
 session_start();
 
-
+$id = $_GET['id'];
 
 if (!isset($_SESSION["login"])) {
     header("location: login.php");
@@ -25,17 +27,29 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $satuan = htmlspecialchars($_POST['satuan']);
     $toko = htmlspecialchars($_POST['toko']);
 
-    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
+    $query = "UPDATE `pengeluaran` SET 
+        `Nama_Barang` = '$nama',
+        `Satuan` = '$satuan',
+        `Jumlah_Barang` ='$jumlah',
+        `Harga_Barang` = '$harga',
+        `Referensi` = '$toko'
+        WHERE Id_Barang = $id" 
+        ;
     $hasil = $conn->query($query);
 
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        echo "<script>alert('Data Transaksi Berhasil Diubah');
         document.location.href = 'pengeluaran.php' </script>";
     } else {
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        echo "<script>alert('Data Transaksi Gagal Diubah');
         document.location.href = 'pengeluaran.php' </script>";
     }
 }
+
+
+$barang = querycoba("SELECT * FROM pengeluaran WHERE Id_Barang = $id")[0];
+
+
 
 ?>
 
@@ -83,11 +97,11 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 </div>
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
-                    <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
+                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
-                    <!-- <a href="landing.html"
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <!-- <a href="landing.php"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                     Logout
                 </a> -->
@@ -105,10 +119,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                            <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                            <a href="landing.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -126,20 +140,20 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             <div id="dropdownDivider2" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                     </li>
                     <li>
-                        <a href="dashboard.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        <a href="dashboard.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="pembukuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                        <a href="pembukuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
                     <li>
-                        <a href="bantuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                        <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="landing.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                    <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                 </div>
             </div>
 
@@ -157,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <div class="flex mx-auto container flex-col">
 
                     <!-- form pengeluaran -->
-                    <form action="">
+                    <form action="" method="POST">
                         <div class="flex p-8 mb-3 mt-2 lg:mt-14 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
                         <input type="hidden" name="id" value="<?= $barang['Id_Barang']?>">
 
@@ -170,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                             </div>
 
                             <div class="mx-auto">
-                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">>
+                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang']?>">
                             </div>
 
                             <div class="mx-auto">
@@ -216,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 

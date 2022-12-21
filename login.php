@@ -70,7 +70,7 @@ if (isset($_POST["login"])){
                     <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
                     <!-- <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li> -->
                     <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
-                    <a href="#"
+                    <a href="login.php"
                         class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                         Login
                     </a>
@@ -125,7 +125,7 @@ if (isset($_POST["login"])){
                     </h1>
                     <?php if (isset($_GET['error'])) : ?>
                     <!-- <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <span class="block sm:inline"><?php echo $_GET['error'] ?>
+                        <span class="block sm:inline">
                         </span>
                         <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                             <title>Close</title>

@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                     <li><a href="transpend.php" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
 
@@ -246,8 +246,8 @@ if (isset($_POST['submit'])) {
                                         <td class=""><?php echo $baris['Jumlah_Barang']; ?></td>
                                         <td class=""><?php echo $baris['Satuan']; ?></td>
                                         <td class=""><?php echo $baris['Referensi']; ?></td>
-                                        <td class=""><a href="hapusbarpeng.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
-                                        <td class=""><a href="ubahbarpeng.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
+                                        <td class=""><a href="hapusbarpend.php?id=<?= $baris['Id_Barang']; ?>" onclick="return confirm('yakin?')" class="hover:text-red-700">Hapus</a></td>
+                                        <td class=""><a href="ubahbarpend.php?id=<?= $baris['Id_Barang']; ?>" class="hover:text-green-700">Ubah</a></td>
                                     </tr>
                                     <?php $j++ ?>
                                 <?php endwhile ?>

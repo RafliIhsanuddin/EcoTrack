@@ -24,7 +24,6 @@
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="#" class="text-[#845EC2]">Home</a></li>
-                    <!-- <li><a href="about.html" class="hover:text-[#845EC2]">About</a></li> -->
                     <li><a href="register.php" class="hover:text-[#845EC2]">Daftar</a></li>
                     <a href="login.php"
                         class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">

@@ -94,10 +94,10 @@ if (isset($_POST['submit'])) {
                 <!-- nav menu -->
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="ubahtransaksipend.php?id=<?= $transid; ?>" class="bg-[#845EC2] hover:text-[#FFC75F] px-3 py-2 rounded-lg">Transaksi pendapatan</a></li>
-                    <li><a href="dashboard.html" class="hover:text-[#482C75]">Dashboard</a>
+                    <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.html" class="hover:text-[#482C75]">Bantuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                     <!-- <a href="landing.html"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                     Logout
@@ -116,10 +116,10 @@ if (isset($_POST['submit'])) {
                 <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                            <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                            <a href="landing.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -137,20 +137,20 @@ if (isset($_POST['submit'])) {
             <div id="dropdownDivider2" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                     <li>
-                        <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                        <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                     </li>
                     <li>
-                        <a href="dashboard.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        <a href="dashboard.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                     </li>
                     <li>
-                        <a href="pembukuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
+                        <a href="pembukuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
                     <li>
-                        <a href="bantuan.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                        <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
                     </li>
                 </ul>
                 <div class="py-1">
-                    <a href="landing.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                    <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@ if (isset($_POST['submit'])) {
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="bantuan.html" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 

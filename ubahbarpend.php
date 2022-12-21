@@ -1,26 +1,55 @@
 <?php
 
-require "functions.php";
-
-
+require_once('connect.php');
+require_once('functions.php');
 session_start();
+
+
+
 if (!isset($_SESSION["login"])) {
     header("location: login.php");
     exit;
 }
 
+$id = $_GET['id'];
+
+
+$transid = $_SESSION['transid'];
+$transid++;
 
 $iduser = $_SESSION["idakun"];
 
-if (isset($_POST['submit'])) {
-    $keluhan = $_POST['keluhan'];
-    $query = "INSERT INTO `bantuan` (`id`,`keluhan`,`id_User`) VALUES ('','$keluhan','$iduser')";
-    mysqli_query($conn, $query);
-    echo "<script>alert('Keluhan berhasil dikirim');
-        document.location.href = 'dashboard.php' </script>";
+
+
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+    $nama = htmlspecialchars($_POST['nabar']);
+    $harga = htmlspecialchars($_POST['habar']);
+    $jumlah = htmlspecialchars($_POST['jumbar']);
+    $satuan = htmlspecialchars($_POST['satuan']);
+    $toko = htmlspecialchars($_POST['toko']);
+
+
+    $query = "UPDATE `pendapatan` SET 
+        `Nama_Barang` = '$nama',
+        `Satuan` = '$satuan',
+        `Jumlah_Barang` ='$jumlah',
+        `Harga_Barang` = '$harga',
+        `Referensi` = '$toko'
+        WHERE Id_Barang = $id";
+    $hasil = $conn->query($query);
+
+    if (mysqli_affected_rows($conn) > 0) {
+        echo "<script>alert('Data Transaksi Berhasil Diubah');
+        document.location.href = 'pendapatan.php' </script>";
+    } else {
+        echo "<script>alert('Data Transaksi Gagal Diubah');
+        document.location.href = 'pendapatan.php' </script>";
+    }
 }
 
 
+
+$barang = querycoba("SELECT * FROM pendapatan WHERE Id_Barang = $id")[0];
 
 ?>
 
@@ -31,15 +60,29 @@ if (isset($_POST['submit'])) {
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bantuan</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <title>pendapatan</title>
+    <!-- <style>
+        * {
+            border: 1px solid black;
+        }
+    </style> -->
 </head>
 
 <body class="bg-gray-200">
@@ -57,11 +100,11 @@ if (isset($_POST['submit'])) {
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
                     <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
-                    <li><a href="bantuan.php" class="bg-white text-evendarkerBlue px-3 py-2 rounded-lg">Bantuan</a></li>
+                    <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                     <!-- <a href="landing.php"
-                class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
-                Logout
-            </a> -->
+                    class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
+                    Logout
+                </a> -->
                 </ul>
 
                 <!-- dropdown button -->
@@ -105,6 +148,9 @@ if (isset($_POST['submit'])) {
                     <li>
                         <a href="pembukuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pembukuan</a>
                     </li>
+                    <li>
+                        <a href="bantuan.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantuan</a>
+                    </li>
                 </ul>
                 <div class="py-1">
                     <a href="landing.php" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
@@ -113,58 +159,53 @@ if (isset($_POST['submit'])) {
 
         </header>
 
-        <!-- about section -->
         <main>
-            <div class="container flex flex-col justify-center mt-16 p-10 mx-auto space-y-10 w-3/4 h-full md:w-[700px] lg:w-[900px] bg-white rounded-lg shadow-sm text-center md:pt-0">
-                <div class="">
-                    <h1 class="text-2xl pt-10 font-semibold">
-                        FAQ
-                    </h1>
-                    <p class="text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates eos quia, vitae animi
-                        saepe et sunt, officiis sint, unde consectetur quisquam quos id provident dolor facilis accusantium tempora cumque.
-                    </p>
+
+            <div class="w-[90%] h-[500px] mx-auto bg-white rounded-lg shadow-sm mt-20 md:w-[700px] lg:w-[900px]">
+
+                <div class="p-8">
+                    <h1 class="text-2xl font-semibold">Tambah pendapatan</h1>
+                    <p class="text-sm">Lorem ipsum dolor sit amet</p>
                 </div>
-                <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center  text-evendarkerBlue hover:text-[#845EC2]">Question 1</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </details>
 
-                <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 2</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </details>
+                <div class="flex mx-auto container flex-col">
 
-                <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 3</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </details>
+                    <!-- form pendapatan -->
+                    <form action="" method="POST">
+                        <div class="flex p-8 mb-3 mt-2 lg:mt-14 md:w-3/4 mx-auto sm:gap-2 sm:justify-center flex-wrap">
+                            <input type="hidden" name="id" value="<?= $barang['Id_Barang'] ?>">
 
-                <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 4</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </details>
+                            <div class="mx-auto">
+                                <input type="text" placeholder="Nama Barang" required name="nabar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="nabar" value="<?= $barang['Nama_Barang'] ?>">
+                            </div>
 
-                <details class="pb-5 border-b hover:cursor-pointer">
-                    <summary class="flex justify-between text-lg font-semibold items-center text-summary text-evendarkerBlue hover:text-[#845EC2]">Question 5</summary>
-                    <p class="text-evendarkerBlue text-sm text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </details>
+                            <div class="mx-auto">
+                                <input type="text" placeholder="Harga Barang" required name="habar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="habar" value="<?= $barang['Harga_Barang'] ?>">
+                            </div>
 
-                <form action="" method="POST">
-                    <div>
-                        <textarea name="keluhan" id="" cols="60" rows="5" placeholder="Perlu bantuan?" class="w-3/4 text-sm rounded-lg"></textarea>
-                    </div>
-                    <!-- <a 
-            ="#" class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-1/3 mx-auto my-7 font-semibold justify-center rounded-full md:w-1/4">Submit
-                </a> -->
-                    <button name="submit" onclick="return confirm('anda yakin ingin memberikan keluhan ini?')" class="flex p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white w-1/3 mx-auto my-7 font-semibold justify-center rounded-full md:w-1/4">Submit</button>
-                </form>
+                            <div class="mx-auto">
+                                <input type="text" placeholder="Jumlah Barang" required name="jumbar" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="jumbar" value="<?= $barang['Jumlah_Barang'] ?>">
+                            </div>
+
+                            <div class="mx-auto">
+                                <input type="text" placeholder="Satuan" required name="satuan" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="satuan" value="<?= $barang['Satuan'] ?>">
+                            </div>
+                            <div class="mx-auto">
+                                <input type="text" placeholder="Referensi/Toko" required name="toko" class="focus:ring-black bg-white border border-gray-300 text-gray-900 text-sm focus:text-black px-5 rounded-full w-[280px] h-10" name="toko" value="<?= $barang['Referensi'] ?>">
+                            </div>
+                            <div class="mx-auto">
+                                <button type="submit" id="submit" name="submit" class="bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm border border-gray-300 px-5 rounded-full w-[280px] h-10">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
 
-        <!-- footer -->
         <footer>
-            <div class="px-12 mt-20 py-12 mx-auto h-full min-w-full md:flex bg-[#482C75] text-white">
+            <div class="px-12 py-12 mx-auto mt-20 h-full min-w-full md:flex bg-[#482C75] text-white">
                 <div class=" w-full py-3">
                     <div class="">
                         <h2>Address</h2>
@@ -189,7 +230,7 @@ if (isset($_POST['submit'])) {
                         <h2>FAQ</h2>
                     </div>
                     <div class="">
-                        <a href="" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
+                        <a href="bantuan.php" class="underline hover:text-[#845EC2]">Frequently asked questions</a>
                     </div>
                 </div>
 
@@ -198,6 +239,7 @@ if (isset($_POST['submit'])) {
 
     </div>
 
+    <script src="node_modules/flowbite/dist/datepicker.js"></script>
     <script src="node_modules/flowbite/dist/flowbite.js"></script>
 
 </body>

@@ -157,7 +157,7 @@ if (isset($_SESSION['ubahtambarpend'])){
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                     <!-- <a href="landing.php"
                     class="px-2 py-2 mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">

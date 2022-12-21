@@ -40,7 +40,6 @@ if (!isset($_SESSION["login"])) {
         <!-- nav menu -->
         <ul class="flex flex-1 justify-end items-center gap-10 mx-10 text-white font-semibold">
             <li><a href="landing.php" class="hover:text-[#845EC2]">Home</a></li>
-            <!-- <li><a href="about.php" class="hover:text-[#845EC2]">About</a></li> -->
             <li><a href="register.php" class="text-[#845EC2]">Daftar</a></li>
             <a href="login.php" class="px-2 py-2 shadow-md mr-10 w-20 font-bold bg-white text-evendarkerBlue text-center rounded-full">
                 Login
@@ -142,11 +141,7 @@ if (!isset($_SESSION["login"])) {
                                         <div>
                                             <label for="telp" class="text-sm p-3">No. Telp</label>
                                         </div>
-<<<<<<< HEAD
                                         <input type="number" id="telp" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
-=======
-                                        <input type="tel" id="telp" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
->>>>>>> 31c917eb681eeb1e13b31d22064c080d3bf1cda4
                                         <div>
                                             <label for="pass" class="text-sm p-3">Password</label>
                                         </div>

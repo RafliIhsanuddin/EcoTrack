@@ -24,15 +24,23 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $satuan = htmlspecialchars($_POST['satuan']);
     $toko = htmlspecialchars($_POST['toko']);
 
-    $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
-    $hasil = $conn->query($query);
+    $query2 = "SELECT * FROM `pengeluaran` WHERE `Nama_Barang` = '$nama' AND `Referensi` = '$toko' AND `id_Transaksi` = $transid AND `id_User` = $iduser";
+    mysqli_query($conn, $query2);
 
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
+        echo "<script>alert('barang tersebut sudah ada pada toko yang sama');
         document.location.href = 'pengeluaran.php' </script>";
     } else {
-        echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        $query = "INSERT INTO `pengeluaran` (`Id_Barang`, `Nama_Barang`, `Satuan`, `Jumlah_Barang`, `Harga_Barang`, `Referensi`, `id_Transaksi`, `id_User`) VALUES ('','$nama','$satuan','$jumlah','$harga','$toko','$transid','$iduser')";
+        $hasil = $conn->query($query);
+
+        if (mysqli_affected_rows($conn) > 0) {
+            echo "<script>alert('Data Transaksi Berhasil Ditambahkan');
         document.location.href = 'pengeluaran.php' </script>";
+        } else {
+            echo "<script>alert('Data Transaksi Gagal Ditambahkan');
+        document.location.href = 'pengeluaran.php' </script>";
+        }
     }
 }
 
@@ -84,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <ul class="flex flex-1 justify-start items-center gap-10 mx-10 text-white font-semibold">
                     <li><a href="dashboard.php" class="hover:text-[#482C75]">Dashboard</a>
                     </li>
-                    <li><a href="#" class="hover:text-[#482C75]">Pembukuan</a></li>
+                    <li><a href="pembukuan.php" class="hover:text-[#482C75]">Pembukuan</a></li>
                     <li><a href="bantuan.php" class="hover:text-[#482C75]">Bantuan</a></li>
                     <li><a href="pengeluaran.php" class="bg-[#FFC75F] hover:text-[#482C75] px-3 py-2 rounded-lg">Pengeluaran</a></li>
                     <!-- <a href="landing.html"
@@ -105,10 +113,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 <div id="dropdownDivider" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                     <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                         <li>
-                            <a href="akun.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                            <a href="akun.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
                         </li>
                         <li>
-                            <a href="landing.html" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                            <a href="landing.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
                         </li>
                     </ul>
                 </div>
