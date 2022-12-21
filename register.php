@@ -142,11 +142,7 @@ if (!isset($_SESSION["login"])) {
                                         <div>
                                             <label for="telp" class="text-sm p-3">No. Telp</label>
                                         </div>
-<<<<<<< HEAD
                                         <input type="number" id="telp" required class="my-1 px-3 py-0.5 shadow-xl block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
-=======
-                                        <input type="tel" id="telp" required class="my-1 px-3 py-0.5 shadow-md block rounded-full  bg-white w-full border-[1px] md:w-full"  name="telp"><br>
->>>>>>> 31c917eb681eeb1e13b31d22064c080d3bf1cda4
                                         <div>
                                             <label for="pass" class="text-sm p-3">Password</label>
                                         </div>

@@ -77,7 +77,7 @@
                     </h1>
                     <p class="">
                         Ecotrack merupakan aplikasi berbasis web yang dapat membantu <br>
-                        perusahaan dan UKM dalam melakukan pencatatan kegiatan transaksi <br>
+                        perusahaan dan UMKM dalam melakukan pencatatan kegiatan transaksi <br>
                         dan melakukan pembukuan keuangan.
                     </p>
                     <div>
@@ -110,32 +110,32 @@
                     <div class="flex flex-wrap flex-col justify-center gap-y-5 md:gap-y-0 md:gap-x-8 md:flex-row">
                         <!-- feature 1 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty.jpg" alt=""
-                                class="w-auto mx-auto rounded-full max-w-[320px] h-auto max-h-[320px] md:mb-5">
+                            <img src="img/tambahtrans.png" alt=""
+                                class="w-auto mx-auto rounded-lg max-w-[320px] shadow-lg h-auto max-h-[320px] md:mb-5">
 
                             <h2 class="font-semibold">Mencatat Transaksi</h2>
-                            <p>Lorem ipsum dolor sit amet
-                                <br> consectetur adipisicing elit.
+                            <p>Pencatatan transaksi yang mudah
+                                <br> digunakan dan terorganisir.
                             </p>
                         </div>
                         <!-- feature 2 -->
                         <div class="text-center space-y-2">
-                            <img src="img/kitty2.jpg" alt=""
-                                class="w-auto mx-auto rounded-full max-w-[320px] min-w-[320px] h-auto max-h-[320px] md:mb-5">
+                            <img src="img/dashboard.png" alt=""
+                                class="w-auto mx-auto rounded-lg max-w-[320px] shadow-lg min-w-[320px] h-auto max-h-[320px] md:mb-5">
 
                             <h2 class="font-semibold">Pembukuan Keuangan</h2>
-                            <p>Lorem ipsum dolor sit amet
-                                <br> consectetur adipisicing elit.
+                            <p>Data transaski tersusun menjadi
+                                <br> buku transaksi secara otomatis.
                             </p>
                         </div>
                         <!-- feature 3 -->
                         <div class="text-center space-y-2">
 
-                            <img src="img/kitty3.jpg" alt="" class="w-auto mx-auto rounded-full max-w-[320px] h-auto max-h-[320px] md:mb-5 md:pt-5 lg:pt-0">
+                            <img src="img/pembukuan.png" alt="" class="w-auto mx-auto rounded-lg max-w-[320px] shadow-lg h-auto max-h-[320px] md:mb-5 md:pt-5 lg:pt-0">
 
                             <h2 class="font-semibold">Mencetak Pembukuan</h2>
-                            <p>Lorem ipsum dolor sit amet
-                                <br> consectetur adipisicing elit.
+                            <p>Pencetakan buku transaksi dengan
+                                <br>beberapa pilihan jenis dokumen
                             </p>
                         </div>
                     </div>
@@ -144,44 +144,50 @@
         </div>
 
         <!-- third -->
-        <div class="bg-gradient-to-br from-[#FF6F91] to-[#845EC2]">
+        <!-- <div class="bg-gradient-to-br from-[#FF6F91] to-[#845EC2]">
             <div class="container flex flex-col mx-auto justify-center min-w-full p-7">
-                <div class="mx-auto text-white space-y-28 m-14">
-                    <h1 class="text-5xl font-semibold text-center">
-                        Anggota Tim
+                <div class="mx-auto text-white text-center space-y-14 m-14">
+                    <h1 class="text-5xl font-semibold">
+                        About
                     </h1>
+                    <div class="w-[600px]">
+                        <p>
+                        Ecotrack dibangun untuk memudahkan perusahaan dan UMKM melakukan pencatatan
+                        transaksi secara mudah dan terorganisir.
+                </p>
+                    </div> -->
                     <!-- team members -->
-                    <div class="flex flex-wrap flex-col justify-center gap-y-10 md:gap-y-10 md:gap-x-8 md:flex-row">
-                        <!-- member 1 -->
+                    <!-- <div class="flex flex-wrap flex-col justify-center gap-y-10 md:gap-y-10 md:gap-x-8 md:flex-row">
+                        member 1
                         <div class="text-center space-y-2">
                             <img src="img/kitty.jpg" alt=""
                                 class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
-                        <!-- member 2 -->
+                        member 2
                         <div class="text-center space-y-2">
                             <img src="img/kitty2.jpg" alt=""
                                 class="w-auto rounded-full max-w-[320px] min-w-[320px] h-auto max-h-[320px]">
                         </div>
-                        <!-- member 3 -->
+                        member 3
                         <div class="text-center space-y-2">
                             <img src="img/kitty3.jpg" alt=""
                                 class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
-                        <!-- member 4 -->
+                        member 4
                         <div class="text-center space-y-2">
                             <img src="img/kitty4.jpg" alt=""
                                 class="w-auto rounded-full max-w-[320px] h-auto max-h-[320px]">
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="text-center">
                         <a href="about.php"
                             class="px-5 py-2 shadow-md w-full font-bold bg-white text-evendarkerBlue text-center rounded-full">
                             Discover More
                         </a>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- footer -->
         <footer>

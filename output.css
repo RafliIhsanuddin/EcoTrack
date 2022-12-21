@@ -1285,6 +1285,10 @@ input:checked + .toggle-bg {
   margin-left: 2rem;
 }
 
+.mt-32 {
+  margin-top: 8rem;
+}
+
 .block {
   display: block;
 }
@@ -1420,6 +1424,10 @@ input:checked + .toggle-bg {
 
 .h-\[1000px\] {
   height: 1000px;
+}
+
+.h-\[1200px\] {
+  height: 1200px;
 }
 
 .max-h-\[320px\] {
@@ -1840,6 +1848,18 @@ input:checked + .toggle-bg {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-16 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(4rem * var(--tw-space-y-reverse));
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -2292,6 +2312,10 @@ input:checked + .toggle-bg {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .py-5 {

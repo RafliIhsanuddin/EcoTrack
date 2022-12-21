@@ -150,8 +150,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             <div class="w-[90%] h-[500px] mx-auto bg-white rounded-lg shadow-sm mt-20 md:w-[700px] lg:w-[900px]">
 
                 <div class="p-8">
-                    <h1 class="text-2xl font-semibold">Tambah Pengeluaran</h1>
-                    <p class="text-sm">Lorem ipsum dolor sit amet</p>
+                    <h1 class="text-2xl font-semibold">Tambah Barang</h1>
+                    <p class="text-sm">Penambahan barang dalam transaksi</p>
                 </div>
 
                 <div class="flex mx-auto container flex-col">

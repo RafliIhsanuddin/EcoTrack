@@ -154,7 +154,7 @@ if (!isset($_SESSION["login"])) {
                                 placeholder="Tanggal akhir">
                         </div>
                     </div>
-                    <div class="flex justify-center md:justify-end">
+                    <div class="flex justify-center">
                         <button type="submit" name="html"
                             class="p-1 bg-[#845EC2] hover:bg-[#643EA3] text-white text-sm h-9 w-[150px] my-5 font-semibold text-center justify-center mx-auto rounded-full md:mx-10">Print</button>
                     </div>
