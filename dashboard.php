@@ -169,7 +169,7 @@ foreach ($pendapatan as $masuk) {
                 <div class="m-7 mb-0">
                     <h1 class="text-2xl font-semibold">Dashboard</h1>
                     <p class="text-sm">Statistik umum seluruh transaksi</p>
-                    <div class="flex flex-col m-6 space-y-5 space-x-0 md:flex-row md:space-y-0 md:space-x-5">
+                    <div class="flex flex-col mt-6 space-y-5 space-x-0 md:flex-row md:space-y-0 md:space-x-5">
                     <div
                         class="bg-white rounded-lg border border-gray-300 shadow-sm w-full max-w-[420px] h-[120px] p-5 md:w-1/3">
                         <h2 class="font-semibold">Total Transaksi</h2>
@@ -186,17 +186,17 @@ foreach ($pendapatan as $masuk) {
                         <p class="font-semibold text-right mr-5 text-3xl"><?php echo rupiah($tkeluar); ?></p>
                     </div>
                 </div>
-                    <div class=" bg-white flex flex-wrap w-full mb-auto p-2 gap-x-1 ">
-                        <div class="w shadow-lg rounded-lg overflow-hidden mb-auto">
-                            <div class="py-3 px-5 bg-gray-50">Arus transaksi</div>
-                            <canvas class="p-10 " id="chartBar"></canvas>
+                    <div class=" bg-white flex flex-wrap mt-6 pb-10 rounded-lg border border-gray-300 shadow-sm w-full max-w-[1300px] h-[300px] mb-auto p-2 gap-x-1 ">
+                        <div class="overflow-hidden text-center mx-auto h-full w-[500px]">
+                            <div class="py-3 px-5 text-sm font-semibold bg-transparent">Arus transaksi</div>
+                            <canvas class="p-10 w-full h-full" id="chartBar"></canvas>
                         </div>
                     </div>
                 </div>
                 
             </div>
 
-            <div class="m-6">
+            <div class="m-7 mt-6">
 
                 <ul
                     class="hidden text-sm font-medium text-center rounded-lg divide-x divide-gray-500 border border-gray-300 shadow-sm max-w-[1300px] sm:flex">
